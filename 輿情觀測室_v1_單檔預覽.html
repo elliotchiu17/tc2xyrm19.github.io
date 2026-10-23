@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F6F0E4" />
+  <meta name="description" content="個人輿情觀測室：依地域、議員與年份整理 2025 年以來的新聞與影音紀錄。" />
+  <title>輿情觀測室｜V1 預覽（非自動更新版）</title>
+  <style>
+:root { --paper:#F6F0E4;--cream:#FFF9EF;--cream2:#FBF6EC;--sand:#E9DBBC;--line:#DFD4C2;--line2:#EAE1D2;--text:#373128;--brown:#80633E;--sub:#857967;--muted:#a3998c;--sidebar:#EFE5D4;--safety:#93694c;--shadow:0 12px 44px rgba(79,57,30,.055); }
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none} .hidden{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.page-shell{min-height:100vh;display:grid;grid-template-columns:252px minmax(0,1fr)}.sidebar{background:var(--sidebar);border-right:1px solid #dfd2b9;min-height:100vh;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;overflow:auto}.sidebar-head{padding:35px 26px 28px;border-bottom:1px solid #ded0b9}.micro-title{font-family:Georgia,serif;font-weight:600;letter-spacing:.18em;font-size:10px;color:var(--brown)}.site-mark{margin-top:20px;font-size:21px;letter-spacing:1px;font-weight:800;white-space:nowrap}.logo-sun{font-size:23px;color:#a17f4e;font-weight:400;margin-right:2px}.brand-period{color:#ab8346}.sidebar-intro{font-size:11px;color:#827567;line-height:1.95;margin:13px 0 0}.side-group{padding:28px 18px 8px}.group-caption{padding:0 9px 12px;font-size:9px;letter-spacing:.15em;font-weight:750;color:#8c7553;display:flex;justify-content:space-between}.group-caption span{font-weight:500}.topic-list{display:grid;gap:3px}.topic-button{display:flex;align-items:center;width:100%;text-align:left;gap:10px;border:0;background:transparent;color:#655a4b;padding:12px 13px;border-radius:7px;transition:background .16s}.topic-button:hover{background:rgba(255,255,255,.4)}.topic-button.active{background:#e0d0b4;color:#30281d}.topic-index{font:11px Georgia,serif;color:#998469;min-width:18px}.topic-button.active .topic-index{color:#77552d}.topic-name{font-size:13px;letter-spacing:.08em;font-weight:650}.topic-type{margin-left:auto;font-size:10px;color:#92816a}.sidebar-years{border-top:1px solid #e0d4bf;margin-top:22px}.sidebar-year-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:0 7px}.sidebar-year-button{background:transparent;border:1px solid #d7c7aa;border-radius:5px;padding:10px 4px;color:#8b785d;font-family:Georgia,serif;letter-spacing:.07em}.sidebar-year-button.active{background:#766047;color:#fff8e9;border-color:#766047}.side-bottom{margin-top:auto;padding:16px 24px 26px}.side-note{color:#776b58;font-size:11px;line-height:1.6;display:flex;align-items:center;gap:8px;padding:12px 3px}.mini-dot{display:inline-block;background:#8b997b;border-radius:50%;width:6px;height:6px;flex:none}.sidebar-manage{background:transparent;border:1px solid #cdbb9d;border-radius:7px;padding:12px 11px;width:100%;display:flex;align-items:center;gap:9px;color:#5d4a36;font-size:12px;font-weight:700}.sidebar-manage:hover{background:#e7d8bd}.sidebar-manage #manageChevron{margin-left:auto;font-size:14px}.sidebar-footer{font-size:9px;color:#9e8e74;letter-spacing:.09em;margin-top:23px}.main{min-width:0}.topbar{height:72px;padding:0 clamp(24px,5vw,74px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.topbar-trail,.topbar-right{font-size:10px;font-weight:700;letter-spacing:.12em;color:#938571}.topbar-trail .slash{padding:0 9px;color:#c1b29d}.topbar-right{display:flex;align-items:center;gap:20px}.topbar-line{width:22px;height:1px;background:#a99371}.topbar-date{font-family:Georgia,serif;letter-spacing:.07em}.main-inner{max-width:1250px;margin:0 auto;padding:0 clamp(24px,5vw,76px)}.hero{padding:46px 0 56px;border-bottom:1px solid var(--line)}.hero-kicker{display:flex;align-items:center;gap:15px;font:10px Georgia,serif;font-weight:700;letter-spacing:.18em;color:#9f845c;white-space:nowrap}.hero-rule{width:30px;height:1px;background:#bb9d72}.hero-grid{display:grid;grid-template-columns:1fr 245px;gap:30px;align-items:end;margin-top:31px}.eyebrow{color:#a1855b;font-size:11px;letter-spacing:.19em;font-weight:700}.hero h1{font-family:Georgia,"Noto Serif TC","PMingLiU",serif;letter-spacing:.06em;font-size:clamp(36px,4vw,55px);line-height:1.32;font-weight:600;margin:16px 0 24px}.hero h1 em{font-style:normal;color:#92734a}.hero-text{font-size:12px;line-height:2.15;color:#857a6d;max-width:470px;margin:0}.hero-aside{background:#e9dbbd;min-height:225px;position:relative;padding:23px;border:1px solid #decaab;box-shadow:var(--shadow)}.aside-deco{position:absolute;top:19px;right:22px;font:23px Georgia,serif;color:#aa8a61}.aside-top{font:10px Georgia,serif;color:#8a704b;letter-spacing:.08em}.hero-stat{margin-top:19px;display:flex;align-items:baseline;gap:12px}.hero-stat strong{font:64px Georgia,serif;color:#5f4b32;font-weight:400;letter-spacing:-4px}.hero-stat>span{font-size:11px;color:#826a4d}.aside-rule{height:1px;background:#d2bea0;margin:12px 0 16px}.hero-stat-bottom{display:flex;justify-content:space-between;font:19px Georgia,serif;color:#6d5434}.hero-stat-bottom small{font-family:system-ui;font-size:10px;letter-spacing:.03em;margin-left:5px;color:#867354}.archive-section{padding:44px 0 72px}.section-header{display:flex;align-items:end;justify-content:space-between;gap:15px}.eyebrow-dark{font-size:10px}.section-header h2{font-size:30px;margin:10px 0 7px;letter-spacing:.06em;font-weight:760}.section-header p{font-size:12px;line-height:1.9;color:#8c806f;margin:0}.section-label{font:14px Georgia,serif;white-space:nowrap;color:#b59b77;border-bottom:1px solid #cbb591;padding-bottom:9px}.controls{margin-top:32px}.year-header{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:15px}.field-label{font:10px Georgia,serif;font-weight:700;letter-spacing:.11em;color:#937954}.year-pills{display:flex;gap:8px}.year-pill{border:1px solid #d5c4a8;background:transparent;color:#856f51;border-radius:5px;padding:9px 17px;font:13px Georgia,serif;transition:all .16s}.year-pill:hover{background:#eae0ce}.year-pill.active{background:#5b4934;border-color:#5b4934;color:#fff5e7}.filter-card{border:1px solid var(--line);background:#fcf8f0;padding:15px 17px 12px}.search-wrap{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line2);padding:1px 1px 14px}.search-wrap .small-icon{color:#a08764}.search-wrap input{flex:1;min-width:0;font-size:13px;outline:0;border:0;background:transparent;color:var(--text)}input::placeholder{color:#aa9e8d}.clear-search{border:0;background:transparent;color:#a59682;font-size:20px;line-height:1;width:25px;height:26px;display:none}.clear-search.visible{display:block}.filters-row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding-top:13px;flex-wrap:wrap}.type-tabs{display:flex;gap:4px}.type-tabs button{padding:8px 13px;border-radius:4px;border:1px solid transparent;background:transparent;font-size:11px;color:#897763}.type-tabs button:hover{background:#f0e8dc}.type-tabs button.active{border-color:#d2c0a6;background:#e8dcc7;color:#5c4830;font-weight:750}.select-wrap{position:relative;margin-left:auto}.month-select{margin-left:0}.select-wrap select{appearance:none;border:1px solid #e2d6c4;padding:9px 27px 9px 12px;background:#fffaf3;color:#786a58;border-radius:4px;font-size:11px;min-width:96px;cursor:pointer}.select-wrap span{position:absolute;right:11px;top:8px;pointer-events:none;color:#a39079}.result-head{margin:30px 0 10px;display:flex;justify-content:space-between;align-items:center}.result-head>div{display:flex;gap:12px;align-items:center}.result-count{background:#e5d8be;padding:4px 8px;border-radius:3px;font-size:10px;color:#806344}.sort-label{color:#968b7e;font-size:11px}.sort-label span{font-size:15px;margin-left:4px}.entry-list{border-top:1px solid #d6c6ac}.entry{border-bottom:1px solid #dfd3c1;padding:23px 10px 24px;display:grid;grid-template-columns:74px minmax(0,1fr) 98px;gap:21px;align-items:start;transition:background .18s}.entry:hover{background:#f9f3e8}.entry-visual{width:74px;height:74px;background:#eadfc9;border:1px solid #e0d1b7;display:flex;justify-content:center;align-items:center;color:#93744d;border-radius:3px}.entry-visual.video{background:#e0d1b6;color:#74583b}.entry-date{font-size:10px;letter-spacing:.04em;color:#9e8a6d}.entry-title{font-size:17px;font-weight:710;line-height:1.75;color:#3d362b;display:block;margin:8px 0 9px;letter-spacing:.012em}.entry-title:hover{text-decoration:underline;text-decoration-color:#bda481;text-underline-offset:4px}.entry-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#918473;font-size:11px}.entry-meta i{font-style:normal;color:#c3b59f}.entry-tag{border:1px solid #e1d3bf;padding:3px 7px;border-radius:3px;color:#8a775e;font-size:10px}.entry-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.entry-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px}.entry-link-icon{font:24px Georgia,serif;color:#a28a68;transition:transform .2s}.entry:hover .entry-link-icon{transform:translate(3px,-3px)}.exclude-button{border:1px solid #d4bfab;color:#866852;font-size:11px;border-radius:5px;padding:6px 10px;background:transparent;white-space:nowrap}.exclude-button:hover{background:#ede0d1}.entry-note{margin:10px 0 0;color:#8c7761;font-size:11px;line-height:1.65}.list-actions{text-align:center;margin-top:26px}.load-more{border:1px solid #cdb99d;padding:12px 30px;background:transparent;color:#746047;font-size:12px;border-radius:4px;letter-spacing:.04em}.load-more:hover{background:#ecdfc7}.load-more span{margin-left:20px}.after-list{margin-top:15px;color:#a29584;text-align:center;font-size:11px}.empty-state{padding:65px 25px;background:#faf5eb;text-align:center;color:#8a7863;border-bottom:1px solid var(--line);font-size:12px;line-height:2}.empty-glyph{font:32px Georgia,serif;color:#b49d77;margin-bottom:11px}.empty-state h3{font-size:15px;color:#604e37;margin:0 0 6px}.closing-block{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 15px 38px 0;display:flex;gap:38px}.closing-number{font:38px Georgia,serif;color:#aa8a5d}.closing-block h3{font-family:Georgia,"Noto Serif TC",serif;font-size:22px;line-height:1.7;margin:14px 0;color:#5f4b35}.closing-block p{font-size:11px;color:#998c7b;line-height:2;max-width:680px}footer{padding:30px 0 36px;display:flex;justify-content:space-between;gap:12px;font:9px Georgia,serif;color:#a99a86;letter-spacing:.13em}.manage-banner{margin-top:20px;background:#e9dcc8;border:1px solid #d6c0a0;padding:13px 15px;display:flex;align-items:center;gap:13px;color:#645038}.manage-banner strong{font-size:12px}.manage-banner p{font-size:11px;line-height:1.5;margin:3px 0 0;color:#87735b}.manage-banner button{margin-left:auto;white-space:nowrap}.soft-button{border:1px solid #bd9e75;background:transparent;color:#66523a;border-radius:5px;font-size:11px;padding:10px 14px}.soft-button:hover{background:#e3d1b4}.small-icon{display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center;flex:none}.small-icon svg{width:100%;height:100%}.icon-button{background:transparent;border:0;padding:6px}.mobile-menu{display:none}.mobile-scrim{position:fixed;inset:0;background:rgba(31,22,12,.35);z-index:19}.toast{opacity:0;pointer-events:none;position:fixed;left:50%;bottom:26px;transform:translate(-50%,110px);padding:12px 20px;border-radius:7px;background:#463a29;color:#fff6eb;z-index:50;font-size:12px;transition:transform .25s;box-shadow:0 8px 24px #0002;max-width:calc(100vw - 40px);text-align:center}.toast.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}.manage-dialog{border:1px solid #cbb697;background:#fffaf1;border-radius:10px;color:var(--text);box-shadow:0 20px 100px #0004;max-width:min(550px,calc(100% - 24px));width:100%;padding:0}.manage-dialog::backdrop{background:rgba(33,27,20,.45)}.dialog-layout{padding:25px}.dialog-heading{display:flex;align-items:start;justify-content:space-between}.dialog-heading h3{margin:8px 0;font-size:22px}.modal-close{border:0;background:none;font-size:29px;color:#8b7a63}.dialog-layout>p{font-size:12px;line-height:1.9;color:#817460}.dialog-layout code{font-size:11px}.excluded-list{max-height:250px;overflow:auto;display:grid;gap:9px}.excluded-record{border:1px solid #e6d9c4;padding:13px;display:flex;align-items:center;gap:10px;justify-content:space-between}.excluded-record strong{font-size:12px;line-height:1.65}.excluded-record button{padding:8px 12px;font-size:11px;background:transparent;border:1px solid #bba27e;border-radius:5px}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:21px}.primary-button{border:1px solid #614d33;background:#614d33;color:#fff5e9;font-size:12px;border-radius:5px;padding:10px 13px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #b18851;outline-offset:3px}
+@media(max-width:1050px){.page-shell{grid-template-columns:217px minmax(0,1fr)}.sidebar-head{padding:31px 18px 24px}.site-mark{font-size:19px}.main-inner{padding:0 30px}.topbar{padding:0 30px}.entry{grid-template-columns:62px minmax(0,1fr) 35px;gap:16px}.entry-visual{height:62px;width:62px}.hero-grid{grid-template-columns:1fr 190px}.hero-aside{padding:18px}.hero-stat strong{font-size:54px}.entry-title{font-size:15px}}
+@media(max-width:760px){.page-shell{display:block}.sidebar{position:fixed;z-index:21;left:0;top:0;width:275px;transform:translateX(-101%);transition:transform .25s;box-shadow:0 10px 40px #0002}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-flex}.topbar{height:64px;padding:0 21px;gap:10px}.topbar-trail{margin-right:auto}.topbar-right{gap:8px}.asof-label,.topbar-line{display:none}.main-inner{padding:0 22px}.hero{padding:28px 0 37px}.hero-grid{grid-template-columns:1fr;gap:24px}.hero-aside{min-height:auto;display:grid;grid-template-columns:1fr auto;align-items:center}.hero-stat{grid-row:2;margin:0}.hero-stat strong{font-size:46px}.aside-rule{display:none}.hero-stat-bottom{grid-column:2;grid-row:2;display:flex;gap:13px}.hero-stat-bottom span{font-size:15px}.hero-stat-bottom small{display:block;margin:5px 0;font-size:9px}.hero h1{font-size:38px}.hero-kicker{font-size:9px;gap:9px}.hero-rule{width:14px}.archive-section{padding:34px 0 52px}.section-header h2{font-size:25px}.section-label{font-size:11px}.section-header p{font-size:11px}.entry{grid-template-columns:48px minmax(0,1fr) 26px;gap:10px;padding:18px 0}.entry-visual{height:48px;width:48px}.entry-title{font-size:14px;line-height:1.65}.entry-date{font-size:10px}.entry-right{gap:7px}.entry-link-icon{font-size:18px}.entry-meta{font-size:10px}.filters-row{align-items:stretch}.select-wrap{margin-left:0;flex:1}.select-wrap select{width:100%}.type-tabs{width:100%;justify-content:space-between}.type-tabs button{flex:1;padding:9px 3px}.manage-banner{flex-wrap:wrap}.manage-banner button{margin:0 0 0 30px}.closing-block{gap:20px}.closing-block h3{font-size:18px}footer{line-height:1.8}}
+@media(max-width:395px){.entry{grid-template-columns:39px 1fr 22px;gap:9px}.entry-visual{width:39px;height:39px}.entry-visual svg{width:22px;height:22px}.entry-title{font-size:13px}.hero h1{font-size:32px}.topbar-trail{font-size:9px}.topbar-date{font-size:9px}.entry-tag{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar" aria-label="追蹤主題側邊欄">
+      <div class="sidebar-head">
+        <span class="micro-title">THE DAILY ARCHIVE</span>
+        <div class="site-mark"><span class="logo-sun" aria-hidden="true">✳</span> 輿情觀測室<span class="brand-period">.</span></div>
+        <p class="sidebar-intro">新聞、影音與時間的細緻整理。<br>一座持續生長的個人資料庫。</p>
+      </div>
+      <div class="side-group">
+        <div class="group-caption">YOUR COLLECTION <span>01 — 04</span></div>
+        <nav class="topic-list" id="topicNav"></nav>
+      </div>
+      <div class="side-group sidebar-years">
+        <div class="group-caption">ARCHIVE / 年份</div>
+        <div id="sideYears" class="sidebar-year-grid"></div>
+      </div>
+      <div class="side-bottom">
+        <div class="side-note"><span class="mini-dot"></span> <span id="sideSyncText">已載入初始資料</span></div>
+        <button type="button" class="sidebar-manage" id="manageToggle"><span class="small-icon" data-icon="settings"></span> 管理模式 <span id="manageChevron">↗</span></button>
+        <div class="sidebar-footer">PERSONAL MEDIA ARCHIVE · V1.0</div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button type="button" id="mobileNavToggle" class="icon-button mobile-menu" aria-label="開啟主題選單"><span class="small-icon" data-icon="menu"></span></button>
+        <div class="topbar-trail">PERSONAL ARCHIVE <span class="slash">/</span> <span id="breadcrumb">總覽</span></div>
+        <div class="topbar-right"><span class="asof-label">EST. 2025 · TAICHUNG</span><span class="topbar-line"></span><span class="topbar-date" id="todayStamp"></span></div>
+      </header>
+      <div class="main-inner">
+        <section class="hero" aria-labelledby="heroTitle">
+          <div class="hero-kicker"><span class="hero-rule"></span> A PERSONAL NEWS OBSERVATORY <span class="hero-rule"></span></div>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">收藏此刻，回溯過往。</p>
+              <h1 id="heroTitle">讓每一則新聞，<br><em>都有跡可循。</em></h1>
+              <p class="hero-text">從 2025 年開始，依照人物、地域與發布年份，整理值得持續追蹤的報導、新聞影片與歷史資料。</p>
+            </div>
+            <div class="hero-aside" aria-label="資料庫摘要">
+              <span class="aside-deco">↗</span>
+              <div class="aside-top">THE ARCHIVE AT A GLANCE</div>
+              <div class="hero-stat"><strong id="totalCount">—</strong><span>則已收錄資料</span></div>
+              <div class="aside-rule"></div>
+              <div class="hero-stat-bottom"><span>04 <small>追蹤主題</small></span><span>05 <small>指定媒體</small></span></div>
+            </div>
+          </div>
+        </section>
+        <section class="archive-section" aria-labelledby="sectionTitle">
+          <div class="section-header">
+            <div class="section-title-wrap"><div class="eyebrow eyebrow-dark">INDEX / 追蹤資料</div><h2 id="sectionTitle">全部動態</h2><p id="sectionSubtitle">依照新聞發布日期，自新至舊排列。</p></div>
+            <div class="section-label" id="archiveRange">2025 — 2026</div>
+          </div>
+          <div class="controls">
+            <div class="year-header"><span class="field-label">BROWSE BY YEAR</span><div class="year-pills" id="yearPills"></div></div>
+            <div class="filter-card">
+              <div class="search-wrap"><span class="small-icon" data-icon="search"></span><input id="searchInput" autocomplete="off" aria-label="搜尋新聞標題" placeholder="搜尋新聞標題或資料註記..."/><button id="clearSearch" class="clear-search" aria-label="清除搜尋" type="button">×</button></div>
+              <div class="filters-row">
+                <div class="type-tabs" id="typeTabs" aria-label="資料類型"><button type="button" data-kind="all" class="active">全部</button><button type="button" data-kind="新聞">圖文新聞</button><button type="button" data-kind="video">影音 / YouTube</button></div>
+                <div class="select-wrap"><label for="sourceSelect" class="sr-only">媒體</label><select id="sourceSelect"><option value="all">所有媒體</option></select><span>⌄</span></div>
+                <div class="select-wrap month-select"><label for="monthSelect" class="sr-only">月份</label><select id="monthSelect"><option value="all">全年月份</option></select><span>⌄</span></div>
+              </div>
+            </div>
+          </div>
+          <div id="manageBanner" class="manage-banner hidden"><span class="small-icon" data-icon="settings"></span><div><strong>管理模式已開啟</strong><p>點擊新聞旁的「排除」即可在此瀏覽器隱藏；匯出排除清單並放回 GitHub，才能同步到公開網站與其他裝置。</p></div><button type="button" id="exportExclusions" class="soft-button">匯出排除清單 ↗</button></div>
+          <div class="result-head"><div><span class="field-label">LATEST ENTRIES</span><span class="result-count" id="resultCount">—</span></div><span class="sort-label">發布日期 <span>↓</span></span></div>
+          <div class="entry-list" id="entryList" aria-live="polite"></div>
+          <div class="list-actions" id="listActions"><button id="loadMore" class="load-more" type="button">載入更多紀錄 <span>↓</span></button></div>
+          <div class="after-list" id="afterList"></div>
+        </section>
+        <section class="closing-block"><div class="closing-number">✳</div><div><span class="micro-title">ABOUT THIS ARCHIVE</span><h3>不是要記住每一則新聞，<br>而是讓重要的事，不被時間沖淡。</h3><p>資料整理僅供索引與個人研究。新聞內容與影片著作權屬原媒體；點擊標題可回到原始來源。自動蒐集可能遺漏報導，也不代表新聞內容已查證。</p></div></section>
+        <footer><span>© THE DAILY ARCHIVE · 2026</span><span>MADE FOR THOUGHTFUL READING</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-scrim hidden" id="mobileScrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="manageDialog" class="manage-dialog" aria-labelledby="manageTitle"><form method="dialog" class="dialog-layout"><div class="dialog-heading"><div><span class="micro-title">ARCHIVE MANAGER</span><h3 id="manageTitle">已排除的紀錄</h3></div><button class="modal-close" value="close" aria-label="關閉">×</button></div><p>你可以在這裡復原排除的文章。當前操作會存在此瀏覽器；若要分享給其他人看到相同結果，請匯出 JSON 並上傳到儲存庫的 <code>data/exclusions.json</code>。</p><div id="excludedList" class="excluded-list"></div><div class="dialog-actions"><button id="downloadExclusionsDialog" type="button" class="primary-button">下載 exclusions.json</button><button value="close" class="soft-button">關閉</button></div></form></dialog>
+<script>
+window.NEWS_DATA = {"items":[{"id":"69b47fa45404111d","title":"盧秀燕痛批有人阻撓「崇德殯儀館」改建 被影射市議員陳俞融回應了","date":"2026-10-14","source":"聯合報","url":"https://udn.com/news/story/6656/9813984","topics":["taichung","chen-yu-rong"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"1c99a63ea0f5bcb5","title":"籲卸任前給市民答案！台中市議員提臨時動議 喊話盧市府加碼「普發現金」","date":"2026-10-13","source":"聯合報","url":"https://udn.com/news/story/7325/9812102","topics":["taichung","chen-yu-rong"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"7b21b09e83080e2c","title":"每年6億養樹卻少2.2萬棵 台中議員批有幽靈樹只見砍樹剃頭","date":"2026-09-01","source":"聯合報","url":"https://udn.com/news/amp/story/7325/9727069","topics":["taichung","chang-fen-yu","chen-shu-hua"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"a56be724522a6cca","title":"議員爆料市府認購月餅「緊急棄單」 鄭照新：弱勢的訂單都沒取消","date":"2026-08-31","source":"聯合報","url":"https://udn.com/news/story/124984/9724339","topics":["taichung","chen-yu-rong","chen-shu-hua"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"7839c85f1b8fb24f","title":"台中公車流失360萬人次？議員轟虧損愈補愈大 交局：駕駛難回榮景","date":"2026-08-26","source":"聯合報","url":"https://udn.com/news/story/7325/9714927","topics":["taichung","chen-yu-rong","chen-shu-hua"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"2d8ad077dcf1e34e","title":"中市編午餐廚餘清運費 議員建議當班級獎勵金","date":"2026-08-19","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202608190120.aspx","topics":["taichung","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"ca7b0e2f80b2a6f2","title":"上傳戶口名簿才能借玩具？台中親子館挨轟 社局：8月就調整","date":"2026-08-11","source":"聯合報","url":"https://udn.com/news/story/7266/9683949","topics":["taichung","chang-fen-yu","chen-shu-hua","chen-yu-rong"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"a56733f671aee548","title":"台中市遭爆給清潔隊過期牛奶 盧秀燕挨轟後回應：趕快彌補","date":"2026-08-03","source":"民視新聞","url":"https://www.ftvnews.com.tw/news/detail/2026803w0597","topics":["taichung","chen-shu-hua"],"kind":"影音新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"14d27bdd8de48127","title":"台中北區4搶3 藍綠對決內部競合","date":"2026-08-02","source":"聯合報","url":"https://udn.com/vote2026/story/124652/9665151","topics":["taichung","chen-yu-rong"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"342d894d8e001f6e","title":"台中議員陳俞融指遭肘擊 2名議員否認指控","date":"2026-07-28","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202607280113.aspx","topics":["taichung","chen-yu-rong"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"070d42b2e065f49f","title":"台中室內裝修3年逾3700件 議員揭：「漏報」恐重罰30萬 促一站式申辦","date":"2026-07-26","source":"聯合報","url":"https://udn.com/news/story/7325/9651549","topics":["taichung","chen-yu-rong"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"adc964e626d51764","title":"台中文華高中體育教甄突取消退費 議員要求調查說明","date":"2026-04-17","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202604170148.aspx","topics":["taichung","chen-shu-hua","chen-yu-rong","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"33808b0f5982be8a","title":"台中購物節國際化遭質疑 市府：續提升外籍客參與","date":"2026-04-15","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202604150099.aspx","topics":["taichung","chen-shu-hua","chen-yu-rong","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"c93aff6817072549","title":"台中小孩淪戶籍孤兒 議員盼市府協助登記戶口","date":"2026-04-09","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202604090298.aspx","topics":["taichung","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"7b9ebc7d821d27cf","title":"全台最大垃圾山難消？台中議員批「僅去化1/5」 環保局說話了","date":"2025-12-13","source":"聯合報","url":"https://udn.com/news/story/7325/9201308","topics":["taichung","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"eb287714984cb2b4","title":"台中交通違規編列23億元 議員籲勿用開罰治理","date":"2025-12-05","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202512050265.aspx","topics":["taichung","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"67c53dc37e5946e1","title":"台中東峰公園遭機車闖入 盧秀燕：追查車牌開罰","date":"2025-11-24","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202511240128.aspx","topics":["taichung","chen-shu-hua","chen-yu-rong","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"f3baccf837657397","title":"快新聞／不關心非洲豬瘟？台中市總機語音竟談購物節 議員砲轟盧秀燕","date":"2025-10-30","source":"民視新聞","url":"https://www.ftvnews.com.tw/news/detail/2025A30W0122","topics":["taichung","chen-shu-hua"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"dca11f79699bab6e","title":"台中公幼2歲專班擠破頭 北屯區400人排候補","date":"2025-04-29","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202504290279.aspx","topics":["taichung","chen-shu-hua","chen-yu-rong","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"bf9aa867a36cb7e4","title":"罷免二階連署倒數 台中綠議員要求市府不查水表","date":"2025-04-21","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202504210276.aspx","topics":["taichung","chen-shu-hua","chen-yu-rong","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"cc39ce639739ecec","title":"綠營議員陳淑華現街頭宣講罷免 遇「激動叔」當街嗆聲","date":"2025-03-31","source":"民視新聞","url":"https://www.ftvnews.com.tw/news/detail/2025331c12m1","topics":["taichung","chen-shu-hua"],"kind":"影音新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""},{"id":"a8b5af416552e526","title":"捷順欠薪員工提告 議員籲中市府撥補助款時優先給薪","date":"2025-02-09","source":"中央社","url":"https://www.cna.com.tw/news/aloc/202502090110.aspx","topics":["taichung","chang-fen-yu"],"kind":"新聞","summary":"","origin":"人工核對初始資料","note":"","archive_url":""}],"meta":{"generated_at":"2026-10-23T14:00:00+08:00","last_attempt":"","last_success":"","mode":"curated-seed","sources_status":[],"note":"這是小量已查核連結的起始資料，不代表2025至今新聞已收錄完整。"}};
+
+</script>
+<script>
+window.ARCHIVE_EXCLUSIONS = [];
+
+</script>
+<script>
+(() => {
+  'use strict';
+  const DATA = window.NEWS_DATA || {items:[],meta:{}};
+  const CONFIG = {
+    topics:[{id:'all',name:'全部動態',kind:'總覽'},{id:'taichung',name:'台中',kind:'地域'},{id:'chen-shu-hua',name:'陳淑華',kind:'議員'},{id:'chen-yu-rong',name:'陳俞融',kind:'議員'},{id:'chang-fen-yu',name:'張芬郁',kind:'議員'}],
+    sources:['自由時報','三立新聞','中央社','民視新聞','聯合報'], years:[2026,2025]
+  };
+  const $=id=>document.getElementById(id);
+  const items=(Array.isArray(DATA.items)?DATA.items:[]).filter(item=>item && item.id && item.title && item.date && Array.isArray(item.topics));
+  const indexed=new Map(items.map(item=>[item.id,item]));
+  const taipeiYear=Number(new Intl.DateTimeFormat('en-US',{year:'numeric',timeZone:'Asia/Taipei'}).format(new Date()));
+  CONFIG.years=Array.from({length:Math.max(2,taipeiYear-2025+1)},(_,i)=>Math.max(2026,taipeiYear)-i);
+  const storedKey='news-archive-v1-hidden';
+  function readStored(){try{return JSON.parse(localStorage.getItem(storedKey)||'[]')}catch{return []}}
+  function writeStored(){try{localStorage.setItem(storedKey,JSON.stringify([...localHidden]))}catch{}}
+  const remoteHidden=new Set(Array.isArray(window.ARCHIVE_EXCLUSIONS)?window.ARCHIVE_EXCLUSIONS:[]);
+  const localHidden=new Set(readStored());
+  let topic='all',year=CONFIG.years[0],kind='all',source='all',month='all',search='',page=1,manage=false;
+  let toastTimer;
+  const icons={
+    news:'<rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M7 8h6M7 12h6M7 16h10M16 8h2M16 12h2"/>',
+    video:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/>',
+    search:'<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
+    settings:'<circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+    link:'<path d="M7 17 17 7M8 7h9v9"/>',
+    folder:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10H3z"/>',
+  };
+  function svg(name,size=28){const el=document.createElement('span');el.innerHTML=`<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]||icons.news}</svg>`;return el.firstChild}
+  function setText(id,value){$(id).textContent=value}
+  function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3100)}
+  function showModal(){renderExcluded();$('manageDialog').showModal()}
+  function timeFor(date){return String(date).replaceAll('-','.')} 
+  function groupedCount(topicId,yearInt){return items.filter(x=>(topicId==='all'||x.topics.includes(topicId)) && x.date.slice(0,4)===String(yearInt)&&!remoteHidden.has(x.id)&&!localHidden.has(x.id)).length}
+  function renderNavigation(){
+    const nav=$('topicNav');nav.replaceChildren();
+    CONFIG.topics.forEach((t,i)=>{
+      const btn=document.createElement('button');btn.type='button';btn.className='topic-button'+(topic===t.id?' active':'');
+      const idx=document.createElement('span');idx.className='topic-index';idx.textContent=i===0?'✳':String(i).padStart(2,'0');
+      const title=document.createElement('span');title.className='topic-name';title.textContent=t.name;
+      const sub=document.createElement('span');sub.className='topic-type';sub.textContent=i===0?'':t.kind;
+      btn.append(idx,title,sub);btn.addEventListener('click',()=>{topic=t.id;page=1;resetMonth();render();mobileNav(false)});nav.append(btn);
+    });
+    const years=$('sideYears');years.replaceChildren();
+    CONFIG.years.forEach(y=>{
+      const btn=document.createElement('button');btn.type='button';btn.className='sidebar-year-button'+(year===y?' active':'');btn.textContent=y;
+      btn.addEventListener('click',()=>{year=y;page=1;resetMonth();render();mobileNav(false)});years.append(btn)
+    });
+  }
+  function renderYears(){const holder=$('yearPills');holder.replaceChildren();CONFIG.years.forEach(y=>{
+    const b=document.createElement('button');b.type='button';b.className='year-pill'+(year===y?' active':'');b.textContent=String(y);b.addEventListener('click',()=>{year=y;page=1;resetMonth();render()});holder.append(b)
+  })}
+  function resetMonth(){month='all';$('monthSelect').value='all'}
+  function renderMonths(){const holder=$('monthSelect');holder.replaceChildren();const op=document.createElement('option');op.value='all';op.textContent='全年月份';holder.append(op);
+    const all=items.filter(x=>x.date.startsWith(String(year)) && (topic==='all'||x.topics.includes(topic)) && !remoteHidden.has(x.id) && !localHidden.has(x.id));
+    const seen=[...new Set(all.map(x=>x.date.slice(5,7)))].sort((a,b)=>b.localeCompare(a));
+    seen.forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=`${Number(m)} 月`;holder.append(o)});
+    if(month!=='all'&&!seen.includes(month))month='all';holder.value=month;
+  }
+  function filterItems(){const term=search.trim().toLocaleLowerCase('zh-TW');return items.filter(x=>{
+    if(localHidden.has(x.id)||remoteHidden.has(x.id))return false;
+    if(topic!=='all'&&!x.topics.includes(topic))return false;
+    if(x.date.slice(0,4)!==String(year))return false;
+    if(kind==='新聞'&&x.kind!=='新聞')return false;
+    if(kind==='video'&&x.kind==='新聞')return false;
+    if(source!=='all'&&x.source!==source)return false;
+    if(month!=='all'&&x.date.slice(5,7)!==month)return false;
+    if(term && ![x.title,x.source,x.note,x.summary].some(t=>String(t||'').toLocaleLowerCase('zh-TW').includes(term)))return false;
+    return true
+  }).sort((a,b)=>b.date.localeCompare(a.date)||a.title.localeCompare(b.title))}
+  function makeEntry(item){
+    const row=document.createElement('article');row.className='entry';
+    const visual=document.createElement('div');const isVideo=item.kind!=='新聞';visual.className='entry-visual'+(isVideo?' video':'');visual.append(svg(isVideo?'video':'news',28));
+    const content=document.createElement('div');
+    const date=document.createElement('div');date.className='entry-date';date.textContent=timeFor(item.date);
+    const title=document.createElement('a');title.className='entry-title';title.textContent=item.title;title.href=safeHref(item.url);title.target='_blank';title.rel='noopener noreferrer';title.title='開啟原始報導（新分頁）';
+    const meta=document.createElement('div');meta.className='entry-meta';
+    const src=document.createElement('span');src.textContent=item.source;
+    const sep=document.createElement('i');sep.textContent='·';
+    const label=document.createElement('span');label.textContent=isVideo?(item.kind==='YouTube'?'YouTube 影片':'影音新聞'):'圖文報導';meta.append(src,sep,label);
+    const tags=document.createElement('div');tags.className='entry-tags';
+    if(topic==='all')item.topics.forEach(id=>{const t=CONFIG.topics.find(x=>x.id===id);if(t){const tag=document.createElement('span');tag.className='entry-tag';tag.textContent=t.name;tags.append(tag)}});
+    content.append(date,title,meta);if(topic==='all')content.append(tags);
+    if(item.note){const p=document.createElement('p');p.className='entry-note';p.textContent=item.note;content.append(p)}
+    if(item.archive_url && safeHref(item.archive_url)!=='#'){const archive=document.createElement('a');archive.className='entry-note';archive.textContent='查看附加存檔 ↗';archive.href=safeHref(item.archive_url);archive.rel='noopener noreferrer';archive.target='_blank';content.append(archive)}
+    const right=document.createElement('div');right.className='entry-right';const go=document.createElement('a');go.className='entry-link-icon';go.href=safeHref(item.url);go.target='_blank';go.rel='noopener noreferrer';go.textContent='↗';go.title='開啟新聞來源';right.append(go);
+    if(manage){const reject=document.createElement('button');reject.type='button';reject.className='exclude-button';reject.textContent='排除';reject.title='從目前瀏覽器隱藏新聞';reject.addEventListener('click',()=>{localHidden.add(item.id);writeStored();render();toast('已排除，記得匯出清單同步至 GitHub')});right.append(reject)}
+    row.append(visual,content,right);return row;
+  }
+  function safeHref(h){const s=String(h||'').trim();if(s.startsWith('assets/docs/'))return s;try{let u=new URL(s);return ['http:','https:'].includes(u.protocol)?s:'#'}catch{return '#'}}
+  function renderItems(){const listed=filterItems();const length=listed.length;setText('resultCount',`${length} 則`);const visible=listed.slice(0,page*18);const holder=$('entryList');holder.replaceChildren();
+    if(!length){const empty=document.createElement('div');empty.className='empty-state';empty.innerHTML='<div class="empty-glyph">✳</div><h3>目前沒有符合條件的紀錄</h3><p>可以更換年份、媒體或搜尋條件。歷史資料仍在陸續補建中。</p>';holder.append(empty)}
+    else visible.forEach(item=>holder.append(makeEntry(item)));
+    $('loadMore').classList.toggle('hidden',length<=visible.length);$('afterList').textContent=length?`目前顯示 ${visible.length} / ${length} 則紀錄 · 依新聞發布日期排序`:'';
+  }
+  function render(){const selected=CONFIG.topics.find(x=>x.id===topic)||CONFIG.topics[0];
+    setText('sectionTitle',selected.name);setText('sectionSubtitle',`${selected.kind==='總覽'?'五家指定媒體':'主題索引'} · ${year} 年新聞與影音紀錄，依發稿日期排列。`);
+    setText('breadcrumb',selected.name);setText('archiveRange',`${year} / ISSUE INDEX`);
+    setText('totalCount',items.filter(x=>!localHidden.has(x.id)&&!remoteHidden.has(x.id)).length.toLocaleString('en-US'));
+    const last=DATA.meta?.last_success || DATA.meta?.generated_at || '';
+    $('sideSyncText').textContent=DATA.meta?.mode==='curated-seed'?'初始資料 · 尚未執行自動更新':`資料更新：${last?last.slice(0,10):'未記錄'}`;
+    renderNavigation();renderYears();renderMonths();renderItems();
+    $('manageBanner').classList.toggle('hidden',!manage);
+    $('manageToggle').innerHTML=manage?'<span class="small-icon" data-icon="settings"></span> 結束管理模式 <span id="manageChevron">×</span>':'<span class="small-icon" data-icon="settings"></span> 管理模式 <span id="manageChevron">↗</span>';
+    replaceStaticIcons();
+  }
+  function replaceStaticIcons(){document.querySelectorAll('[data-icon]').forEach(el=>{el.replaceChildren(svg(el.dataset.icon,17));el.removeAttribute('data-icon')})}
+  function downloadExclusions(){const combined=[...new Set([...remoteHidden,...localHidden])].sort();const blob=new Blob([JSON.stringify(combined,null,2)+'\n'],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='exclusions.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200);toast('已匯出排除清單；請上傳替換 data/exclusions.json')}
+  function renderExcluded(){const holder=$('excludedList');holder.replaceChildren();const ids=[...new Set([...remoteHidden,...localHidden])];if(ids.length===0){const p=document.createElement('p');p.textContent='目前沒有排除的資料。';p.style.fontSize='12px';holder.append(p);return}
+    ids.forEach(id=>{const itm=indexed.get(id);const row=document.createElement('div');row.className='excluded-record';const title=document.createElement('strong');title.textContent=itm?.title||`文章 ID：${id}`;const b=document.createElement('button');b.type='button';b.textContent='復原';b.addEventListener('click',()=>{localHidden.delete(id);remoteHidden.delete(id);writeStored();renderExcluded();render();toast('已復原本機排除狀態；正式網站請重新匯出並執行 rebuild')});row.append(title,b);holder.append(row)});
+  }
+  function mobileNav(open){$('sidebar').classList.toggle('open',open);$('mobileScrim').classList.toggle('hidden',!open)}
+  // Initialize
+  $('todayStamp').textContent=new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'Asia/Taipei'}).format(new Date()).toUpperCase();
+  const srcSelect=$('sourceSelect');CONFIG.sources.forEach(s=>{const option=document.createElement('option');option.value=s;option.textContent=s;srcSelect.append(option)});
+  $('searchInput').addEventListener('input',e=>{search=e.target.value;page=1;$('clearSearch').classList.toggle('visible',!!search);renderItems()});
+  $('clearSearch').addEventListener('click',()=>{search='';$('searchInput').value='';page=1;$('clearSearch').classList.remove('visible');renderItems()});
+  $('sourceSelect').addEventListener('change',e=>{source=e.target.value;page=1;renderItems()});
+  $('monthSelect').addEventListener('change',e=>{month=e.target.value;page=1;renderItems()});
+  $('typeTabs').addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;kind=btn.dataset.kind;page=1;document.querySelectorAll('#typeTabs button').forEach(b=>b.classList.toggle('active',b===btn));renderItems()});
+  $('loadMore').addEventListener('click',()=>{page++;renderItems()});
+  $('manageToggle').addEventListener('click',()=>{manage=!manage;render();if(manage)toast('管理模式已開啟，可排除不需要的新聞')});
+  $('exportExclusions').addEventListener('click',downloadExclusions);
+  $('downloadExclusionsDialog').addEventListener('click',downloadExclusions);
+  $('mobileNavToggle').addEventListener('click',()=>mobileNav(true));$('mobileScrim').addEventListener('click',()=>mobileNav(false));
+  // Shift-click manage mode opens excluded history for maintenance
+  $('manageToggle').addEventListener('contextmenu',e=>{e.preventDefault();showModal()});
+  // Accessible via manage banner button tooltip: additionally allow Alt+M to open exclusions.
+  document.addEventListener('keydown',e=>{if(e.altKey&&e.key.toLowerCase()==='m'){e.preventDefault();showModal()}});
+  const extra=document.createElement('button');extra.type='button';extra.textContent='查看／復原已排除';extra.className='soft-button';extra.style.marginTop='10px';extra.addEventListener('click',showModal);
+  $('manageBanner').append(extra);
+  replaceStaticIcons();render();
+})();
+
+</script>
+</body>
+</html>
