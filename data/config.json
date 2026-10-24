@@ -6,7 +6,12 @@
     {"id": "taichung", "name": "台中", "terms": ["台中"]},
     {"id": "chen-shu-hua", "name": "陳淑華", "terms": ["陳淑華"]},
     {"id": "chen-yu-rong", "name": "陳俞融", "terms": ["陳俞融"]},
-    {"id": "chang-fen-yu", "name": "張芬郁", "terms": ["張芬郁"]}
+    {"id": "chen-ya-hui", "name": "陳雅惠", "terms": ["陳雅惠"]},
+    {"id": "hsieh-jia-yi", "name": "謝家宜", "terms": ["謝家宜"]},
+    {"id": "chang-fen-yu", "name": "張芬郁", "terms": ["張芬郁"]},
+    {"id": "chang-jia-an", "name": "張家銨", "terms": ["張家銨"]},
+    {"id": "chou-yong-hong", "name": "周永鴻", "terms": ["周永鴻"]},
+    {"id": "chiang-chao-kuo", "name": "江肇國", "terms": ["江肇國"]}
   ],
   "sources": [
     {"name": "自由時報", "site_query": "news.ltn.com.tw"},
