@@ -1,0 +1,21 @@
+{
+  "start_date": "2025-01-01",
+  "recent_days": 3,
+  "github_repository": "elliotchiu17/tc2xyrm19.github.io",
+  "topics": [
+    {"id": "taichung", "name": "台中", "terms": ["台中"]},
+    {"id": "chen-shu-hua", "name": "陳淑華", "terms": ["陳淑華"]},
+    {"id": "chen-yu-rong", "name": "陳俞融", "terms": ["陳俞融"]},
+    {"id": "chang-fen-yu", "name": "張芬郁", "terms": ["張芬郁"]}
+  ],
+  "sources": [
+    {"name": "自由時報", "site_query": "news.ltn.com.tw"},
+    {"name": "三立新聞", "site_query": "setn.com"},
+    {"name": "中央社", "site_query": "cna.com.tw"},
+    {"name": "民視新聞", "site_query": "ftvnews.com.tw"},
+    {"name": "聯合報", "site_query": "udn.com"}
+  ],
+  "rss_feeds": [
+    {"name": "自由時報", "url": "https://news.ltn.com.tw/rss/all.xml"}
+  ]
+}
