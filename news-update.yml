@@ -1,0 +1,75 @@
+name: Refresh archive and publish Pages
+on:
+  push:
+    branches: [main]
+  schedule:
+    # UTC. Roughly every 4 hours. GitHub may delay/skip scheduled runs.
+    - cron: '17 */4 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'recent: 搜尋近期新聞；rebuild: 僅重新部署'
+        required: true
+        type: choice
+        options: [recent, rebuild]
+        default: recent
+      days:
+        description: '回看幾天（1～30，0 表示使用 config.json）'
+        required: false
+        default: '0'
+      topic:
+        description: 'all，或 taichung / chen-shu-hua / chen-yu-rong / chang-fen-yu'
+        required: false
+        default: all
+      source:
+        description: 'all 或來源名稱，如 自由時報'
+        required: false
+        default: all
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: personal-archive-site
+  cancel-in-progress: false
+jobs:
+  collect_and_publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh data or rebuild
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_MODE: ${{ inputs.mode || 'recent' }}
+          INPUT_DAYS: ${{ inputs.days || '0' }}
+          INPUT_TOPIC: ${{ inputs.topic || 'all' }}
+          INPUT_SOURCE: ${{ inputs.source || 'all' }}
+        run: |
+          if [ "$EVENT_NAME" = "push" ]; then
+            python scripts/collect.py --mode rebuild
+          else
+            python scripts/collect.py --mode "$INPUT_MODE" --days "$INPUT_DAYS" --topic "$INPUT_TOPIC" --source "$INPUT_SOURCE"
+          fi
+      - name: Commit automated search result index
+        run: |
+          git config user.name 'news-archive-bot'
+          git config user.email 'news-archive-bot@users.noreply.github.com'
+          git add data/news.json
+          if ! git diff --staged --quiet; then
+            git commit -m 'chore: update personal news index'
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
