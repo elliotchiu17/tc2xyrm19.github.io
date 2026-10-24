@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5efdf">
+<meta name="description" content="按主題、年份與月份彙整新聞；人工收錄、排除與輔助自動搜尋。">
+<title>輿情觀測室｜個人新聞檔案</title>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brandline"><div class="brand-seal">✳</div><div><div class="brand-en">THE DAILY ARCHIVE</div><div class="brand-cn">輿情觀測室<span>．</span></div></div></div>
+    <p class="side-intro">把新聞留在時間裡。<br>按主題、年份與月份慢慢整理。</p>
+    <div class="side-divider"></div>
+    <div class="side-section-title">追蹤主題 <span>TOPICS</span></div>
+    <nav class="topic-nav" id="topicNav" aria-label="追蹤主題"></nav>
+    <div class="side-divider"></div>
+    <div class="side-section-title">資料整理 <span>ARCHIVE</span></div>
+    <button class="side-utility" id="sourceSearchBtn" type="button"><span class="side-ico">⌕</span> 搜尋原始新聞 <span class="side-arrow">↗</span></button>
+    <button class="side-utility" id="updateHelpBtn" type="button"><span class="side-ico">↻</span> 自動更新設定 <span class="side-arrow">›</span></button>
+    <button class="side-utility" id="importSideBtn" type="button"><span class="side-ico">⇧</span> 匯入舊資料 <span class="side-arrow">›</span></button>
+    <div class="sidebar-bottom">
+      <div class="sidebar-legend"><span class="status-dot"></span><span id="syncStatus">正在讀取資料</span></div>
+      <button class="admin-toggle" id="adminToggle" type="button" aria-pressed="false"><span>✎</span><span id="adminToggleText">開啟管理模式</span><span class="side-arrow">→</span></button>
+      <div class="side-privacy">公開閱覽 · 管理資料需自行同步 GitHub</div>
+    </div>
+  </aside>
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="開啟選單" type="button">☰</button>
+      <span class="top-crumb">NEWS INDEX <span>/</span> <strong id="crumbTopic">全部主題</strong></span>
+      <span class="top-right"><span class="tiny-sun">✳</span> TAICHUNG · PERSONAL ARCHIVE</span>
+    </header>
+    <div class="content-wrap">
+      <div class="eyebrow">A PERSONAL NEWS COLLECTION <span class="eyebrow-dash"></span> EST. 2025</div>
+      <div class="page-heading"><div><h1>收集新聞，<em>留下紀錄。</em></h1><p>不替你決定哪篇新聞重要。先收錄，再慢慢整理。</p></div><div class="heading-stats"><span id="headlineCount">0</span><small>則資料已收錄</small></div></div>
+      <div class="thin-rule"></div>
+      <section class="archive" aria-labelledby="archiveTitle">
+        <div class="section-top"><div><div class="section-kicker">BROWSE THE ARCHIVE</div><h2 id="archiveTitle">全部主題</h2><p class="section-description" id="archiveDesc">依照原始發布日期整理的新聞與影音紀錄。</p></div><button id="addArticleTop" class="primary-btn add-top" type="button" hidden>＋ 新增新聞報導</button></div>
+        <div class="browse-year"><div class="browse-label">選擇年份 <small>YEAR</small></div><div class="year-chips" id="yearChips"></div></div>
+        <div class="browse-month"><div class="browse-label">選擇月份 <small>MONTH</small></div><div class="month-chips" id="monthChips"></div></div>
+        <div class="filter-panel">
+          <label class="search-holder"><span>⌕</span><input id="searchInput" placeholder="在目前資料中搜尋標題、備註或來源…" type="search" autocomplete="off"></label>
+          <div class="filter-options"><div class="type-tabs" id="typeTabs"><button type="button" data-kind="all" class="active">全部</button><button type="button" data-kind="新聞">新聞</button><button type="button" data-kind="影音">影音</button></div><label class="select-holder"><span class="sr-only">媒體來源</span><select id="sourceSelect"><option value="all">所有媒體來源</option></select><span class="select-down">⌄</span></label></div>
+        </div>
+        <div class="admin-bar" id="adminBar" hidden><div><div class="admin-title">✎　管理模式已開啟</div><p>這裡的新增、修改、排除會先保存在此瀏覽器；按「匯出資料」並上傳 GitHub 才能分享給其他人。</p></div><div class="admin-bar-buttons"><button id="addArticleBtn" class="primary-btn" type="button">＋ 新增新聞</button><button id="restoreHiddenBtn" class="secondary-btn" type="button">↶ 復原排除</button><button id="exportEditorialBtn" class="secondary-btn" type="button">↓ 匯出資料</button></div></div>
+        <div class="list-heading"><div><span class="list-kicker">ARCHIVE ENTRIES</span><h3 id="listHeading">新聞列表 <span id="resultCount">0 則</span></h3></div><span class="sort-hint">按新聞發布時間　↓</span></div>
+        <div class="article-list" id="articleList"></div>
+        <div class="load-footer"><button id="loadMoreBtn" class="load-more" type="button" hidden>載入更多新聞 ↓</button></div>
+      </section>
+      <div class="footer-note"><div class="footer-symbol">✳</div><div><h4>一座持續更新的新聞檔案室。</h4><p>標題、日期與連結僅供索引；新聞及影音內容屬原發布者。自動搜尋結果不等於完整新聞全集，請以原始來源為準。</p></div></div>
+      <footer><span>© 2026 THE DAILY ARCHIVE</span><span>KEEP THE RECORD · KEEP THE CONTEXT</span></footer>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input id="importFileInput" type="file" accept=".json,application/json" hidden>
+<dialog id="articleDialog" class="modal article-modal"><div class="modal-top"><div><span class="modal-kicker">ARCHIVE EDITOR</span><h2 id="editorTitle">新增新聞報導</h2></div><button type="button" class="close-modal" data-close="articleDialog" aria-label="關閉">×</button></div><form id="articleForm" class="article-form"><input id="editId" type="hidden"><div class="form-row"><label class="form-field wide">新聞標題 <b>*</b><input id="articleTitle" maxlength="240" required placeholder="請輸入新聞標題"></label></div><div class="form-grid"><label class="form-field">發布日期 <b>*</b><input id="articleDate" required type="date"></label><label class="form-field">資料類型<select id="articleKind"><option value="新聞">新聞</option><option value="影音">影音／YouTube</option></select></label></div><div class="form-grid"><label class="form-field">新聞媒體 <b>*</b><select id="articleSource" required></select></label><label class="form-field">其他媒體名稱（選「其他」時填寫）<input id="articleSourceOther" placeholder="地方媒體名稱"></label></div><label class="form-field">原始新聞或影片網址<input id="articleUrl" type="url" placeholder="https://…"></label><label class="form-field">補充備註<textarea id="articleNote" rows="3" placeholder="可自行整理重點，不要直接複製未經授權的新聞全文。"></textarea></label><label class="form-field">授權附件連結（非必填）<input id="articleAttachment" placeholder="例如 assets/docs/document.pdf"></label><fieldset class="topic-fieldset"><legend>歸入哪些追蹤主題？<b>*</b> <small>可複選</small></legend><div id="articleTopicChecks" class="checks"></div></fieldset><div class="form-buttons"><button class="secondary-btn" type="button" data-close="articleDialog">取消</button><button class="primary-btn" type="submit">儲存這則新聞</button></div><p class="editor-reminder">新增後會立刻出現在目前瀏覽器；公開網站同步仍需「匯出資料 → 上傳 GitHub」。</p></form></dialog>
+<dialog id="helpDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">NEWS COLLECTION</span><h2>搜尋與更新方式</h2></div><button type="button" class="close-modal" data-close="helpDialog" aria-label="關閉">×</button></div><div class="help-content"><p><strong>手動新增是主要功能。</strong> 自動搜尋只是補充，不會先按議員名稱、重要性或報導主題替「台中」篩掉新聞。</p><div class="help-step"><b>01　搜尋近期報導</b><p>點側邊欄「搜尋原始新聞」，以目前選取的關鍵字到 Google 新聞搜尋；也能自行在媒體網站搜尋後複製網址，再按「新增新聞」收錄。</p></div><div class="help-step"><b>02　自動追蹤（選用）</b><p>完整版 GitHub 專案附有自動更新工作流程，按設定週期查詢四組關鍵字及指定媒體；搜尋服務不一定收錄全部新聞，因此不能保證每天數十篇都抓齊。</p></div><div class="help-step"><b>03　永久保存手動編輯</b><p>在管理模式按「匯出資料」，把下載的 <code>editorial.json</code> 上傳到 Repository 的 <code>data/editorial.json</code>；只需上傳這個檔案，不必再改 HTML。</p></div><div class="help-step"><b>04　新增關鍵字／媒體來源</b><p>修改 GitHub 裡的 <code>data/config.json</code>：<code>topics</code> 管理主題名稱與搜尋字，<code>sources</code> 管理媒體名稱與網域。更改後重新整理網站，會顯示新設定。</p></div><div class="help-actions"><button class="primary-btn" id="helpExport" type="button">↓ 匯出我的編輯資料</button><a id="githubActionsLink" href="https://github.com/elliotchiu17/tc2xyrm19.github.io/actions" target="_blank" rel="noopener noreferrer">開啟 GitHub Actions ↗</a></div></div></dialog>
+</body></html>
