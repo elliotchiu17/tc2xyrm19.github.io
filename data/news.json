@@ -1,7 +1,13 @@
 {
   "items": [],
   "meta": {
-    "status": "awaiting_first_update",
-    "note": "尚未執行新聞更新；空白不代表沒有相關新聞。"
+    "last_checked": "2026-10-24T15:35:37+08:00",
+    "mode": "rebuild",
+    "lookback_days": 3,
+    "queries_attempted": 0,
+    "query_failures": 0,
+    "added": 0,
+    "total_auto": 0,
+    "warning": "Google 新聞及 RSS 可能漏新聞；不保證全部相關報導。沒有設定重要性或新聞量篩選門檻。"
   }
 }
