@@ -18,3 +18,9 @@
 .article-card.excluded .article-title{text-decoration:line-through;text-decoration-color:#bba78d}
 .help-content .form-grid{margin-top:10px}
 @media(max-width:590px){.inline-add{flex-wrap:wrap}.inline-add input{width:100%;flex-basis:100%}.uid-panel code{font-size:12px}}
+
+/* 隱藏舊版 V3 匯入功能 */
+#importSideBtn,
+#importBtn {
+  display: none !important;
+}
