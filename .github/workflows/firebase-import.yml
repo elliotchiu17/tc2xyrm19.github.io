@@ -1,7 +1,7 @@
 name: Firebase 新聞搜尋佇列（自由時報）
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: read
