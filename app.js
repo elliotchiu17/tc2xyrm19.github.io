@@ -45,7 +45,42 @@ function showCatalog(){if(!state.admin)return;editCatalog=structuredClone(state.
 function makeId(name){return 'topic-'+[...new TextEncoder().encode(name)].reduce((a,b)=>((a*31+b)>>>0),7).toString(36)}
 function renderCatalog(){const topics=$('catalogTopics'),sources=$('catalogSources');topics.replaceChildren();sources.replaceChildren();for(const t of editCatalog.topics){const row=node('div','setting-item');append(row,node('span','',t.name),btn('移除',()=>{if(!confirm(`移除追蹤主題「${t.name}」？已存新聞不會刪除，但該分類將不再顯示。`))return;editCatalog.topics=editCatalog.topics.filter(x=>x.id!==t.id);renderCatalog()},'small-danger'));topics.append(row)}for(const s of editCatalog.sources){const row=node('div','setting-item');append(row,node('span','',s.name),btn('移除',()=>{editCatalog.sources=editCatalog.sources.filter(x=>x.name!==s.name);renderCatalog()},'small-danger'));sources.append(row)}}
 async function saveCatalog(){if(!state.admin)return;const button=$('saveCatalogBtn');button.disabled=true;try{await cloud.saveCatalog(editCatalog);state.catalog=structuredClone(editCatalog);if(!state.catalog.topics.some(x=>x.id===state.topic))state.topic='all';$('catalogDialog').close();render();notify('關鍵字與媒體已儲存至雲端')}catch(e){notify('設定未儲存：'+safeErr(e))}finally{button.disabled=false}}
-function externalSearch(){const t=state.catalog.topics.find(x=>x.id===$('externalTopic').value),s=state.catalog.sources.find(x=>x.name===$('externalSource').value);if(!t){notify('請先選擇一個關鍵字');return}const start=$('externalStart').value,end=$('externalEnd').value;if(start&&!verifyDate(start)||end&&!verifyDate(end)||start&&end&&start>end){notify('日期範圍有誤');return}let q=t.terms?.[0]||t.name;if(s?.site_query)q+=` site:${s.site_query}`;if(start)q+=` after:${new Date(start+'T00:00:00').toISOString().slice(0,10)}`;if(end){const d=new Date(end+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+1);q+=` before:${d.toISOString().slice(0,10)}`}const url='https://news.google.com/search?q='+encodeURIComponent(q)+'&hl=zh-TW&gl=TW&ceid=TW%3Azh-Hant';window.open(url,'_blank','noopener,noreferrer')}
+
+/* 外部搜尋功能，先以自由時報測試 */
+function externalSearch() {
+  const topicId = $('externalTopic').value;
+  const topic = state.catalog.topics.find(t => t.id === topicId);
+
+  if (!topic) {
+    notify('請先選擇關鍵字');
+    return;
+  }
+
+  const start = $('externalStart').value;
+  const end = $('externalEnd').value;
+
+  if (!start || !end || !verifyDate(start) ||
+      !verifyDate(end) || start > end) {
+    notify('請確認搜尋日期');
+    return;
+  }
+
+  const keyword = topic.terms?.[0] || topic.name;
+
+  const params = new URLSearchParams({
+    keyword: keyword,
+    type: 'all',
+    sort: 'date',
+    start_time: start.replaceAll('-', ''),
+    end_time: end.replaceAll('-', '')
+  });
+
+  const url = 'https://search.ltn.com.tw/list?' + params.toString();
+
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+/* 外部搜尋功能到這裡 */
+
 function showSearch(){const topics=$('externalTopic'),sources=$('externalSource');topics.replaceChildren();for(const t of state.catalog.topics)topics.append(new Option(t.name,t.id));if(state.topic!=='all')topics.value=state.topic;sources.replaceChildren(new Option('所有媒體','all'));for(const s of state.catalog.sources)sources.append(new Option(s.name,s.name));$('externalEnd').value=now;const d=new Date(now+'T00:00:00Z');d.setUTCDate(d.getUTCDate()-3);$('externalStart').value=d.toISOString().slice(0,10);$('searchDialog').showModal();closeMobile()}
 async function parseV3(files){const inputs=await Promise.all(files.map(async f=>{if(f.size>12_000_000)throw Error(`${f.name} 超過 12 MB，請分批匯入`);return JSON.parse(await f.text())}));let manual=[],news=[],edits={},hidden=[];for(const v of inputs){if(Array.isArray(v)){news.push(...v);continue}if(Array.isArray(v.manual)){manual.push(...v.manual);edits={...edits,...(v.edits||{})};hidden.push(...(v.hidden||[]))}if(Array.isArray(v.items))news.push(...v.items)}const collected=new Map();for(const raw of [...news,...manual]){const original=str(raw.id);const withEdit={...raw,...(edits[original]||{}),hidden:hidden.includes(original)};const r=normalize(withEdit);if(!r)continue;r.id=await stableId(r);const prior=collected.get(r.id);collected.set(r.id,prior?{...prior,...r,topics:[...new Set([...prior.topics,...r.topics])]}:r)}return {records:[...collected.values()],unmatchedEdits:Object.keys(edits).filter(id=>![...news,...manual].some(x=>x.id===id)).length}}
 async function importOld(){if(!state.admin)return;const files=[...$('importFileInput').files];if(!files.length)return;try{const {records,unmatchedEdits}=await parseV3(files);if(!records.length){notify('檔案裡沒有可匯入的新聞。請選 V3 匯出的 editorial.json');return}const msg=`準備匯入 ${records.length} 筆舊資料，會直接寫入雲端。\n\n同一來源與網址的紀錄會使用相同識別碼。已有同識別碼紀錄可能被這次匯入覆蓋。${unmatchedEdits?'\n另外有 '+unmatchedEdits+' 筆編輯紀錄缺少原始新聞，請連同舊 news.json 一起匯入。':''}\n\n是否繼續？`;if(!confirm(msg))return;await cloud.importArticles(records,(count,total)=>notify(`正在匯入雲端：${count}/${total} 則`));subscribe();notify(`已成功匯入 ${records.length} 筆新聞至 Firebase`)}catch(e){notify('匯入未完成：'+safeErr(e))}finally{$('importFileInput').value=''}}
