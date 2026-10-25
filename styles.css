@@ -28,3 +28,10 @@
 .job-status-item strong{color:#58452d;font-size:15px}
 .job-error{color:#9b3f34}
 @media(max-width:590px){.source-setting{align-items:flex-start}.source-setting-content input{font-size:14px}}
+
+/* 首頁主標題統一使用襯線字體 */
+.page-heading h1,
+.page-heading h1 em {
+  font-family: "Noto Serif TC", "PMingLiU", Georgia, serif;
+  font-weight: 750;
+}
