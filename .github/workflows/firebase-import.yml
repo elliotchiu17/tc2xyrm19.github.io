@@ -1,0 +1,25 @@
+name: Firebase 新聞搜尋佇列（自由時報）
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: media-archive-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 安裝來源解析與 Firebase 程式庫
+        run: python -m pip install -r scripts/requirements.txt
+      - name: 執行排隊的匯入任務
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/firebase_import.py
