@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.uid == 'KuDXgMSQQmdqFAvSS2e7KJ2xZPt1';
+    }
+    // 只有公開文章允許匿名讀取；人工排除紀錄與工作進度不對外公開。
+    match /public_articles/{articleId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /articles/{articleId} {
+      allow read, write: if isAdmin();
+    }
+    match /settings/catalog {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /search_jobs/{jobId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin()
+        && request.resource.data.status == 'pending'
+        && request.resource.data.source == '自由時報'
+        && request.resource.data.mode in ['rss','site']
+        && request.resource.data.createdBy == request.auth.uid;
+      // 工作狀態只由受保護的 GitHub Actions 服務帳戶更新。
+      allow update, delete: if false;
+    }
+    match /admin_probe/{probeId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+  }
+}
