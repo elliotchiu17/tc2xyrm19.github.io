@@ -69,6 +69,17 @@ export async function upsertArticle(record,oldId){
   await batch.commit();
 }
 export async function setHidden(record,hidden){await upsertArticle({...record,hidden});}
+/* 新增完全刪除功能 */
+export async function deleteArticle(id) {
+  if (!id) throw new Error('缺少新聞 ID');
+
+  const batch = writeBatch(db);
+
+  batch.delete(doc(db, 'articles', id));
+  batch.delete(doc(db, 'public_articles', id));
+
+  await batch.commit();
+}
 export async function importArticles(records,onProgress){
   const chunks=Array.from({length:Math.ceil(records.length/180)},(_,i)=>records.slice(i*180,(i+1)*180));
   let count=0;
