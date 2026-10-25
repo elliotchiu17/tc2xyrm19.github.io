@@ -70,7 +70,7 @@
     <p class="editor-reminder">只有出現「已儲存至雲端」才算完成。其他裝置重新開啟網站即可看到；不必下載 JSON。</p>
   </form>
 </dialog>
-<dialog id="loginDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">SECURE ADMIN ACCESS</span><h2>Google 管理員登入</h2></div><button type="button" class="close-modal" data-close="loginDialog" aria-label="關閉">×</button></div>
+<dialog id="loginDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">SECURE ADMIN ACCESS</span><h2>管理員登入</h2></div><button type="button" class="close-modal" data-close="loginDialog" aria-label="關閉">×</button></div>
   <div class="help-content"><p>請使用你要指定為管理員的 Google 帳號登入。第一次登入後會顯示 Firebase UID，再用它設定資料庫安全規則。</p>
     <div id="loginUserStatus" class="help-step">目前尚未登入。</div>
     <div id="uidPanel" class="uid-panel" hidden><b>你的 Firebase UID</b><code id="uidValue"></code><button type="button" class="secondary-btn" id="copyUid">複製 UID</button><p>前往 Firebase → Firestore Database → 規則，將專案附的 <code>firestore.rules</code> 中 <code>REPLACE_WITH_YOUR_FIREBASE_UID</code> 換成上方 UID 並發布。發布後按「重新檢查權限」。</p></div>
