@@ -11327,12 +11327,12 @@
     }
   ],
   "meta": {
-    "last_checked": "2026-10-25T16:17:41+08:00",
-    "mode": "recent",
+    "last_checked": "2026-10-25T16:23:07+08:00",
+    "mode": "rebuild",
     "lookback_days": 3,
-    "queries_attempted": 46,
+    "queries_attempted": 0,
     "query_failures": 0,
-    "added": 146,
+    "added": 0,
     "total_auto": 807,
     "warning": "Google 新聞及 RSS 可能漏新聞；不保證全部相關報導。沒有設定重要性或新聞量篩選門檻。"
   }
