@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5efdf"><meta name="description" content="個人新聞與影音檔案：依主題、年份和月份瀏覽，Firebase 雲端同步。">
+<title>輿情觀測室｜雲端新聞檔案</title>
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brandline"><div class="brand-seal">✳</div><div><div class="brand-en">THE DAILY ARCHIVE</div><div class="brand-cn">輿情觀測室<span>．</span></div></div></div>
+    <p class="side-intro">把新聞留在時間裡。<br>按主題、年份與月份慢慢整理。</p>
+    <div class="side-divider"></div>
+    <div class="side-section-title">追蹤主題 <span>TOPICS</span></div>
+    <nav class="topic-nav" id="topicNav" aria-label="追蹤主題"></nav>
+    <div class="side-divider"></div>
+    <div class="side-section-title">資料整理 <span>ARCHIVE</span></div>
+    <button class="side-utility" id="sourceSearchBtn" type="button"><span class="side-ico">⌕</span> 搜尋原始新聞 <span class="side-arrow">↗</span></button>
+    <button class="side-utility" id="autoImportSideBtn" type="button" hidden><span class="side-ico">↻</span> 自動匯入／更新 <span class="side-arrow">›</span></button>
+    <button class="side-utility" id="manageCatalogBtn" type="button" hidden><span class="side-ico">⚙</span> 關鍵字與媒體 <span class="side-arrow">›</span></button>
+    <button class="side-utility" id="updateHelpBtn" type="button"><span class="side-ico">ⓘ</span> 資料與使用說明 <span class="side-arrow">›</span></button>
+    <div class="sidebar-bottom">
+      <div class="sidebar-legend"><span class="status-dot"></span><span id="syncStatus">正在連接 Firebase…</span></div>
+      <button class="admin-toggle" id="adminToggle" type="button" aria-pressed="false"><span>✎</span><span id="adminToggleText">Google 管理員登入</span><span class="side-arrow">→</span></button>
+      <div class="side-privacy">公開閱覽 · 只有指定管理員可以編輯</div>
+    </div>
+  </aside>
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="開啟選單" type="button">☰</button>
+      <span class="top-crumb">NEWS INDEX <span>/</span> <strong id="crumbTopic">全部主題</strong></span>
+      <span class="top-right"><span class="tiny-sun">✳</span> TAICHUNG · CLOUD ARCHIVE</span>
+    </header>
+    <div class="content-wrap">
+      <div class="eyebrow">A PERSONAL NEWS COLLECTION <span class="eyebrow-dash"></span> EST. 2025</div>
+      <div class="page-heading"><div><h1>收集新聞，<em>留下紀錄。</em></h1><p>按主題、年份與月份歸檔。新增之後，雲端永久保存。</p></div><div class="heading-stats"><span id="headlineCount">—</span><small>目前已載入紀錄</small></div></div>
+      <div class="thin-rule"></div>
+      <section class="archive" aria-labelledby="archiveTitle">
+        <div class="section-top"><div><div class="section-kicker">BROWSE THE ARCHIVE</div><h2 id="archiveTitle">全部主題</h2><p class="section-description" id="archiveDesc">依原始發布日期整理的新聞與影音紀錄。</p></div><button id="addArticleTop" class="primary-btn add-top" type="button" hidden>＋ 新增新聞報導</button></div>
+        <div class="browse-year"><div class="browse-label">選擇年份 <small>YEAR</small></div><div class="year-chips" id="yearChips"></div></div>
+        <div class="browse-month"><div class="browse-label">選擇月份 <small>MONTH</small></div><div class="month-chips" id="monthChips"></div></div>
+        <div class="filter-panel">
+          <label class="search-holder"><span>⌕</span><input id="searchInput" placeholder="搜尋目前已載入的新聞標題、備註…" type="search" autocomplete="off"></label>
+          <div class="filter-options"><div class="type-tabs" id="typeTabs"><button type="button" data-kind="all" class="active">全部</button><button type="button" data-kind="新聞">新聞</button><button type="button" data-kind="影音">影音</button></div><label class="select-holder"><span class="sr-only">媒體來源</span><select id="sourceSelect"><option value="all">所有媒體來源</option></select><span class="select-down">⌄</span></label></div>
+        </div>
+        <div class="admin-bar" id="adminBar" hidden><div><div class="admin-title">✎　管理模式 · 已連接雲端</div><p>按「儲存」就會寫入 Firebase；手機和其他裝置重新開啟網站即可看到。排除的新聞只有管理員能復原。</p></div><div class="admin-bar-buttons"><button id="addArticleBtn" class="primary-btn" type="button">＋ 新增新聞</button><button id="autoImportHelpBtn" class="secondary-btn" type="button">↻ 指定條件搜尋</button></div></div>
+        <div class="list-heading"><div><span class="list-kicker">ARCHIVE ENTRIES</span><h3 id="listHeading">新聞列表 <span id="resultCount">0 則</span></h3></div><span class="sort-hint">依發布日期 ↓　·　可載入更多</span></div>
+        <div class="article-list" id="articleList"></div>
+        <div class="load-footer"><button id="loadMoreBtn" class="load-more" type="button" hidden>載入更多新聞 ↓</button></div>
+      </section>
+      <div class="footer-note"><div class="footer-symbol">✳</div><div><h4>一座持續更新的新聞檔案室。</h4><p>標題、發布時間和連結用於建立索引；原文著作權屬新聞發布者。網站不會依重要性自動篩選新聞；外部搜尋亦不代表完整全集。</p></div></div>
+      <footer><span>© 2026 THE DAILY ARCHIVE</span><span>KEEP THE RECORD · KEEP THE CONTEXT</span></footer>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="articleDialog" class="modal article-modal"><div class="modal-top"><div><span class="modal-kicker">CLOUD ARCHIVE EDITOR</span><h2 id="editorTitle">新增新聞報導</h2></div><button type="button" class="close-modal" data-close="articleDialog" aria-label="關閉">×</button></div>
+  <form id="articleForm" class="article-form"><input id="editId" type="hidden"><div class="form-row"><label class="form-field wide">新聞標題 <b>*</b><input id="articleTitle" maxlength="240" required placeholder="請輸入新聞標題"></label></div>
+    <div class="form-grid"><label class="form-field">發布日期 <b>*</b><input id="articleDate" required type="date"></label><label class="form-field">資料類型<select id="articleKind"><option value="新聞">新聞</option><option value="影音">影音／YouTube</option></select></label></div>
+    <div class="form-grid"><label class="form-field">新聞媒體 <b>*</b><select id="articleSource" required></select></label><label class="form-field">其他媒體名稱<input id="articleSourceOther" placeholder="選擇其他時填寫"></label></div>
+    <label class="form-field">原始新聞或影片網址<input id="articleUrl" type="url" placeholder="https://…"></label>
+    <label class="form-field">補充備註<textarea id="articleNote" rows="3" placeholder="你自己整理的新聞重點（請勿直接轉載未授權的全文）"></textarea></label>
+    <label class="form-field">授權附件網址（非必填）<input id="articleAttachment" placeholder="https://… 或 assets/docs/ 檔案路徑"></label>
+    <fieldset class="topic-fieldset"><legend>歸入哪些追蹤主題？<b>*</b> <small>可複選</small></legend><div id="articleTopicChecks" class="checks"></div></fieldset>
+    <div class="form-buttons"><button class="secondary-btn" type="button" data-close="articleDialog">取消</button><button id="saveArticleBtn" class="primary-btn" type="submit">儲存到 Firebase</button></div>
+    <p class="editor-reminder">只有出現「已儲存至雲端」才算完成。其他裝置重新開啟網站即可看到；不必下載 JSON。</p>
+  </form>
+</dialog>
+<dialog id="loginDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">SECURE ADMIN ACCESS</span><h2>Google 管理員登入</h2></div><button type="button" class="close-modal" data-close="loginDialog" aria-label="關閉">×</button></div>
+  <div class="help-content"><p>請使用你要指定為管理員的 Google 帳號登入。第一次登入後會顯示 Firebase UID，再用它設定資料庫安全規則。</p>
+    <div id="loginUserStatus" class="help-step">目前尚未登入。</div>
+    <div id="uidPanel" class="uid-panel" hidden><b>你的 Firebase UID</b><code id="uidValue"></code><button type="button" class="secondary-btn" id="copyUid">複製 UID</button><p>前往 Firebase → Firestore Database → 規則，將專案附的 <code>firestore.rules</code> 中 <code>REPLACE_WITH_YOUR_FIREBASE_UID</code> 換成上方 UID 並發布。發布後按「重新檢查權限」。</p></div>
+    <div class="help-actions"><button id="googleLoginBtn" type="button" class="primary-btn">以 Google 帳號登入</button><button id="recheckAdminBtn" type="button" class="secondary-btn" hidden>重新檢查權限</button><button id="logoutBtn" type="button" class="secondary-btn" hidden>登出</button></div>
+  </div>
+</dialog>
+<dialog id="catalogDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">ARCHIVE SETTINGS</span><h2>關鍵字與媒體管理</h2></div><button type="button" class="close-modal" data-close="catalogDialog" aria-label="關閉">×</button></div>
+ <div class="help-content"><p>這些設定會直接儲存至 Firebase，其他裝置同步看到。移除分類不會刪除既有新聞。</p>
+  <div class="help-step"><b>目前的追蹤主題</b><div id="catalogTopics" class="setting-items"></div><div class="inline-add"><input id="newTopic" placeholder="新增主題，例如：交通建設" maxlength="40"><button class="secondary-btn" id="addTopicSetting" type="button">＋ 加入</button></div></div>
+  <div class="help-step"><b>目前的新聞來源</b><div id="catalogSources" class="setting-items"></div><div class="inline-add"><input id="newSource" placeholder="新增媒體名稱，例如：鏡新聞" maxlength="60"><input id="newSourceUrl" type="url" placeholder="官網網址，例如 https://www.mnews.tw/"><button class="secondary-btn" id="addSourceSetting" type="button">＋ 加入</button></div></div>
+  <div class="form-buttons"><button type="button" class="secondary-btn" data-close="catalogDialog">取消</button><button id="saveCatalogBtn" class="primary-btn" type="button">儲存設定到雲端</button></div>
+ </div>
+</dialog>
+<dialog id="searchDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">OFFICIAL MEDIA SEARCH</span><h2>官方新聞搜尋／自動匯入</h2></div><button type="button" class="close-modal" data-close="searchDialog" aria-label="關閉">×</button></div>
+ <div class="help-content"><p>先選關鍵字、媒體與日期。「開啟媒體官網」可供任何人使用；「送出自動匯入任務」目前只支援自由時報，管理員登入後才能使用。</p>
+ <div class="form-grid"><label class="form-field">追蹤關鍵字<select id="externalTopic"></select></label><label class="form-field">新聞媒體<select id="externalSource"></select></label></div>
+ <div class="form-grid"><label class="form-field">開始日期<input type="date" id="externalStart"></label><label class="form-field">結束日期<input type="date" id="externalEnd"></label></div>
+ <label class="form-field" id="searchModeHolder">自由時報資料來源<select id="searchMode"><option value="site">官網日期搜尋（實驗，可能被阻擋）</option><option value="rss">官方 RSS（適合近期，不含完整歷史）</option></select></label>
+ <p id="autoImportNote" class="import-note">請選擇來源。</p>
+ <div class="help-actions"><button id="openExternalSearchBtn" type="button" class="secondary-btn">↗ 開啟對應新聞官網</button><button id="autoImportBtn" type="button" class="primary-btn">送出自動匯入任務</button></div>
+ <div class="help-step"><b>最近的匯入進度</b><div id="jobStatusList" class="job-status-list"><p>登入管理員後顯示</p></div></div>
+ </div>
+</dialog>
+<dialog id="helpDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">HOW IT WORKS</span><h2>資料與使用說明</h2></div><button type="button" class="close-modal" data-close="helpDialog" aria-label="關閉">×</button></div>
+ <div class="help-content"><div class="help-step"><b>01　雲端永久儲存</b><p>使用管理員 Google 帳號登入，按「新增新聞」並儲存，資料會寫入 Firebase，其他裝置可查看，無須再次上傳 JSON。</p></div><div class="help-step"><b>02　主題、年份與月份</b><p>新聞依發布日期歸檔，預設顯示目前月份；可以選擇其他年份或全年。按「載入更多」逐批取得更多新聞，以免一次讀取數萬筆。</p></div><div class="help-step"><b>03　排除與復原</b><p>管理員可以排除不相關的新聞，公開頁面會移除，登入管理模式時仍能復原。</p></div><div class="help-step"><b>04　直接開啟媒體官網</b><p>自由時報可直接帶入關鍵字與日期；其他媒體先打開該媒體網站內的搜尋入口，依其實際功能操作。</p></div><div class="help-step"><b>05　自動匯入</b><p>管理員可選關鍵字、日期和自由時報資料來源並送出任務；完成 GitHub Actions 安全設定後由背景程式執行。官網日期搜尋是實驗功能，受阻時會回報失敗，不會假裝蒐集完成。</p></div></div>
+</dialog>
+</body></html>
