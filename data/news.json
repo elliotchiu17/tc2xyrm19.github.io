@@ -1,11 +1,1437 @@
 {
   "items": [
     {
+      "id": "ff1d8b6c652f2982d268",
+      "title": "中和烘爐地山路練車險擦撞 引爆駕駛與騎士大亂鬥 | 社會 | 三立新聞網 SETN.COM - 娛樂星聞",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE11NHBDR0hFUG9BQ0cxZzB6MFMtVkh6OS01ZjJIMGk2OVI4Q0hWM0tuMU8xTHlNV25nN0NUa3RXZVZQeVVHNFJRUHRB?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "feaeb36a30cc943eed98",
+      "title": "台中市長辯論卡關！江啟臣要20分鐘全英文 翁達瑞獻策反擊",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCeDRGVTRyWjFPZHllZ3RqV2lGbDhZdGJqZHpKQkJDYlEyVVRtRXRIdC1ORkVpVDU4dlhJYlhmSzJGcXdJNTRKZ3Ftb0k4UnRyOUlvVGExVVBYbzRTVWJ6cFlLR3dKWjlrcEHSAW9BVV95cUxPNkF4VzBfYjRIRFJCXy1ZZUp3bHliYmpDb21odmJaTGpqdXpxVktFWHZKMWlGeXN6dGYxMkxsdVZjeVdvQVprRWx1V2FWSjA0Vko3SVRpb0s1NElXUDNDRzd5aVZKSFlfXzYwVUsxSnM?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "fe4bbc20b1b642e920ca",
+      "title": "台中市議員第四選區豐原、后里抽籤各候選人支持者到場助陣| 2026九合一選舉 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5tTkM4bUJpSVFHODAtTjJ4VzlaWnZDYWRHNzEtcU5CYW9kQ1I2cXJxMGVObndVZXhRSXJqdE9hbk44TjhGOGh0MGJQallnbXNHWVBhNVB3cm0?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "fd933cb07e9420276a0e",
+      "title": "八曜和茶飲料驚見蛞蝓！創辦人公布調查結果「這6字」網笑翻：超有誠意| 生活",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE12LWkya1B6bE84NlI2S3kyUEJIMjRxaTQwWnVzc2d3bnlMVjJ0SGVBaEQzLW9qRkx5REpPQjdhTG5odVNTcDVNSQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "f9cf50045e9a2a2eab24",
+      "title": "藍綠決戰台中! 何欣純抽中1號 江啟臣3號 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1WNjA4d05vVXo2bmJLLTZYVlU3R2czZnZQVU1tUnpSQmtPdmI3T1JKNjlDUVFLaGVZVnlxVnp6d2lTZldjbkdOSVhWZHc5NzEwTThtNmg5MV8xRFo1TU83Vw?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "f8ccbfff3d2038ef1ea0",
+      "title": "豐原警副分局長警廣談查賄 呼籲民眾共同拒絕賄選",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1wUzNuT01TQ3EwTkI2c0VUZllaZ09MN3g1d0NGaWpRZ1NBaVRZS0dDQXBqd2hlMDRUWmZCbTAteWJiY0Z1NFpiOWNUS2RCWlFYd3IyYXg0WlpCdzZPb3NKRUlickNIekdycEHSAW9BVV95cUxNRUFYNFNOSjBsSDAybVBPTENRRndweXBieTJpeUI1cTZ0Y0xMakxkN2hMbU9BSUNfR2xIdkZwZ3djTlk0bjFBYnBac19Kb0JHcEZiZjJYRXlLeFktQ3U1amszTndkdlhEdVZQWDBRS3M?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "f48b8b22f1756af88c3d",
+      "title": "台中大安區農會推動水芋保險 提前準備降低農損風險",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9SWmFDVWlzeGg2YlkzNXZBTnl1Ri12OENWeXNmX2tNY2R4Y3liZjdpekU0OWpZMTZfdWRJaWd0SU9laXNsMFBZTV9vV014UDBGd0ZKZlpVU2hEWWxtMEJqWnRZVzLSAWpBVV95cUxONE5SRGt0ODdYMUt5MzNrRXl4Skk0UVRfejNMWXNuSUNYNHhVWHUybndBSE9MZlNrOGUtV2VsMmx0c09iUHViTENkU2dMcDVOZUVHcmFaRUxMYTFjMG5lZEtOWGJYeXBoVlR3?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "f48974cfc7f9dfde99a1",
+      "title": "網友推「台中恐怖島」 名導陳文彬聲援：國民黨8年執政還不夠慘？",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBMQ0pPblhkcy04RjBKZHJxaTlwMjl5X3J0ZjZZVTlTeHFyUnFCU0FoVThQd2xEUl9EMG9VNlJOcF9DNENaZWFta3lETmZ5MTVjNlNjVFNON05FWE1LWW5QUEZxVnRmTjhHYmfSAW9BVV95cUxObmZlXzBENnRCLXlOdUhkb281ckZ4N2N0TkJ1a2IyaGxMYkdkYmF5MGFvRnNPaHFnd0xpQVUyWEJYdTJGMUdrdmFlMEZxbmhpQ2xqZThlcjBuSnFCX3o3U0dwc00tMEJsVjh4NVVHem8?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "f255595f03a5fef126f1",
+      "title": "台中餐酒館| 搜尋標籤 - udn 女子漾",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcHZSUHQ4TzlxaWs3MVpXYjU0UTR0RzRmc2c4dG1Gcm50NE9iR3dacWdxZjVVNWZXQ3h3Rm0wUmFTOXR2Y2Q5MGVJSHVhWkcweVZVeHYxUmpJSlZWdHFoWkYtd3ZyemxJQUZJZW5ybmZNN0ZLc2lLaW1YejVQN2xNNV8zVQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "f06c23b4d42ef404c750",
+      "title": "台中太平區議員抽籤 民進黨蔡耀頡抽中籤王",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5KZFM0WVNtTUVVcURYdUJtc2lSTDFnQzRSRTY1Smx2TXotcDk2U1lpbXZ1SjFNdzhiUzR3LWFVX1Yzblg3YnFrTjl2N291WElySkNpY1JyclFRSTBjX3FPVkdCSjBMWkIzQmfSAW9BVV95cUxQcWNCOXM1MU8zYXBzYmVPbUhpNXdIRHkwcll5ZEZXNzd6S0FDNFdxTVh0bTVzczFQMjZJeFhfaFlwNm9CTFgwbUpRc0RMWTZGU1Rpa2lEaGF4djFYYzh4b2kydk1jQ0dHMExUSGU4Wjg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ed81acac4faea645be20",
+      "title": "快新聞／台南市長選戰號次出爐 陳亭妃、謝龍介抽籤結果曝光 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBtd0p0WUExNG5oNlVFeExQakxSU1Jqd2VtT1VKM292cjIxaHl3MXZUSVFiUloyRW1Vc1BJdGlVbjl0QTBiT0JuWTBadDlNNXY1c012dHp0dTdWaVZ0NlBUcA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ec5580db8c1c24660faa",
+      "title": "河口湖台女割頸案驚爆跨國詐保！高大成：「割頸左右側」成破案密碼",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5ENUU5OHdwb24wT3MxODFuSkd0Vkctal9IcGRES0ZNV0w3VXVRam1WSGl1YllfZzFGaEk4Z1RqRnZtazU1ZEM4eNIBTEFVX3lxTE1kbWlTNGpSbGZKRGpDN19WMmJtVlpYVDBsQUMtV0tUaWgzZXRwR1lEc20xaWVRV0VJa015YUVpeXdyQWdxMTRTaDAxWDc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "eb6b2fea3bbbccd4a376",
+      "title": "台中市長辯論卡關！江啟臣要20分鐘全英文 翁達瑞獻策反擊",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5619839",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "媒體官方 RSS"
+    },
+    {
+      "id": "e4ad4efc905aea71b359",
+      "title": "散布前女友私密影像已判兩案...第三度流出遭訴 台中男二審無罪 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1pZ21OTlV2NHUzb0ZtdzROajdPOTRxRlFYNTM1M0Q1Sl83WVo2cXJzYXR5QzM4NlNuMER1eUhKckFWTUJzdFpyMDF6R3ZaSUx10gFWQVVfeXFMTnpzMjVZSmFmb3c3VURNanVHcm1hUjU0MTd6WTc4ZEZzQnQyZVVzT0JRZ21HQUhZRm12bHI1TkNZdkU0Q1pKZnpOcWxqLW9DMmRiRE9sd0E?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "e3cb74b8f655a724bbe4",
+      "title": "當選成立青年局 何欣純：提供200萬創業貸款",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1ZcHBuUk44YlNTdWZTYzE1bFEtVXBFdEtPT1RtR05LU3NQSTBrUklCcC1SZWMzaWtoRkt4YkU5SFA4LUROZVZoYTI0M0hTaDJkWl85TXRMU2pQdlVWaEtkeFVBZGd2UdIBZkFVX3lxTE1ZcHBuUk44YlNTdWZTYzE1bFEtVXBFdEtPT1RtR05LU3NQSTBrUklCcC1SZWMzaWtoRkt4YkU5SFA4LUROZVZoYTI0M0hTaDJkWl85TXRMU2pQdlVWaEtkeFVBZGd2UQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "e1c8d973b2325b21f03e",
+      "title": "韓國瑜批不副署讓台灣民主「腎虛」 卓榮泰反酸立院「先天條件不良」 - 娛樂星聞",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0tRnF3czlZR1dWR2wxeUJMU21zZkdaTXJRMnl6YWZxNTFFRnBXdmpFWVp2bzMtdDFJUGZXVVhLNkQ4ZGx1ZkRjdHBB0gFMQVVfeXFMTy1lRmZOU0dRSU5lTlJXLXpiR2xxQ2U0ek00R2NQNnVuOXFOdFJVQjlZaGdyQXYwT05aWUFRNlpaREE0cXpCbzR0c2FYRQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "e14c21a42b73e5cc411a",
+      "title": "和韓盧侯大合體「卻安排鄭麗文暖場」？蔣萬安17字回應了",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE54VXJJNWJ0dkpuZU1ndmJvV0FlQ2lxMEJrOGpScHJOdVRMZ1h1SVdWVzhqUVB2SmhMSW9yRnFwR3ZGWjJqc1RpQ9IBTEFVX3lxTE0tUnVKUUxJTU1wNHpSQUdyVFlLbjd3dEltZTFSdmtrYjlWWlVVRmJQQml0eURsTXR1MFpIaUR2TjVHQk14UGxlUjltTm4?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "df4924fe0a39de383db5",
+      "title": "歡呼聲不斷！新北市長選舉號次出爐 蘇巧慧抽到1號 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5jbVZfcjNoaTl0YWk2R2Y1RkxGcU43a3JIY193R2V5aGNrSlBmalY5MTl4cjgyX3FLcXBHZFlocUlZdzJMU0g2dFZ5Q0NDVXllN2ZBZy1GMlZ2ZDl5R0UtYQ?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "db873eb05b29ae824396",
+      "title": "達人理財／投資越無聊越賺錢 資深證券人股7債3滾逾3千萬",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE00MUIxWnVhSDlTYmloSEdWNkRnd0R5U0wwUkxFeGFCLUZXY1hDb01WZ2xadkY0ZHNqaGxzR0xCTzFwSTVETUVHQmx1TQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "db529bcdee620da39216",
+      "title": "台北市長選舉號次抽籤 沈伯洋3號、蔣萬安5號[影] - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qdW9tSzBWUW1lR3k5NVVnalhPX2gzX2wyMWZIM3Y1ZDhVNEI0WEp0ZTRwTVZpelBXQUxETUtwckNGcTdMRS1adjlOSUkxQWsyb1B6Wmh5Z19MQ1haWG5j?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "d4f5f9702e135c5ad1c5",
+      "title": "挑戰蔣萬安！市民主委「Lydia」抽到3號 沈伯洋競選口號曝光了 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB4dlFRV09ETDFVS1dkZUZTV0llOXl6cGhKV0NjaWd0UmFQRHhqcy1oWlNncTZ4Q3BZWmRNMWtIa1lJLWdoRllmcEFUVkoyMk9JQlNqblZmekRaT1VkRmxHLQ?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "d46b3aced8e2127b5956",
+      "title": "「河口湖命案」出現大翻轉！台女遇害前曾向媒體求救…預感「活不到年底」 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE10dGdVSXh2WTlnQWhpbXhzZldxUm02dlZNN05KY3RUVW9CYjNiNDlUeHc1NU9FcklMeDc0X3lGWWdzUzRnT1FtaTA2N3NSeE9sb0NhR2hPMEhHQ1kzY1JmWA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "d22d0017e51d4150d040",
+      "title": "台中男深夜開車闖紅燈！18歲女騎士路口遇劫…「頭部重創」昏迷搶救中",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE0yVG5TUDFDRkRXbmtHUUM5YVZRQWVRMk1fYV9wY2dGQU1lQU54VnBRLXZxNncxSzU4bnlNVC13YWVYOGJhZ0dZSdIBTEFVX3lxTE8ybklPbzgybm5xOGNreGFvN3VtRTR6STg5cFNvRGVtT0hRLUtuMUhGbW5kcEt1bGxjazczbnVSUzZ0YmVEZWxaaUFWOUE?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "d0cbed82a9e43781dc68",
+      "title": "快新聞／林佳龍站台力挺周永鴻、陳怡潔 籲攜手何欣純為台中未來打拚 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95dHJjc21OYXlDck9BUEVCQ0Rzbm1qX1lDd2xIcVdnX2xkeS1nRUlGLUxlMEZKT1F2dDFZRThkd2xQSE51ZnpBaEZaNk14U2ZnZ3ZMd01Lb3lIZ25CR24tYw?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ccb201f2fc4e40dff647",
+      "title": "格上Go Smart共享車 歡慶七周年 - 經濟日報",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE91UU1BSGV6ZE1IeHpTXzZUNl9mdGtOTmktSkpOeGxDVDhsOFBGb2JjR2VzYXlielZaQnFnVUtIMEZ3TWFXdVVabWdvMTd6M3U3Q0VHYWJQcEFoTk4x0gFiQVVfeXFMT1JDOFhpOEhoWkdOWUk0Ml9VUGNNMjVac2d0T0VHMkkydWJ6Y1lrcm13NkJEYmwxQlVmZTFzLWtNQlYtcHR4Tm1CQ2FhYllVVUttSXFpaHFrbjQ0VlY1Q2t2eGc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "cc9966a274f63aec0235",
+      "title": "工地廢料變身親子創作！遠雄建設《好室智造所》台中推動永續教育 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9CT3U1YTdqdXFnYnpGUkdvOXo4eEhNcE92ck5YOUdCSF9CRGxxdEN6QXUyTkJQc3BKUGVYWmphdjVtMzNXSFdJc2k5MER5eXlhU0p3dXZuekc3QQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "cae187ec09d5285dfe2d",
+      "title": "台中北區、北屯區議員抽籤各出奇招 有人玩諧音、也有扮花木蘭",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9VRVo1LUs2M2l5UVZwMkhwRDB3M3J0dGlEZGxEVkh2ZW9FM0l3aWc0amVxUm5telRqRktYUlZ1elVuWmpFOEFMR3lYSm91TGM4ME1uU2pGTGtmMjYwcmtaZXFiWkd5Y1c5c2fSAW9BVV95cUxNYnVybjZBSnphRzVWVHQyUlp3Vmpod09oMkFBeUxucmw5M1lqbFVDNktXbFNBc2JzVjh0cXB3N1h2LTFmNUVrUElpZ3Z3NFZoSkg3OGpFcW51TkQwbUd2c1BjVFhBU0xXUUZFTDR4NmM?oc=5",
+      "topics": [
+        "chen-yu-rong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c8b27a782d5608316e48",
+      "title": "新北市救國團貢寮偏鄉贈點心 關心學童送200份課後點心 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5Oa3ViMWowMWd1Z1JjdUs5enJzWlNfRkhJbVFzRUZGYUpaYWU3alI2LVNWSWl6clJwY1NBYnFhYk5IZHRGY1RJSkRSaU9ydGJ4OWRYdU9B?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c884ee523bf71ff533b7",
+      "title": "台中驚悚車禍！轎車闖紅燈猛撞機車再連撞2車 18歲女騎士傷重送醫",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5HRUdRbHZISVJMbFNyTFl1Y3BwU3JxV2d0S3h3N0RKZ0lXRHV0NTN5akhId3ZmdjdxZklSSGEzRTVkNU9TaE43OHkzS0FxVVA3bk95OUtrdjNaT3JSWFliSXFJaG5zcVMt0gFuQVVfeXFMTmJLOHdnZk83RVQ0MzhoLUNVdlhLN0tnV0JkTUxpeEV0aEl6V19hWTZSamwwVTN2VUhnSEtoZW9XdXRZelhMWW1lYU1fSVNpS2Nzd0hxTFhDWXk4YzVjbS13ZHQtazNIZkZJTTRab2c?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c7aac80f6beae307be0b",
+      "title": "八曜「喝到蛞蝓」調查結果曝！創辦人製圖揭「時間軸」網讚：公關天花板 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9ZU29sd2wxaE9PUU1Nd21uMXlWSkRuYUlOazk0UFV3NWJRdnlUZmxseTRYSk1DbjlWZVpVM1ltZzNsV2c0WmU1WExoQVZVeDYyLU5La0VwbG1FREtudFBBNg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c7a5e1d5124e056db8fe",
+      "title": "沈伯洋出奇招抽選舉號次 洋流號船員代抽",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5jSFBHN1RWRDllZi16ZVktcV8tWWpGUG1FaVNFa1hQME1tNWpHUlBoanJiNk5kNEFRekhfSWRsYkdEQUdFcXdFY0RTUVRRQQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c72e83f5ebd1964735e9",
+      "title": "影／台中市長號次抽籤出爐 何欣純1號、洪麗華2號、江啟臣3號 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5PVHhuWldfaUN1V3YzeHdTTEJnRkRGRk9DZk96Mjc3NGd4RDNKWU53SGhsVmZMeUhLMEpGTkMtN1ZRNEZwcnpfMmtzMTFQUFVLVlBv0gFYQVVfeXFMUFNyLXFhSXBja244aHFCbl9adDZnUkdncUhTTUY5aW45djZoX1J1ZHItVzY5TjI5c0lwX3ZlTnFneGNmNHMzb0lsYnRYcXR4U241dkxtbnlmOQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c6f5395fa3f21c9379e8",
+      "title": "費半狂飆近3%！美股全收高帶勁 台股早盤飆漲逾5百點 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1pcjNyX0Z0YUxSYkZkY3N6cDZDUDNoaURySm5UN081X0NrNnd2dDJHSldXdTgwMm1xTGJrZnAxU0FuY1NWWlY5c1B2UDlDcDhHT0FDSnVkT1M1bk5VcFA2Mw?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c68f1df76db4989a60f7",
+      "title": "高雄市長選舉號次抽籤 賴瑞隆5號、柯志恩3號 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB3aktadFlQZmlGMk5PZzJVOHZ5SDFuRllySUoyazJCN2xMRjdWVmZORDJnSDAtSGRhc056QmRycFd4dEZNUnBxWXYxMnBTeTBPNVJkVi03c2dmazRhTTlv?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "c6121e28e063fbe7a154",
       "title": "離職交接狂刺9刀奪命！雲云董座不服無期徒刑「判太重」 高院今宣判",
       "date": "2026-10-27",
       "source": "三立新聞",
       "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Wd0FKWVJ0UF9Fc0p3MGFNRU5jRFJSSXczMmNFNFV0S0tZOHVSdEl5cm9DNm82NjE0cTk1MWlqRmJ6RzRLVEU3Q9IBTEFVX3lxTE1Wc19IRFdMU2J3NkFmd3kxWGpwRmlVQ3l1cTU3T0pZSzRGX2pTazhRZVljbDJkYS1RTjNjQXlWaWVqbk9SZHJ0aTgxZEE?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c1e52d7068519b0c4491",
+      "title": "西式料理| 搜尋標籤 - udn 女子漾",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBhTzlQUk9VZ1hBWkFNY0RURjNwZXBOY3lYcEV5OWxtWHJFRHJ4RXh4VVF0d1FFZ2xWcmFuaXRpdklnR3ozSmFPVlNhNlpoYm1YODNHSkJ6RjNUTUhzLVhBQ015TFQ5RHRObDFpWjFvZkRQOXo2OXFB?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c062d1ad58bd302daeaa",
+      "title": "稱周春米沒小孩不知養兒苦蘇清泉道歉坦言用詞不當| 政治 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8ySTN4WnJsbnc3d3V6MXNOVnlwRnVEelZPOHVxMGEtOF9mZ0x2RU93TVpBWWpvVS1nVzlLdnZiVFFyaHlYWC1NaC15cTQ5QWdMNzR5T3h0d3Fmb0dtczlN?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c02ddc06ff85e6704360",
+      "title": "市長選舉委由市民代表抽號次沈伯洋喊台北靠山| 政治 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9OY3hmak1Ra21KSHZXMm1zcWVHcHprQVQ0N3FlRE9BZHBqdnNTX0pfUTh1QUJ1b2Fzd1ZuZVFRTmFRT25EMGFIWGtSV1VVMmhvcWgwWXdjajFDa1ZKQ0Fn?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "bcdcbe6be6755bdcb00f",
+      "title": "2026決戰首都市長！沈伯洋、蔣萬安號次震撼曝光 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9pWXlPcDJsRmszVVRsRm9TUW96WE40cC1pTDNsTFVFcy0wd3BscEcxckhiS3FsZWNjc0tRanM4WnFDclB3TUplbkNhcjAySG1JTWFIVWlJRURpeHI2R1pDRg?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "bb2e521cf4337acc7560",
+      "title": "臺中國際花毯節10/31登場 來趟結合特色民宿、泡湯賞花小旅行 - udn 女子漾",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBnNjhPNTRhY05ETkl3Uk4xNjNYMUx3X05pN0Q2aHhnU0wwRzBFUDQwczJrdzQxN2gzMWhnekIydWhzMHNvb3FEUF9uY2lWMkFyUGF3MTBFUHllSl8zZTBoc3F1Ui1CUVlRNGNXM0FWdVI4WlZpZE1WbTdMclo3Z9IBYkFVX3lxTFBfSWxCWmxmdExDUElqZnkxczBWcVhYcmp4Znp0RzdvQ1dZZTJSb0dHVnFXVU9BZ1BnLVQzbkFuZGdQVzlWTF9JbGZVQlBhM0puWWJmMGc4bkZrNUczbGd3eU5B?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "bac2da6d57b19ba647e0",
+      "title": "中市議員第四選區抽籤 候選人拚口號",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE95d3FaQXNlOW9qbS1UMFNob2ZvUHFJM2hIakpubGpEZnJuS0wxTTBNTFN3aGpRc2lmQmJiYWFhYTg0bXoxUV9VOF9pLVFmbEwtcEo4SjFTeUZNd24zeklLcGw3VnBVdlcyaUHSAW9BVV95cUxPQ3Q2SVF6bHEyb2pQV04ybzMwTlItSVFpVjcwOGJTU2dwMFVuQkIxRS1seXdpNkZOWnFUdGpkOW5aTDd4SUNKVmdnVVpVRmFBWENsaHlNVlAyNHZWQUh1Mk1jeXRRZmJ2d0daMUFXbmc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b915704d4cc3ad92e801",
+      "title": "驚悚！台中轎車高速闖紅燈 撞上機車騎士又波及2車 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1ucUNscDBhc0hudXlsSS15UFgxcjFXWVNQMXVDbTUyOFh4S3lVNVFiTmJCQ1paX2UwZi1rS1BYRE4yYTNSUFRQMDBETkxSVDNDbkROWkMxTHpTSkhteVJHMQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b8cee6a2e86ab1a3653c",
+      "title": "「台中唯一看不到盧秀燕大臉」！鈴蘭通兩天狂吸近22萬人潮",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1fX3kwMmxpaEJPdGNEdHNtMFFxSzlZR0NzWmVMSzhWNkdXM2ZKTFVNeXlKRGhpYW5FTjZlTDRvbF84LWlrRXNHQkptemU2LTlQQjBVRUs3QVVsVV96WWg1OWQ3b3hBUzJHR0E4SzY3NNIBb0FVX3lxTE1fX3kwMmxpaEJPdGNEdHNtMFFxSzlZR0NzWmVMSzhWNkdXM2ZKTFVNeXlKRGhpYW5FTjZlTDRvbF84LWlrRXNHQkptemU2LTlQQjBVRUs3QVVsVV96WWg1OWQ3b3hBUzJHR0E4SzY3NA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b6fdebb9308d79ad2364",
+      "title": "桃園市長選舉號次抽籤 黃世杰1號、張善政2號 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jUXVadDdGbTZjcGJCZDAxQVI5d3EzVmprcjVRMXBkeHByMU9odjN0TEtjbXU5ZG1ocVhwdjZYS0RLazJFbEhxV1BMbEVjYUlhaFc2V080dzFwemZPYXRN?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b6b855ad305f1f34a5c9",
+      "title": "薔琵釀霧峰香米倒伏嚴重 市議員張芬郁爭取納入現金救助",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1uU1kyeEczbTJZdExSbUlaUUNYZEw2YWdBMjVoLU5NUlJ1RTc2ejZEcmtqczV5SEFYWDBGS2x5MUVoblVvRUk3VUxtOE80S3ZTdHQ0LUtjaEdEeEJ6VTB2YTU1UnDSAWpBVV95cUxPbXdOOS1qRk5SbHhFZGhnWmNxUTNuVjI3MTZxdVdjTTNSQjdkWHFkTnlBRDdkcEhtUWVTRU9YanJodWJXck8xS252SkUtTUpIY0RhYXoyOWE4QWNHc3luc25wVXJqVGhwMmRn?oc=5",
+      "topics": [
+        "chang-fen-yu",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b67e184cb8fda481980a",
+      "title": "中市再傳特教生遭師膠帶綑綁一節課 校方：已暫時停聘調查 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4tZjQxRF9TdERnS2NfbFpyVklmcUYwQU02ZldMR0M1RlJ3RE9IWk8ySnJiblFYSmhoU0RhODE2bDFINWxadXdWSzBRYnJXV0lB0gFWQVVfeXFMUHduZU9BS1MzNW42M0NTLUcxUHFfOWpqQ2M0b2tLcDh4MVQ2em90MW5ndHZCU005VGhza0xfLWtaVk4xMlA1UzI2b2N0M1dyYnE5UWRCVFE?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b563b9d2790411178985",
+      "title": "融合三麗鷗 新社花毯節10/31登場",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBBbjVzaGhtSFVLeVFWSGpVa0xEaFh6em5rWjVYaWp5VGY0dGdPbUNNTTFEYkVGME0yeVp5c0c5Zzlta0otTmVzRUE5WDJqZElUSnVVcHRsVThKMlXSAWBBVV95cUxOSGJHZkhQcGN1UEkzR1NUMDVva1RpQ194YzJJZnU3Tjd5cmhjTExhSjZ6Ykd6Yl9WQ2RJUnZwX3NkcHpYTlpzUWh6bC1NOXZwWndQWWwtejVfNkRKT0dGNTg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b4c969c2e90e5e252ec0",
+      "title": "台中市長候選人號次抽籤 江啟臣抽3號、何欣純抽1號 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5weDJsOTRmSlpFaHNXUlZNT3lIS05Lc2JZaU5HRlg1NG4zUmNpcHZUbE1QUl82X193THk1WDB0UjVoVVhHM1ZNV2xtWG9FQU13V0pFMjFNWnY?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "b419dbe496d80f972350",
+      "title": "黃慶林 - 第1頁 - 相關新聞 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBsLUhSNFNrY25URUNYMjJVeUhqVG9QMWgyeW1Idklac3c2Q0RERDhucVJVWmxTdWY1azdmMlZuMXBfbEdqVTJ5WjAyMG5PX1JRNGQ5VWVoYnM1aHg0cVE4dm5qaHVJeG11bGQw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "af3be17b0d0f86f40556",
+      "title": "MLB(影)／光芒左外野手搏命接殺！辛普森將功折罪彌補跑壘失誤 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5HQXZjSGx3amR6MkdHb0w0OW1xZWZGNzEzREt3RUNiNFY2SENZcmZhWXR1NnRoZWxKOGp1Nkt5WWZkVFJxRVZoaFhPU0xOME0wOElmbXo4aHlBTGhsaDhjLQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ac0bb35bae73cc70e253",
+      "title": "即時短評／盧秀燕光環對上「洋流」擴散江啟臣、何欣純決戰游離選票| 2026九合一選舉 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0zMTB1X1RqWUZiWFRZbmdnaFNGaUU2Q1J0RjBRSVRFdk5odW5PSVdTZTZVN1hjVXdGaFc5MXB3WUd5Y0p4WFlVbnJyaUhFbzdvY3Jxc0tyRWY?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ab5d8c93c85e08abf935",
+      "title": "韓國瑜語出驚人！竟稱台灣民主「腎虛」 卓揆：靠韓院長提補藥來補 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9zYk9xMmRYS3FwTGVQbzBMOC1NaXdRN3o1NzlFd3F4ZzFfc3dqa3pBYlRNckZ2Y1pkV09kZ1B2ZUlIQ0tVM0tjSGRramZyZ1lqdWhfQ0J5b0g4QWNoYWxMcQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "a99a4944e4e31ea8da61",
+      "title": "台中市長候選人號次抽籤 江啟臣抽3號、何欣純抽1號 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1WUnQ1VnU1NUNFWHdkS3lEa3JvZFJaNmtEUkR4SjRIdllLQllKVGRLZjJGZG1NVFRfX2dsUkRrQV9VdktkWjJEZjNiUEU5ekRLX0xB0gFYQVVfeXFMUEhnSkgtaHMxdnRGVFZENjdPSjBJSEhDWUJBb1dVVlBiRlU5QjFSM2szWmlXWjB0TF9vbE54dFBKQWpYdVJqOTd0NTRqaFBOT3FiOXRsaUlNcQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "a72639939e694028c392",
+      "title": "快訊／台中市長候選人號次出爐！何欣純1號、江啟臣3號、洪麗華2號",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBBMFBIRVlMa1huc0FHNmhVWDFDd3RDc3lpWnMxLVM3TC05NHBoT0RwZnpzdDBwaTZMRHBsMjh3Tlhob2JsREJEcdIBTEFVX3lxTFBQU3JwWHAzNEdJb3JxM0hXUlBoWmMya3NRSTMzUlBZM3Nkalg4R0MtTi1tamwzdkFHazNlZEtCczlTLUdaSHBhWUdRVWo?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "a598bab4cbd645d16b77",
+      "title": "台中市長候選人今號次抽籤 何欣純、江啟臣將親自出馬狹路相逢",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9HZHJEVElQcnhTdTJLV09UaWd3SWw0a2hVSjhscW5VR2ZwcUh6ZFVsWjBFZGZYQlJYd2sydmNkdHg4UnpET3gxbGFXTGctQTlib0hFdnRhQ2N0Z0VHNmlrU256U1BKclRwYlHSAW9BVV95cUxPc3lWNXd6c0lKSGhjSHA0OGh2aXMzdl9HQTdMelRhTzVSTmowTjZ5V2ZpZUxfVlBWRXBSdFh5M0k1MzM1MVF1T0UzREFkWlJqR1BUc1NlazdLNEVoenZURFA5Y1dJT3hjYng4ZWxxV0k?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "a25e4b8622b896d3002b",
+      "title": "快新聞／費半狂飆近3%！美股全收高帶勁 台股早盤飆漲逾5百點 - 民視財經網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE01Skg2V0JHZGpnMkdId0hTYmFEMU9QaXQxT0k4MXg5RG1rMkpwcy1sUDNTOUs4by04OGlTSWNSQjFPY1FPaDRBME1RLXlrV3FZYmdXdW5CeDlUVDNHTVIxdF9qbjNiQQ?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "a1704bbc37a363a3467b",
+      "title": "Toyz販毒入獄895天申請假釋獲准！外傳已重獲自由…彰化監獄回應了 - 娛樂星聞",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBJRlAzdzFWeEl1SUU3cGFGbWlFUzdKSXhKLUlTVHhFeWpybmVCQzVPV0h5U1lhdC1WYkYwUkxqbTg2RHdDd1JVQXBn0gFfQVVfeXFMTi0tRjJIZjlieVdNeGhUNFdvV25rWDJTUjlwdHBBUGJPbkhtNmVrTU83RW81ZDhEUV83N2pBWG1lMlZXaHQtM0ZqZEpkSTVkek82SG12THVIZXZyMHdsM1E?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9ed95be5d0705eea9367",
+      "title": "掛茶行招牌當掩護！幫派男柬埔寨設水房洗博弈金流5.6億、21人遭起訴 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1UR1RjWXgtODBKMk1nN3B1aGlKV2pRQUpoVk9QNWJtQTVPdmF5VlRZVzE1NkJXZU9zYm1QYXJRVkM4aGlmWEtaajJVZVFQS2t3ZHI4cmw4QW5TN0t4alVGaA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9e4fb63f5931e4ea8ccd",
+      "title": "2026九合一選舉／選戰倒數32天！六都市長候選人號次一覽",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBmcGFBXzIxaU1xdE0tTWlwRXdiX2ZHNlp5VGcyM1NWbFkxTFR1eGtIREV1Nm5SOWRJQzh0MmdkZ2FsU2NtR2ZQX9IBTEFVX3lxTE9NTzBDOVhTVkpqME4yX1hzc0xOV3U5TFdXZTJnVzE1elVmcndIRmRCNjdNQmZVZE1WLWs2c2MwNG53azViVlJBd1pXZnQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9d58d3d0971ec87fc52d",
+      "title": "台中市長選舉號次抽籤 何欣純1號、江啟臣3號 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5GTlkyNDdYZG9pXzEyb1VZc3VnZktiTHFQQ25zRl9TeGRkR0xuaHRaVHlsUl9tLUVfdjgtejB6YVpyRnlqUUhycHJWWS1XT0dpWW4zX05LNEtrQTQ5ek5n?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9b94065a40483e441b6a",
+      "title": "快訊／桃園市長候選人抽籤號次出爐 黃世杰1號、張善政2號",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5PVWZVT3JyZ3pfdGdrTkdsSzI3amJuQkdLcjFMMmNjdGRQTXpiTkpIOUMtWE9yYXFlYnNpR0lMZHIwVGxNNUMtb9IBTEFVX3lxTE1EOUVyVmRiYU41eDloTUtYRnZrd25rUmQ3cUhDTmJfN25jOUV1S2hnaWp1anlmb3ZqZVpIOEVPTmlfR1FxdDktSklhcmE?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9b4415a1f94b334d0a77",
+      "title": "司法正義黨- 第1頁 - 相關新聞 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPLXBjd0JXUmdHT09nTjdwTFh4bG04d1p6T2xuX2x1Tl9jX1k0OXpaYm1tSGJ0RG53UXJlZXFyQTV2NzNaSjEzbkVKOXdaREliYlNsWDJ6WTZSZmJoOGtlaklNUlMxRTVOQU5YTXJyblRheml0aXUxVHo2UWVqNnFpX1RiVQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9b2a82f39cef25e8dcc8",
+      "title": "最新民調來了！新竹縣長2選將差距出爐 驚人趨勢曝光 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5fOFNtWnV6c1dCaXFTNDE1UmttNDZBTFNrTmhhaVVYSEhNZG5TMWE0U0xSY0dsLWlCWlR2SlpZWjFUVVVVVEhCc0VvUHZkajhhVFFKNC1URWw1OGJna29Gaw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "99f7c6c8b354d984f7a2",
+      "title": "變陣反攻洋流！局處頻扯後腿民調狂洩蔣萬安急改戰法突破沉默螺旋| 政治",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFB3elo4b1EyUTZ1TFlpZzFRWXBfQlhmZUwwZW8xS202RGxjQUFfMjJzdE1xZ0c1MGloQmM2cG9zRmI1Yk8zbmpocQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "99e09e2b7134fe94fc5a",
+      "title": "蔣萬安競總成立「藍三子」合體！她見1幕諷：像幼兒園開學日",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFA0QnYyd0dBeHZ4aFQtYmltRFNTbzRCcXprQ3lqZ3A4R0FVWGlKdW5yNXFEd2ZJMGhqU2tKTVpoSDc1V1dxUTY3UtIBTEFVX3lxTE5FamtkbThuM1ZXRE5ZbVhUSURqQVl1bEJXME52cjVuT19McEx3UjlhbWs4WnVDLXRjU0JkSi1iajlwQWRhR1pNUzItc2w?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "99de7dcdd4c09fb4853d",
+      "title": "委內瑞拉反對派領袖返國 美國務卿透露已提前交涉 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE91ZlVLT1Zid2xaMWw2MlJvMWFQZ1o4OUgyVVc4TkZKRmRxaUduNGp4dWdGeHp5MVJQN0o3aHhydkFva3llZlZsSDRIeUhab3N1NXkya0JhYjFjVFFaNFVVVw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "94fa626a665ece603d2f",
+      "title": "台南江川肉燥恐「被歇業」 疑金得春捲解約受波及 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9QYi1LM3ZwdVpSS1Y1YWJIbEd2UjZlbmhJVUNQOVViWUhWeXhoTnNKRGhkLUJ0N1pSN2pLa2d3N2hKazZLcm91cmNGb1NsWHVFT2JSLUZ3STFwdzZVTjVrNw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "943a46400e3167534104",
+      "title": "「看不到盧秀燕」！台中民間自辦「鈴蘭通」 2天狂吸近22萬人潮",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE02enRuSTdpVDVkak80V1dTVHg0ekgzTURIY2gzaW5sb21acGR5SEhPYXZLaDc2dVJQRmNHblRuSFB0OWZ5WjFpQ1ZWbXZsVWpBeHJlWUZaak9DaU5TYV92NlJVX1XSAWpBVV95cUxPdFI0azNBOGFDTmU5cllEbWdwdUh0TzF2VVJGeHYwWHhJQWgxdEZxTHJPRlF5enhUbXpYWk5rNUZfbkdoV3RqVVdhbV9sR081T0x3YVFYamVNNW9lWW1nMFBQZHhqeERfbVRn?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9421117ab72ae52c2836",
+      "title": "東京平價鰻魚飯「名代宇奈とと」台灣首店11月開幕！一碗百元起",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5fUmlLdkNiVlo2eGQxRnJGSV9kUlM2WHJvbElhWXdpd2FocXNsZTQtNDZ4UUFQcEJhRlNuYWZmb1gzRW9kMjlEatIBTEFVX3lxTE9yd0RrUXktR3ExOHBOZWM1dC1kYmpKamN2RGEtQVhVdWtqbFlRbGxnOG85WDFZNFkyZTliVEdrOFAtTW5YX2I5S3M0Y3Q?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "8ad8e336239b851d33f3",
+      "title": "復電率破9成！台電跨區大動員前進新北宜蘭重災區 力拚今晚全數復電 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBuXzA2aWtNc3o0OGJ5STZGUGRuOGVDdmFrYWR4OXJxVUh0azFyZ18wNDF4MEF4MElCd09WcnhSQ002TXgzVGNaSnhNc0otU0xmekFRNHRB?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "881e82ec76fa5fb1fe3d",
+      "title": "離奇巧合！雙胞胎姐妹買同款車車牌竟遭車行裝錯 無奈吞$5400罰單",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBfeENDMzJkd216anI1VUxYVE5IaHRuOXRpYjdva2RDRHJBX3FkU1k2dDZpUzE3UTNQenY1WWdtV1hERzBwZ1hPdNIBTEFVX3lxTFB6SkJKN1VBUUM2YmxxVXZmalhkTGJHRnJEbzNpd1VYVnNRREdOZXlPUXVBcnp6Wmt0UTFsZ3dkeXV6Z0QwQWFsLVdnWS0?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "8694a3f11c8ab0b0c167",
+      "title": "離島三縣長號次抽籤金門23日已先完成抽籤| 地方 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBfUTdoT1R0MzZ2T0UzR0FjX2NCd2k4azNsdjMyVmZPaUVTVDR6azBOOUtPUnF6VGNfS1cxUWJ0RkNPWmFETnVBWFhfOVpsQjdha0w0XzEwb1lvLWJoNmdv?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "8427378721abe2687bce",
+      "title": "台中畫廊進口北韓「萬壽臺」畫作 夫妻涉資恐防制法雙雙遭起訴 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5uQzRPdTNnOVpuS2RnVldCUG51a0pUWVNDS3V2dDAySDRkZlJqVEduam8wSTlPaXNfM3JmOV81V3ViWG5XVXNid0Z6SWpPcHhn0gFWQVVfeXFMTVFVQVJGbXRZOXJPQUlad3ZDWDJUdk5DeF9JTm9kR1J6ZWFqWFRjaURKc0hLaFowbHpuVmVkZ04xcDd2ZlFiLVlYWUtuc1pibEZOdV9OLUE?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "82660a220d74927c6108",
+      "title": "影／台中深夜路口爆巨響！轎車闖紅燈撞機車再連撞2車 18歲女騎士送醫 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5LempNay16U29KT0wtZ0ljTTctMUllR0hwejhKdHlQaG9TTGRzNEEzcmNzVXA3dXpFLXV3S1FiejNIamcxUlV2akN3eHZsWTVo0gFWQVVfeXFMT1p2RmI5bnByM3ZRQmYyNE5TekdlZzAyQ3RIanQxVzhDQ1Y2eG9RRGhMNVAyeGxjQUZISGRNcFZtanA2NkRnWFA3T3VXQkZCWDBLaGxMZmc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "7eac6106e706282d9c28",
+      "title": "當選成立青年局 何欣純：提供200萬創業貸款",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1xX2dWRkdkZ2s3VlZQNW9rbjhscXVhN1lyanJZUHdjWEdhS255U0ItTXo5WGhBZWdsSkF1cC1HV0VWTW5ySUs1ejlNdm1KbzA4aWJhX2ZpT2ROOEtwQVdPZNIBZkFVX3lxTFBjNkZUa0w5dm9QbGhHYmJLUWxNeVI0SE9qX1kza3VVOUZCWjV3SHJXaGYyUE53bzVjRHh2WUNvdzRrcWhsbm9Va0p6VjhfSlpZdWxLaUVZVHpEUHFmcUlpLVFld2h0dw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "7e424d9a7ac78cdc8a48",
+      "title": "快新聞／林佳龍逛鈴蘭通、探訪90年老醫院 見證台中舊城再生新活力 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE45Z1VOdVk1VzBtOTZNa0JZYTR6ZnM1cFhsOVZTb29KSWQ4Y3plNnVPWHdCLW9VdDZoeG4wOFhTMDBMeTVyODlKa2FfeHJ1WW16QlZmaTM3aE9CZlNRbk5SZg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "7a75104c11b5cbaff754",
+      "title": "台南市長選舉號次抽籤 謝龍介2號、陳亭妃3號 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1vZmpIS3FXUXRSXzZSWjJLZk80dEYyeWhDSXZyYUpmcGV6d3IteHZCcmVpMTVMelhBSWh4ckZ3ZXdrTG0wQk5vbHd2eUZ4UG5yenRQZlpqamt0ekRQdjZB?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "7a4eee23f7f1a600b0a2",
+      "title": "「洋流現象」如2014年的柯文哲？蔡壁如揭差異認了：恐有外溢效應",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5naGVLQWt1T2tyM2V5Ykdad2pPT2pETjUyZ3BBc0tvZ2FPNEgwUUtlcFdIZnpSVG43STJzRkhBcGxuQ0ZieWd6WNIBTEFVX3lxTE9hTUpVRnJyd1M2bmtwa3JERkpmYjU1aEVmdUNyV0ZOSEg0RldMRGpxYkxRSHZzNFZhLUZSbjRxUlQ0TXV3QjRZNXNNaHY?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "764e7e3bbd3812c8d4fe",
+      "title": "新竹市監理站釋出黃金號碼7777、8888 夢幻鐵支牌限時開搶",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1keWFTYW5xUlNZeHM2Tm9Renk4T3hiRG52cThsSnEzQ0gyNUxzdjctdkotazdpWHZNSVgzQzhDTlZLTDZ3Sno4cUxyZlNTUUZLTTlVV0RYc3JTdXJsTVNGZFhJdGLSAWpBVV95cUxQTElvX1RyV2kySF9TMXk3UzNWUThzZy1GVTVOT1Y1RnFudlJmU1F3cEc5V1Q1RW9Vd3lBdER2YXZBTXdRSFRZWXZuamJCbFNvODFHT1NqMzRfdHI5TVplbk1ncTYzVERLWGpR?oc=5",
+      "topics": [
+        "chang-fen-yu"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "7412830cb980a72fdefa",
+      "title": "蔡康永微博稱未支持台獨沈有忠：現階段無台獨議題| 兩岸 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5fQVpGc0NoQWd2RGlPRE1HQWVYNVBJT3BpSG95cVBDSHFySGZtNVNzLVFabTVFLWRQVU53anpVVEtEWnYxTzN2c012d09KQnNxZXRLakJXQnlrUEdlbmc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "73eaeeffdcfddb1436b2",
+      "title": "涉貪案開庭！高金素梅下午首度出庭 張俊傑棄保潛逃成焦點",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5EdGJXWXpYOFgtbDZmYnZ6T3hwck92SVo4OUJaV200Ukd1RmlwdGluRk50dmdOR2NiTEkzWjFqM1JLSGV0X05TMdIBTEFVX3lxTFBQRnlZSWV3ZlhuWi1zV1hWYi01UUNSZkozZ0JDNmpwZG9zdUVmZ1RjbmllQVhIazF3YTUxeVRPQWdMRW5QWFIxTWtvYmQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "7112fcd4646c452298e6",
+      "title": "中職／台灣大賽防禦率破10！中信兄弟牛棚大將「呂寶」喊：會繼續嬉皮笑臉 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE90VHBmNUNJaHhiS2FkUGx2ZEJLM0NURDJOREUtTzZYTHRyd1hyd3hVZzlMenFUWWRoRU5OQlNaQi1fbkIzNU9iRlAwYzBqUlBlNXhPRG5SVEtMUjZyZUxOaw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "6f7b3ea6960ab1716af1",
+      "title": "快新聞／選情慘了？蔣萬安喊「吹起反攻號角」 王世堅留「這句話」酸爆 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5fbFJHYUtqazBldWUzS1BZa1RfX0pmdkk5ZF9UN3h1NklwOFhxcFlYaHdLVzNNZ1ozMTg3ZFdyS1ppWm5UcjFZcGdmamJDT1N6ay12UmtIMURCSmhmN1A0MQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "6e3c5b72de1970edbef3",
+      "title": "選舉號碼政治學！1號何欣純吻合政見「3個第1」3號江啟臣同盧秀燕「冥冥之中預感」",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8walRqR2ZMUHo3bE5zMFBlR09TZW9JbUFkZ1FGLW50WlFIa0ZRVHIweUdFbnc1NW9ZRkYtSk1oMjF5ek10Mk95TzFCVEduaGpTcWRveHFWdnNKdFoxZjVrZWlxLUNDRzgwM0HSAW9BVV95cUxOLUtCVEMwYXRyaHVuZllXMS1HLWRmcXVUTVpJT2JGU01YNGNTZVFpUXFTcFVfU2xNS19KMzNkWEx0LUhDRmlGTEtBcVVwbmg3M21hMGc2T3hLM1hoTEU5RkdkanZZSldQNG1mS3RWQmc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "6870643de00cf0c808db",
+      "title": "AI燒錢壓力大！微軟向6萬員工提自願離職方案 涵蓋Xbox、Windows部門 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5TUlRuT0txbzV1Y2NKSGZmSzI3Z2FSUHp2LThjTVNGbGttU282RG5uLTlHSG8wd0pNZEg2TzV0ZkZWRzAtbHZycnM3ejVVR2VRa3YxRVRrMDhIODJyR2daXw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "679d27581226427d037f",
+      "title": "2026九合一選舉縣市長參選人抽籤號次一覽| 政治 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1kYVNEemQyaTNQcC1jZHphdEI5MFZlM3JoR3RLcFd1TUg3U2dvOUE5ZmduRm9jdk9fcmxLVjM1RUFYc3hPZ0Q4a1ZhX3hFOEVUVWROV2R1bkUtSU9qWWc4?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "633dd580589dd1e6b9c9",
+      "title": "率西班牙勇奪世界盃冠軍 Luis de la Fuente榮膺金球獎最佳教練 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ORXZtemREdktaNy1idUVpTTltMWhtTnNTTHlTajl0RUM2UXB4cHNnN1pwZGhvczlvLWdHMmg5cmdDYjBrLUV2R2NrVXlzSmVGb181NzFSY0hWS1IzVS1FUQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "6050ea7ba7ea1b7b431e",
+      "title": "鈴蘭通- 第1頁 - 相關新聞 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBGTWV2TW80cHlSMUpnNFFrcmlLckZyX3VYcU9rZTJtT2RWdkRYVEJfeFJlVTM2ZFZMLXNXSkZMemZnODk4cjdvYlY1ZHB4dWk0MktxaUYxTnloMDVzYzZaN0R5ODdCRjJ5amlr?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "5bb651fbc600ab2a3a86",
+      "title": "台中市長號次抽籤何欣純抽中1號重申盡快推進辯論會| 2026九合一選舉 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBla1FFY2xwR3p5czZ5VTJYOG0weUI5ZnJTSVVVUUxNMnlyLUNFYkl3T3BKM0dDMllSdGdNemxDMmFlemNJaGxkV0xtMWtLc0NDZDd6MUdIc3Q?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "5ace75de63c898556c93",
+      "title": "中捷藍線列車外型「山海脈動」 26列3節車廂每列可載530人",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9zS3d5UnI1YlFCUktfUERMSm9wUUZVX1QtazRyTnBqMWs3czFibjdMUXkzbzNnQ1ZXSTZHbzJRSHh6OFFkUWV4WTFNeTlqWTZ6MFYyZGhPSGd5c0xwV2k4dTBucGjSAWpBVV95cUxPOFBxcmpYMWFXN05MXzlMMG9DcVAtSllsbVlUZVNmSHpSNXo4eEtsZnRwa2FjNGVuNF9lU1g3UzJzOHdhMFE3QzFadlBYQU5yQW9CcXVxZkdMOEpLMTJXTWd4QWt0TlhmclRn?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "57a30b73a3dd8f0e49c6",
+      "title": "台中餐酒館推薦！栖 Habitatto推爆汁雞皮煎餃、叉燒飯SHU Club把夏威夷披薩變調酒| 美食旅遊 - udn 女子漾",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOY05HMENYRUJFTi13T3p6X3dYNTA2eHpnNGNPMUR5M2V2bVJkVjIxejduMEtPaG10MEFKVm1iWV9nNFZUUlZlQ01leXBEUm03Zkk0SHJWaWd1dlpNREJBMVdIUGZ3M05xS1JkRi01d2tfSklpbHZSYzl5eUlSQVdIcVoyaw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "55b2f49fdf91f946f1b7",
+      "title": "大台中123 - 第1頁 - 相關新聞 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9TVUVMdUZvSUhLSDBTcVFPOXFVcFZVZ1ZFTmpuZG56WEhEUExXRnhBTy03UlNxeE1UaFl6NUJuNzZNNHg1Nk1XQTRoRE9vWjBnNEZ1TDZNYjRLc0djdjNqbDE4dktiSU5VQjN6dnF1NA?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "543705e8b05a2f348a09",
+      "title": "以色列大選選票暗藏玄機 希伯來字母成政黨宣傳密碼 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5wbnhNTHVMekFVbFl1SmF1cFBFRThLYjJLZlg4eEJEYjMyNGtPVHpEUS1KRG9la1p3dU4wOU45Mm52MGRTTkdPSk9IMnJ0bjBZV25yS1h3bXJBdkdQMWsyYQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "50b2b57af3164dcde7c9",
+      "title": "慶中華職棒封王「披薩買大送大再送大可樂」！ 7大速食優惠一次看",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5RS0xGSkRFLW45WlZtdG14T3luU0JyQUY3azBYb3VvbFZvX1VBaFhmSE5IU1V4QVhQUEFJXzBGMWVhSG9oTDBlN9IBTEFVX3lxTFBHMzdONGFTM1gyeXQ1d1dMWHM1QkplZmZnWGw0cXZJeEtUUHB6SEhDS2lUd3hQQ3o3UDNmVXdWOFFieHI5b0c2RWpYOVY?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "4fffe3b1d912f88c215a",
+      "title": "台中市議員第四選區豐原、后里抽籤 各候選人支持者到場助陣 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE94MXJwOEFBUkVKNS1wdnllbEljN0QxbHpxUzI4bTJJbUNuaHZ4X3ExT3VEbWRwUkUzakxIeWpIblZIYUQ3Ty0ycW1iV0NMRjJtUXFz0gFYQVVfeXFMTm0wTEg2MkN6allPbnhFRS1NUUlYWnFucVo2NUotZTc5TThjOEtKUndSTS1xajdqSS1QQUw5T1dFMTdaUVFjLXVjRXNhMnJVMnlSeC1ZbGc3dw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "4998ffd9b881a34b35d9",
+      "title": "中市東南選區8搶4 楊寶楨抽到籤王",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBxVjVPaV9fekNLb3ZNRFpCSExWcHJUZkM3V3NrM05fRXJnb05Ya1VsaGl0MkdZUTQxUGxLVDZ4aEd2NW1ZaGoyS0poNjA0SzZkSlFOY3FlaEZiU1ZUeGdYSWJEWTcxN21mR2fSAW9BVV95cUxNR0M4QWM3bEliNHNsVU9fODlwVmJsYU1vQlpucTRFR3dNT1RLdDdUZVhFZHhaTU8tQTE3cmRUazJQYkZ4cEt0TXZrZ2NVZk1FQUExM01OY09jRkh4ZExtcTZHYllvc2VTRERtWEZWeUk?oc=5",
+      "topics": [
+        "chen-ya-hui",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "48139e1e9a6d7da291d6",
+      "title": "江啟臣：當選市長 優先改善學校安全",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAxS1lhQU4wbFpvamhCeTU1dy1kM3NIY1FQSnpqd0J3U2RBNVo5aTMzam5faFg3QUF2ZFV1WjcxMzh5dFRzYXRkRkctOFUtUHFWN2xYZXUzYlI1UWk5enQ0SNIBZkFVX3lxTE1IbjBvOUxiWFJxN215eTN1X0g3eHJOX2ZaRlpoaXFCQ1FsQmlFOHlGZjRIVVBWam05VEV6R0pfRVBsSU5WM2V4dVJ6cEt5QWFuTHdQMnpyZVR3bE45U2RURDBWQTNrUQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "480a8b868b7f7c678456",
+      "title": "怨卸貨太吵持菜刀狠砍10刀郵局司機枉死 兇嫌恐反覆殺人 法官裁定延押",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE85N01kMTNKUUQ2RW04RTR6VDZ2LWtUeVE1X1lOWXFmNkVEcXBZMFVSZXJkWmtQNUxySTRMdXlxV0FHbVp2MFF1VtIBTEFVX3lxTE1BRUpJNFVGQkEtZXJvUllQVUdnZzNYbkpyaGRtRk4zSzFTWllReER6Y2RKU3F3OHA0Nlpha1c0VlJOb3pOVVZLb1BUYmQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "45733db28df1fa370564",
+      "title": "疑鞏固白營票倉？ 蔣萬安上節目謝柯文哲打基礎 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OZllSZ2RuNnhueHpaWUhwWjYzNnlXWlN0QVV4V1psVUFROE1tLUFfUV9vQ0pNOUh3aVRSMHZkOGlDWjFmVVg5ZGg5c2RldEdEelhTWnJxa1lwZG5TMG0tMA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "40c5d9c33b9e95d0b054",
+      "title": "台中市長號次抽籤何欣純抽中1號 重申盡快推進辯論會 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1jN0wyMXAxQ3ozeFNFZE5mUHRxUE95RWRhTFB4TUVtWG5MTHJpSXNYeVJxMXhoeXI4Z3g0RjZ5UlpqVU5WbXJCeDNjN3VCbWZBMU5sMjdjWXfSAVhBVV95cUxNYzdMMjFwMUN6M3hTRWROZlB0cVBPeUVkYUxQeE1FbVhuTExyaUlzWHlScTF4aHlyOGd4NEY2eVJaalVOVm1yQngzYzd1Qm1mQTFObDI3Y1l3?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "3e4130f0f4435456f18f",
+      "title": "爸驚見女兒新手機 揭台中貨車司機誘少女 和解換緩刑5年 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1Sb3NtXzlJQ2lRNlVpYVY5czBrQ1hJY0dPRHQ3VktSb25BenBFY3hlZUdZc1NxV2RSX3FUY0ZSQ211MGlQelVQU3RDck9CS3VI0gFWQVVfeXFMT3dSV0E0b3RFbUs2SUZlSlNkSTczWEtpX1pDeEVIWldSMGFiczlVQjNfeHExREJkS1pRQVFmRUFfb21ZTnptUXRNOFhpQ2VPdlNlejVmY0E?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "3bb536e0e63ae9d3e1c2",
+      "title": "台北市長抽籤出事！這候選人突喊「我是紫微聖人」亮出1物 遭制止秒暴怒：你給我閉嘴 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1fWkV0dkVxU2dxT2tXMktMOTQ2SndoSWZjUy13M3BBT2RCNjNKMVJOZ01BZHNaTVJJUzlWS01jQ0pyQm1WQXJOMjI2ajdwNTM3aVRfcTI0TGxqRkYxNHF6TQ?oc=5",
       "topics": [
         "taichung"
       ],
@@ -29,6 +1455,62 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "372ee87b9657266312cf",
+      "title": "吳俊立稱病高雄住院治療 將由台東地院重開羈押庭 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9qVWFwQXZCcVVqNFE2V3JnSndYdU5pWV9fSVpmbDI5UWl4ZHhNZnNPNi0zb2JCazNpd3VScHhpR3FCVDNST2dYUkRZZXhSY1I5RFB4bGRzT0prSmF5VTVXbg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "2fa36a44bf7ebd3f5554",
+      "title": "東海門市- 第1頁 - 相關新聞 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9obEpqS29lSkRkUThMMWdlTTgxWXhtQW5BVTQ5RmRqdTQ5WjVtanNJZm96aE5Gd0ZuV2wzR1gxbjBOVlpPNU5mdmlYUXEwTW56eG5PS2VuVU8yWmc4YV9BeC0zbFFJdmsxYUZ2WUtFZ3VOaGNwNE5V?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "2dc952cf465007358ce1",
+      "title": "中華電信基金會STEAM計劃圓滿完成 攜手宜蘭聯隊花蓮玩綠能 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9XS2lIYi1XdHdWZlRhMmpkQkY2N1RiTGgyd2dhQ3hhTEVnYkVQREE0dE5fb2c2NlBMMXJCUlNWZ2s2aVZXUTN4S1RMQlc4M0JDUTlwb2l3?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "2d608f85f4e8bae40f2c",
+      "title": "花蓮縣長抽籤出事！國民黨候選人才喊這句「假牙疑噴出」畫面全放送 傅崐萁反應曝光 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1UNlpha0h6TnpLTWh6SGU5NzZHejYwSk9LRWdyYkJhZXE2YVU1LTFSSjlCak9fUFMzOW04bUdRbFVVcjFFWTY1bUdpUGdhbHlidXBOXzg5NjZnUUNFdVJHeQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "2cc8af1559d8d1fe0dee",
       "title": "台中藍綠較勁江啟臣妻市場拜票何欣純搶青年票| 2026九合一選舉 - UDN",
       "date": "2026-10-27",
@@ -43,11 +1525,351 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "2ca2e93957150f83aa53",
+      "title": "影／不賣茶葉真洗錢！黑幫茶行藏台柬兩地 2個月洗錢逾5.6億 21人落網 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1tdmhFRHFOLXBmWlVBcmFUS2NBTHVHVUdiOGRUZVdfWE9uTzdzdmNWRi1RSkhzbG85V2ppUXh6TmVxc0x3N0VQS0hlQ2paMERq0gFWQVVfeXFMTzdidTJGQlJGNWw1dnRDTURHUkhrbDhwT2ZtZk1YTWZtZTNFbWMycWQ2clZ5NnNJM19NWG42X3ZkU19zUl9wQU1lWVRpcElYeG85Mks0Q3c?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "2c3e970aec836ea0389a",
+      "title": "以當代美學詮釋鐵道文化 阿里山林鐵復駛通車獲日本設計大獎",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5UWmFIOG84RngxN3RJY185bHUxa2NUb1M4Undsb3gwSXV5bjBBbmlCWVZsaUl2S2hLSFB6ZmVjZDFQcmdIWXowSzdnUzJJc0R6QnBKN0piS2lWTmp6MDlVd3l2cljSAWpBVV95cUxPU2luYWpaMWlsQTJhR3pmY1R6cmZ6TXRndnVZeXpxcUtORklhb0lqcF9taWJNN0JFcnF5VHlGUXc0UGlpSWVaZUdNSHk2WHJDTG1FWVZzOUxNZ0pBVEJFbUpfc1JiMXVaLUtR?oc=5",
+      "topics": [
+        "chang-fen-yu"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "2ba008f12401b2b4d791",
+      "title": "警方查獲跨境博弈水房台柬兩地設茶行做帳| 社會 - 中央社 CNA",
+      "date": "2026-10-27",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1PZnV5N0Jqb2lNVFhsVkJ6NzV3Zm0yeGthVVZNUWJndnhSUjJCZk5icEZaUVhnN0g1dkRDWTltZDg0ZHZuQVU3T2wydnl5T3ExT3d5R1pNXzdFUVU2WDN3?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "288a8158a7b787be811a",
+      "title": "Harry Kane榮膺金球獎 睽違25年英格蘭球員再奪殊榮 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE43bWRoOUFZb0RaZzc5emY3M3hNZGFUeGMyaS1kT19uZnd1TkpWazJ0MkhwSWZLUzhBZlJ4a3M0WFlSSGkzTDktdWlpRG5Eek95NmdXUUZRV3NwRlFmUjZteg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1f3f4508ce3fc3cd0d8f",
+      "title": "封王優惠來了！4大超商「咖啡買1送1、11款飲品任2杯69元」",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9XeHlQVFdGdEdOcUlNVUFkQk90WEk2R1Btb3kzX1ZWZ29ya09BNFhwc0s1ZHpMZXRHcEVSTnlSTW9xM0NXb2RXb9IBTEFVX3lxTFBHMG5lb0VhcVY0VFU2YUhhdlYtQW9TaXpPUk1URjJ4bXVUaUxRQ1NkMURiUzRmTHpSMTdlWkUwSlV1bm5RU1oyMTFMSzM?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1e9be69590340207ee95",
+      "title": "蔡康永突致歉：沒支持過台獨！國安案件專家揭「中共施壓藝人手段」孤立沈伯洋 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBmOVQxQmN2cHNTTDAwMWx5VEJTaWltR0NnWnpTQVRUalRXWVpDY2JSYVJjNmlyczY0YmkyUnEyd1hFZlVlbWQ0bTZqVldZT3VmQ1JMd2xObm1uOUdxS2lGMg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1e878c4524d00d275ca1",
+      "title": "第一「欣」好市長！台中市長抽籤號次出爐 何欣純抽到1號 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kNEc2QVdkaGJQOVd3SUFKOUtBenI0a2RLX1B0aDhHcXJla3FEUmhWbXo3NzFENWlNUWJHaVpiQXJGUkhEdDZhSnlMbDZkdms0TjRaNjV3SmtNbUg0OVQ0cw?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1cf3e7f64231a7ec0c4e",
+      "title": "留住托育人員 中市明年起試辦久任獎金",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1JM2hJMnF0WEp6Y3luX05YSDNkY2JnbWppVFFNOHB3aHRnb3RuVElHNEFlYl82a3JHN0paVHNGbzVaVDVQamxXZ05TOXB4ZHJIam1JWDFncnYwR2swRWphRi01Sm7SAWpBVV95cUxQUW9UNllEVmFQVUNQejlldzZjeWlQS3R4WFFJLWVvQnN0S3IzNEg3MmF4R1RPX1lWZlc5NUNRcHlLTFZKZ1pXR0tNb1hkSUVOei1DNUpsZ0hqbWxleTRUZXVkX2lxaGxPNlln?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1beea01b822147af17f8",
+      "title": "影／不賣茶葉真洗錢！黑幫茶行藏台柬兩地2個月洗錢逾5.6億 21人落網| 時事 - 聯合影音",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFB1UWJGcFlkWWMxd3lDWkdnNkk4WUpvTk5vY2k5M3lLcGNrMHg0QTExTThsUkRzMEY1dHpTSnNTRHp5OEtXNUwzdldR?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1a9ac3def8ad401ac5f8",
+      "title": "哥倫比亞與芬蘭聯手 擬轉移5千億有害補助護生態 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1TdERCODNlb1VtY3JfQjM4eVFYUEdxNUE0ajE2UUhOWHl3SDBZMFAxMFhxYVJPMVpiYzNNZ1lRUFM3WkROdUpONzJPdjBkUndscUNWZWxHWUFHU2xvREx6QQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "184ae760a70a9f4dd80f",
+      "title": "薔琵釀霧峰香米倒伏嚴重 市議員張芬郁爭取納入現金救助",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.ltn.com.tw/news/life/breakingnews/5620096",
+      "topics": [
+        "chang-fen-yu",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "媒體官方 RSS"
+    },
+    {
+      "id": "171083918aab4f82727a",
+      "title": "即時短評／盧秀燕光環對上「洋流」擴散 江啟臣、何欣純決戰游離選票 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBNdFhTcUpJeWgzbjdKWk9wVWhhWWh3U3NpQWE3SUhXWE1kdVhqaXRlbGNrMFBuM1hlcUZLZ2dNanowRnFIbW5XRktwcHFQUkhZWS1R0gFYQVVfeXFMTjlhdmZrbTlnTVNYV1B2TDVicDNJS0tiYmZsWHRxYmVLSDlnT21yVVFYa3lWMkZQNG1yeWFtTkdyeGh0UDlmcDJKdzFNUG96WnRQRjlfcmZZMw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1693dbec4d22b16c02cd",
+      "title": "蔡康永撇台獨！林德宇跳出來抱屈 痛批中國黑手逼表態 - 娛樂星聞",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5jWkhmUk1KbnBKcDVjdHNCaTdfYVkzc3BGVXo3Z2JwUG42UEpkamdrSHM5RUR2cXVnWkZVTFRZc3pPMFNJbld2R1N30gFfQVVfeXFMTnpmZnIzLXM5aldDNkx4a21xZEFCdmlOd3paU2tjVTlkV2s2ZEdzOU5mNUoxRG01Skd5RlA0NzhvUzhkc0x3ZjdkdGQxQXVQUWFzYVA5WC1hTzhDb3VFS2M?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1651f51a22d543484898",
+      "title": "快訊／彰化死亡車禍！騎車雙載遭轉彎聯結車追撞…夫妻慘死輪下",
+      "date": "2026-10-27",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBENjNqRm5ZNnYtNTIzMHJVdEJwZWhldnZZTzdTZndaZ0dCS2F1Tk1mOVlRTVJnNVliRnB3YldYQVRHV1Rac2RCedIBTEFVX3lxTE1JclpVUXZxM00xXzlSUlAwa3hCUERRY3FOVXowOXdxcUFqeVY5Mjc4VGU5VUlSZWs5UmdtUHNmd0ZNbl83dmJsRmZGcU8?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "15546685112142bbab2c",
+      "title": "與史努比一起變裝！ 桃園萬聖城黃偉晉、派偉峻開唱 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA2VHdhekw5eXNYbDE3aFNjdkNVUW9tX1FPc25BQnlUajJ6Vk9yTDVEbmhVU0c5dW9JLTNqZUFNSjFUTmQ2QnBKdnUySU1RMHNkQjdUUjhLZlF4UU1oZ2FZMA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "10058a0f0634644e5ace",
+      "title": "影／江啟臣抽中3號喊「最強靠山」 揭「她」兩次競選也抽中 - UDN",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9pTUYxOVdHbk00eU01VEdBaF9pbWNHYnZfOWJicUdLNWVmWUZ2UV90Q0c5Y0dvLTFJWEh6YUotY0VGZG0xeEtHZm05V3FTRHVhT0FF0gFYQVVfeXFMUHFqTU5VUGtmZWw4MTlBcVFONW5iaGs2X3hOMnA1S1VZQVo3b09fYnpSSExyeTZMblVUeFdwdDZGR2RSbVpVaXJxZ1NnMHA4cm9ua3B5V0M5cg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "0a6d35fe3a4999b88446",
+      "title": "江啟臣：當選市長 優先改善學校安全",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBfN1pHYmlBSTZQWkFFbk1qMmoxX2VDbnpiZWJrdkFwV3JoOGhfa1g2eFc5dkRJWnhQWGluOTBVVXh5bk1iYXdfMzNXWVMzbjhfczBjYWVqNGhMV3hzYm82R9IBZkFVX3lxTE5sa2dSZWZEb2NjZ0szbFpqSkRRSTJBdWViNThYdkFEWGZOajhkT1R5TXVOd1pURlk1Skw5ZWxieEE3Y19QTWcxYlg5elBpVVJabWtJN3hmVDRENVA4OV95SHJRQktRdw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "0991a1b6c423896ff493",
+      "title": "影／台中深夜路口爆巨響！轎車闖紅燈撞機車再連撞2車 18歲女騎士送醫| 時事 - 聯合影音",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5KOFowdmdTc2U3OEdBMG50VFYtTkVrMlRSNlFiR2JCMDNQa1lpQjYyM1FESzhTTW56SVpHNHVKWUVIWURYWXM5eDd3?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "072cc4aebfec2a18bd1b",
       "title": "北台中城隍廟- 第1頁 - 相關新聞 - 民視新聞網",
       "date": "2026-10-27",
       "source": "民視新聞",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNTkh2bC1keHZXSHB0WTIxSkJkbWg0TlhlbzJUalJSZUlYY3ducWdTQTBWRVhIWU1qVXlPNE93WFcwS0RaX25mZnpvQ3F3eEdhR3Vob1BTckFLN0dmT2d5Z1NTZHhialZsclo0MXFEVEZGbC1TNGpZUXNoZzcyckV0cFMwS0ljLXhjNkIzYlRKQQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "05bbabc4e6c583fe9aab",
+      "title": "全台非六都16縣市長候選人號次出爐！藍綠白關鍵選將號碼一次看 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5IRFB4WGN0ZnJBUzRIYklxRERKQld1OFo0aWRYOWFhNjhiYktnS0g2OUNvSjc3ZC1WWEpiMnVidEV3OGxlYkUyWWJKOEdUSDN3ZmZfUEJMME4xdE1NbU44ZQ?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "056928a9db5b182d6566",
+      "title": "蔣萬安選情差全因「局處不給力」？民代嘆：自大的蔣市府「助長洋流」 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBzRzNwelJtQmZIQ3pfSXJCY2FEdVF1THlKVENabzVsYjA0UVRYWEZ3dDNZLVUtTW0xcVQ1cTVkOUhpakd2dGtGcW9ETXVrSkV2blp2b09QLXUyYjVNa3lQYw?oc=5",
+      "topics": [
+        "chou-yong-hong",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "048c6f2cc48331b33ec8",
+      "title": "影／江啟臣抽中3號喊「最強靠山」 揭「她」兩次競選也抽中| 時事 - 聯合影音",
+      "date": "2026-10-27",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5jYl9VdlYzMUNhSjFxRWh3S0FGcllFaW1tQnItZkhDcjFsZmhxYk40OVZRMFVLR2s2TWVaWXFkMndqU091cGY2ZXlR?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "043419dd543054cc4e65",
+      "title": "LIVE／候選人號次今抽籤！沈伯洋有請市民主委Lydia「你一定贏」代抽 - 民視新聞網",
+      "date": "2026-10-27",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE92Y2NBWlRZQ1VBbVpmX3BXUklLa3E5elFjWGN5T0V0TG1qUEFlMFZKUEFObTJpNW95X2NDZTZaUzVtZEZlYlhwZUtWX19laXM5LTBUcTVrNEhnN0JRUUEtdQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "032251f5b990c7b95800",
+      "title": "台中市長號次出爐！何欣純1號「台中第一」 江啟臣3號「最強靠山」",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE85SDl4VjBudUZtSlFLSDBsVVRYM3pGbWVvSld4d2ZZX2JNYWRkaF8tYlhyOF94c0RoZlVHMUtFbzVtUmVwQ2t0ck5jeXFyNjdraWZrWnBXTTVQdXRsVjJNcXRXTGpac1dRT1HSAW9BVV95cUxPaHdOM0ZXR1VLTDZObmVObEVCNzl6RWdXQkFHZE1MUkVJZHo0RjJBVFBmb3p5Tk8yYV9hbnJNZXlQREJCNWNnWTlpMkdQb08yOW1ueHBNNWZlZTZMNEpIb2gwMENtZTlsbkl5UTdFTkU?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "00a26b5ae14a78e32007",
+      "title": "拿抗憂鬱藥當減肥藥！女過量中毒死亡 台中診所院長涉過失致死起訴",
+      "date": "2026-10-27",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1BaGpNVUhrOVllbWlLaVNJMkU4b09aSl9WTVpmYWRmUzdZNW5tTzhjZWxEMkVjdE5VOHd1M3p4WjFxcmpHRFZ0T3l0Y3d2VGU3VGJGV3FXbGdNS2kySUt1NGlfNFQzVEti0gFuQVVfeXFMT2NWcVpfUWoyRVpFelNxUDc3LThBN0hFdFpfdmJjZFd0blZaZkp3blRvaGJRWkg3YXBlY3RiQ0d3cTRPeVgyNHBKVE1mc3lWcFdSR2EzTnlyam1KT1MyMU5vNExPM0szdjQ3Q05KOHc?oc=5",
       "topics": [
         "taichung"
       ],
@@ -147,6 +1969,7 @@
       "source": "自由時報",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4yM19fODktM2dYRGxILTV0M19tRGx2d1B5MFVFNUtYQXFSbGIwd2V2NE81OEU4YlNHWkJlZWU5bVJ5c2s2TzlFenlQUGVObExTdmFmWDN4d3BXSE9YS25UU9IBZkFVX3lxTE4tZ0I2cWJQeHJWd205WVVZTjN2cUYwajljWks2aFVRVkVWS1k5NURIOVIxb3BCQ2pMZ29XUlVpaGRoYTRzZHZFU3BfcHozM21ITHV0aUJtQWdYVVRCZUt6NXMyZFQ0QQ?oc=5",
       "topics": [
+        "chang-fen-yu",
         "taichung"
       ],
       "kind": "新聞",
@@ -227,6 +2050,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "f3b7d02d984356d63b51",
+      "title": "Lula意外連任引發恐慌 巴西股匯重挫觸發熔斷 - 民視新聞網",
+      "date": "2026-10-26",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ZdHV2ZDN5TE81SVhjZl9FR09vbzVRRGtFa0RDdjBaaU81a295TGZRTEQ0em9iM3V2MF9uM3J1MGVtZmxJWjVGX1c1RHpDT01UWGhES2Vscm14UGxfNkNUVA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "f34739a460a0716d5bc4",
       "title": "光復節連假收假北返旅客多台鐵再加開1列北上自強號| 生活 - 中央社 CNA",
       "date": "2026-10-26",
@@ -269,6 +2106,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "f176de65e56bc7edd1b3",
+      "title": "蔣萬安自嘲老實、口才不如沈伯洋 辯論鎖定「輝達、鮮奶、大巨蛋」",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9ta255ZWxraGVkaGNDaThZVGItRU1CMWlBbzJhNmFlM0MtcE1pRzZsaDFwVlNfeUFiZThsOUlLdWExRUE1NVNrV9IBTEFVX3lxTE9wXy1peEcya0NJZHFxdG9CeW10TGxYX296SlVubDJNbVdtWm5TbkJ5ZDVMYWo0dFgyRkxGTWxVNlhZWm9MdE9jR1RFSi0?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "f102cec109f2ff147967",
       "title": "中市罰款收入編23億 綠籲專款專用",
       "date": "2026-10-26",
@@ -276,6 +2127,34 @@
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5WSUg3MzhyVzEyeTVNYmF3dTc3cXJRSFg4Smg0R0g3MWlxcHdHUkVJeHVKeVdBSjJWemw3QVFObVFZUWEzZzBKZU11MWE1OE1mVkQ1OUZZMW12am_SAWBBVV95cUxOV0VqRTlLTU9WTU9fNnMxVng3S0V3eG1STEdBNXhSVndyblFuOFpackY5VlpORXhVMnJYbVo2d3lPeTlWVldjQkEzcnRDTWpmOE5Qb2dnX2lsdUNkcFFlNFY?oc=5",
       "topics": [
         "chang-fen-yu",
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ef5ba9de401fe017ca49",
+      "title": "喝到活體蛞蝓！八曜和茶創辦人親上火線「公布調查結果」",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE13M0tyczNKczlUa1J3Q04xUzFnLW0wcV93UHFNSkNFMC1sSVVyZEhlUWYtRVV0dXRiaWV5S1ZhSG5MZ0tUWDVDOdIBTEFVX3lxTE05X3l3aVRvc3RlR3J4R19jYi1zT01sZC15WC1FVFhES3N1SU1USGp2OGgyRk1CNU85ck9JT2twYmlHMzhsdllmTlFxTFI?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "eeca7c9e050e6664e997",
+      "title": "台中免費展覽新景點！「小熊維尼」百年快閃店展至明年1月，300款周邊、限定商品一次逛 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBQQUlYQklTRWJpYUM2UEFoMmdWZFk0TV80US1IT2hXV0I1UnhFa3EwZWVibU5Cby1qTWlOWU9STUhTQjlQZl96STVCTnF0M1JGaVpYZ21pVklzNWdvaXNRR3M1a18xT0xlb0VOUW9pZkZyNU1lLVBLZ0hFcTRxNXM?oc=5",
+      "topics": [
         "taichung"
       ],
       "kind": "新聞",
@@ -373,6 +2252,20 @@
       "date": "2026-10-26",
       "source": "中央社",
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9QM1pBc2FKa05pZ0RWNXhySVdPcTdlNmFSNS1LLVRYZ1BPTEZwNW5raXBuQkFCWHhVR1A3MmxBbVhXSk9ueGdleDgwODR4OEVXQm5pUGozcUdWeWUzdjBz?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "e976321df8fc1090ad51",
+      "title": "颱風過後進入中市北屯兩大市場 江啟臣等3人之妻連袂拜票 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5xY2JwWF9sLVZac080cFpIVXdvejByOWRtYUcycjkzOTZYU3ZzZVI4ZG9vbXRUZ1pqeDlOc3RDYjJ1dUU1RHdkeWpNeFJHT2FvZnJz0gFYQVVfeXFMTmhfaHlobGxDUm9iOGdJOURlYmhIUlh1MndnZTlfaE1zQm11VEpBajE3dG5uZEtMLTN4U2ZpSkpzQVB5TEVpMEQ2TGd5azhPVndmakNFb1dhYQ?oc=5",
       "topics": [
         "taichung"
       ],
@@ -494,6 +2387,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "dfb67ab7ab19c07b5aa9",
+      "title": "雷朋眼鏡繼承人提收購遭拒 義大利報社大股東堅決不賣 - 民視新聞網",
+      "date": "2026-10-26",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhVG5tQmkzaExiZW1RcXFMQ0hBMmJUYWkxZXhQRTJaby1nUFE1MDh2YzBBalNzNjRIQllVblRxZF9pN0cyVzF6TG8tLTFKVVpIdVlBNkxodjdoWk1GOGVDeQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "dec05a3ace19d9fbff31",
       "title": "賣3000元海洛因 板模工判關8年半",
       "date": "2026-10-26",
@@ -513,6 +2420,20 @@
       "date": "2026-10-26",
       "source": "中央社",
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9UXzljRkxEUWxxS0pLTDZkZE1CdHpIZG5PLXowVUYtLWdEYWNua1p3eUFQVEhwaFI1al93cVdRVnV3ZFlpcU10XzNjOXFweEtNNW0xS0lYc1k1YVR0cWNR?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "de6e30c021856db08a75",
+      "title": "比蔡康永還早一小時到！「李明依穿白衣力挺」現身蔣萬安競總成立大會",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1XbjlGbE1RX2dnUjRaYjBkQ3BoZ09vTWswU0hqTE9uellyUllMeHNKOVRWQWllRkhqY2VKTEpYSjdDRlhuQU05a9IBTEFVX3lxTE1sR1FmdG1jM2tvTDBxUEMyUTc5ZkhGaUkwUmQ2RjhKREpTb2RyQ0thQXJnVVBwYjlXTmtpY1ctaWJLY0lndzlTYUVZOEc?oc=5",
       "topics": [
         "taichung"
       ],
@@ -564,6 +2485,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "dc92ea9991836f5201a3",
+      "title": "假日急診分流再擴大！「UCC」台南中西區+1、台北華山市場明年春節啟用",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1KeTFIT3JwTmVuVV9wOS15Z1gxYnNTS19MYXRyQUN6cjNJYW9mNndRSGtUR3FfRVdqd0FYRFlYSzhNOHkxZEQ5TWQxLVY?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "dc74fe3ae93d108b7cf7",
       "title": "台中大華縱橫案因戶數規模大，預計何時取得使照？ - UDN",
       "date": "2026-10-26",
@@ -590,6 +2525,20 @@
       "note": "",
       "archive_url": "",
       "origin": "媒體官方 RSS"
+    },
+    {
+      "id": "da31345d24d2cdff8e3a",
+      "title": "彰化大城潭墘路老舊破損縣府辦理改善工程| 中彰投| 地方 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE80TlI3dC1yY0ZWRDkybGlCczRDVGg3bndFWDVTTGRDdjk5aGhKMWU5TUNRc3FLcW9LQllIaTFDdktabHVYUDB0OWVCT1dqZUN6?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
     },
     {
       "id": "d98aa4c4229998d6f812",
@@ -654,6 +2603,20 @@
       "date": "2026-10-26",
       "source": "民視新聞",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBYSlAzZ0oxNXFteFBlcFI3MHYxUmhWRzU0eHpDc1pwWldpSWNXYThPczVnQzNsSjJmSmw1enFBbTVuMWdfUDI5MERFbndhV20tYkFJc1J5allUZkhsaGQyRg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "d07ccfe9aff2012e5ac7",
+      "title": "老屋翻新遭AI假照詐騙255萬！設計師揭裝修避蟑5大重點付款前必做1件事| 品味生活 - udn房地產",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9iR3Q5UkV6SFc0bUpFbEltVXlVazgwOXVESEhvSGZqRGNfemM0NU9MWXV3dVpmTnJnWERyajdIemY4OTdEMDRXLVlKMFNzUTdpa1R0X09ZZzVYT0hf?oc=5",
       "topics": [
         "taichung"
       ],
@@ -775,6 +2738,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "c323cc25693df202e96b",
+      "title": "場面大爆滿！民眾到場聲援吳子嘉今晚聯手盧秀燕竹北直球對決| 2026九合一選舉 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1lb3MxakM0Q1UxZUpGcktOMTk5TmozQmxqQ2s2cHhjWlpVaEt1Y3AwUmxVamNob0Y2WFJKcHBJS1BTeHppU3FmTEhFN1JkeEJaVWdmNnBSRlU?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "c26e05ef2a50b93e191e",
       "title": "連假耶...蔣萬安競總成立大會 國中生遭目擊被叫回學校掃地 - 民視新聞網",
       "date": "2026-10-26",
@@ -796,6 +2773,48 @@
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5RM2tNUld3VEt2eU4zaXkzYVFaVUtiQlZMNTYxeDQ0ZE4tbGdjdmJBLThHeS1KNXJJTzF1ekNKUExEelh0U2xuTWY5bVhGd2p1X2FnV2JmWnR6MjRyQk55ZkFlT3DSAWpBVV95cUxQdDFoaFF3TnUyeHFpWjE3SzV4R1JaZmRyR3BDNXd4MVBEczNZWURYVDF6d1VOOWRiWmtiTWlmTXZrZDJrb0djUm5RMXVza2s3V1dLMExzZW42QUpMRzkzdy1uNnZBS0tfR0tn?oc=5",
       "topics": [
         "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "c1577c0131209f670fb7",
+      "title": "競總成立dress code白上衣！蔡康永將穿黑西裝？蔣萬安：尊重每個人穿著",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE41RHl1YU51bXVIUXM4X1RrZ2EtZE81ZU1jOEdqeWdnMEJOVHgxelJZVmdXS1ZNR1BwVGR0X1FPZEU5a3lCUUplWtIBTEFVX3lxTE54QjlJZl9EV1VEcm1tMi02Nzg4VXYtb2xYZUloOWtoNVRwR2tNU0gwZnFGUnZYRFVmcFJlMWRrbWxuRFlLSVkybFJveW4?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "bf65ab465ba1844f856c",
+      "title": "江啟臣拉抬聲勢 與盧秀燕、胡志強同台 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE92UHdEbVVZeWNNUURoaEVQbzFLbllCMWtub1dGWVExVXQ5SnR5VDUxdEJ2SFlueTB2dkJmdXVTS1hEcngwYmdobFJyNE5YV24wQ1RB0gFYQVVfeXFMTm5VUUw2SUVTVV9hTV9KcFVOcmZBdDhaNGo0NXJoUDEzQTFsOGU5V1BSOFM2NmZleTdwemlzQnBXTFF5OTF6SFlMdE1qeGxSenFnVldzT0NlLQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "bf0c1f36d72ef94a7b13",
+      "title": "綠營質疑台中毒駕增加 要求補防毒漏洞",
+      "date": "2026-10-26",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5abTMwWXJXVjQ2SVFBeG5zYUtkeW43UlhiVF9TenlFLWJVbzZhUUJIUjBfdEk5cTBlOGJuQWN3VjNQWi1ldnl1NVF5TURTb1dZdEFjdk02eUhNRXl1bzY5WTBVajhPX2dnQ1Z1ZDl1Z9IBb0FVX3lxTE5abTMwWXJXVjQ2SVFBeG5zYUtkeW43UlhiVF9TenlFLWJVbzZhUUJIUjBfdEk5cTBlOGJuQWN3VjNQWi1ldnl1NVF5TURTb1dZdEFjdk02eUhNRXl1bzY5WTBVajhPX2dnQ1Z1ZDl1Zw?oc=5",
+      "topics": [
+        "chou-yong-hong"
       ],
       "kind": "新聞",
       "note": "",
@@ -850,6 +2869,20 @@
       "date": "2026-10-26",
       "source": "中央社",
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1HTE52a0Z5YTVadUQ2bnVXWTlHcVB2UkpoUXotbWNLVGtzNzRBVTcyMlM1T0tJcW9nUk50eUJKNHUydjZPR1NUMGk0VFhMbG5HTzNPVWxtaHpLUE1FNzhv?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "bbc7996d161e1094707f",
+      "title": "台中人氣蔬食拉麵「福屋拉麵」進軍台北！開幕時間、地點曝光了 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBEbnVmV1JHZWNLUk9XSGxpdjlnZS1mVkMzc0dhVDlGT2lxYzNHOHM4QmYzSkF6TmZTUWlwbnE2N1Y1YXNpNVltUUo5UkpiRkYtVk1kQnBGeDlmWWdU?oc=5",
       "topics": [
         "taichung"
       ],
@@ -985,6 +3018,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "b4e8f3ecb39d4aeab747",
+      "title": "讓大家擔心了…蔣萬安造勢「先認錯」學者讚解除封印：從挨打走向肉搏戰",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFB2SmgxMVgwczdOMS1fY2Q5eFJFNWVpYUN0UGhhblBVYU5TejF4dlNPa012UUQ5REstaG5mT2ZvWnVRS2MyTWVkTdIBTEFVX3lxTE1EU053Z0xpd1RVYlY1VjdPVk1qenA1NkJNNjVIZWFCUm5TcGJ3VGtESlZScVk3eVFfTnF5ZmNRalhsdkNBWmVsSUZLUEU?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "b4ca1e24d858bd11747b",
       "title": "宜蘭民團發起反賄選反抹黑大會 邀候選人向神明宣誓",
       "date": "2026-10-26",
@@ -1074,6 +3121,20 @@
       "date": "2026-10-26",
       "source": "聯合報",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9xVjY4QXJQTHlwYi16eEliM0duZ1hodWNXUEk0Qm12WldrZlBndEVydFRVVnV2QWNGd3R4VmI2RWY1TTY2T0wxSm9ZemZHWGRI0gFWQVVfeXFMTklfdzlTODJuMV9pRVhIV3VZRDhBdHRrVVlJU3M1akVZeHItOXY1YnY1Sno0MUYxT2RUcFFIUXg4WWVMeEpmcjZPOURCRjZ3TC1EQmVndHc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ae73b4c5826c49b37095",
+      "title": "AI巨頭Anthropic申請IPO 市場檢驗人工智慧投資熱潮 - 民視新聞網",
+      "date": "2026-10-26",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1PUWhYbHNUTVQ1VElfOHBfRUV5TEFtWjFweUE4R1c1WHFtTUdkYnpJQWJXUU5hOUV4T0Y4QVJIYzJkV3dtNUJZeVBqN2FzSzBlT1NqVEdHVXhIcDFZMjUwVQ?oc=5",
       "topics": [
         "taichung"
       ],
@@ -1349,11 +3410,39 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "9d40a38da2fa33c75b87",
+      "title": "蘇清泉酸沒生小孩「可憐」 周春米批極端歧視：應更鄭重向社會道歉",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5ZckdISGRhU3g3T3Uwc1BRa1pDMmNsbklHcVZiM01sZGhqNURLZGFZbkJwRUlSODBEdVIydE9jTjlhSkxqYk5zVtIBTEFVX3lxTE90TnhWa2lGWjRoSEg1dHc5a05DQU94cW44M0RDbjlFVHRBaHQwTFY4Y2k3aUQzWVlwaVhkYXJaODBzczRvS3VpbXowdGs?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "9d1403438e56ea330f11",
       "title": "台中軟體園區發展不如預期 經發局：需先釐清定位再決定如何協助 - UDN",
       "date": "2026-10-26",
       "source": "聯合報",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA4TmRDdEJKUF9JODM0M0MtcmZyZkhWS3hKVUkzMzdOdGxUZXp5dlJ2STlISnBaTXZ4S01TaXhCV01aSVNWR3lrTGEtVFlYaEhE0gFWQVVfeXFMUDZ1cXVRdi03UjhXRll5NUJkSGZzbVBzMHdhNTROZjlpeVBWYUpPN2cweDJnUmo1RkR1bmVzXy1yNnJONi15aml5RUdMQnpZTEk5VTRNWlE?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9c9a4af51ed6dc22deee",
+      "title": "中市南屯銜接國道路面改善 明日起連4晚進行五權西路三段路面刨補",
+      "date": "2026-10-26",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5QdzhTS2NrYVg3N2xkT3NGbkxqclN4ZHNpX0ZIUlNNaEVZaHB2eE9Hd295bnVRNmVQbHpMcV9sQk10UjNHbThUOHBIcExUM3BSaURsMXZKcmpleldDaDhQN04yMldRMlNyZVHSAW9BVV95cUxPZGNfTUFJNXR0V3VOT3ppSUdaV3I4R3ltaklYWDhTOU5aWnloTmcyc1duM0JvLS1TMVJTNlhBTjBMc3BvTFpSbjNJS19xa0ZhZUczZTJJLVBBYk9IeFlBdVh6ZWJUOElsX2N0SDZ4dEE?oc=5",
       "topics": [
         "taichung"
       ],
@@ -1411,6 +3500,20 @@
       "date": "2026-10-26",
       "source": "中央社",
       "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9mdVdzcHFsaW12TWVwR25sQTlmMmtLeEtpWkNVQlo3ZWlEZHltMmZoYTgtUFlXUDJIMGtkVzhxdXZnT1VOZklMREFPYw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9ab57e7a629d73d1576b",
+      "title": "光復連假今收假！國道下午「12處易塞路段」曝光 國5宜蘭一路塞到坪林",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1FQXFJM01tR2tpYjJ2X01WN3hNNnRKN2xjcjl3djBTQndMNXQ1bW44clJuV19vYjlfLVAtTjA1X21lQm12c3N1ctIBTEFVX3lxTE5lVWREcXBVZkVTdGcxV0d2a3puR0JZaVA4REdLUHpVSThzS25uT2c2dFZCYkkyejBySGc0MHJaNEF3a3VmcFBuWXJJeG0?oc=5",
       "topics": [
         "taichung"
       ],
@@ -1519,6 +3622,34 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "9238137b9d41ba030928",
+      "title": "明基材轉型計／偏光片龍頭不坐著挨打 明基材以新科技轉進半導體界",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1ObzNBRzU1QmZRNWhXYXhzSGtYYldyYlB6dnlDR09YNms4Ml91aURJS2lGUGEzTERKal9jLXVlY2M5NVhNaTZLengxZw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "91759ffbf6ee90c9e63b",
+      "title": "台中東區｜KATZ卡司韓藝料理iFG遠雄廣場．延伸首爾道地口味！ - udn 女子漾",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWXZ3SjlvN080OTU5enozSnBtQ2VzQ2xvb2xFdm42WVBKTmNjaEJYbUhEeVdpNlJvWXg1RmVvQVBNYnhiVW1QTzgtM1VKRkxSYzhCZ2pNWVM5QzViTmQxZnk4WEdHZzFLSEF5Z1l6N0VCSk5uem41X3pVU211SXk3Z0tQUQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "8fb087add331218e4be0",
       "title": "變天注意！大台北、東半部濕涼迎雨 東北風發威「南北溫差近10度」 - 民視新聞網",
       "date": "2026-10-26",
@@ -1552,6 +3683,34 @@
       "date": "2026-10-26",
       "source": "聯合報",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOYmZkcFNoRVZSVDRBWUVoUVBYSjZncWxjLTBlWk5kdFJVRC1qZlVpajFNbnRGMDFDRjNJNDgxNnZRQ0wtbjg2aW1QcmQtVmlxUXlYSnl0ckl2N2pVX1FLTlFfVk1fVElOSGNad3d0V3JwWEZYNlQ4ZnU3WXZ5WjloddIBX0FVX3lxTE53WS1mWWEweXZCc3BIbkYxd1J0QUJCeW9EcW9qdXROODdZY2d2WFUtM2VoSlJYWXpvSjY2MERrTkpBNWNQNTlRTGlMeG9CcFhzUndnRXpQZm1JbENSazJN?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "8e0398f75eb0e622b224",
+      "title": "蔣萬安借敦化國中造勢遭疑行政不中立沈伯洋緩頰：放假租借很合理| 政治",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBwSkNiajNBT1EtdElTWjA4R2ZnTS05RWQ4ZzBoajk4M25BSGdqb0JndHFUdXJSR0k4TjlkbGhlNnZUM2YtS0lQaw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "8ddaf34def74c6a5d83d",
+      "title": "必搶！高雄漢來下殺2折、台北漢來35折含島語早餐 大倉久和1泊2食3.4折",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5wdDZDSWszWWx4aDYzX0dhc2N6cTRFYTYtZHlXSE5OTHRfWGpjNE1uRFZjTVpiRExxR01hOEEzSVJwXzhvakh5dtIBTEFVX3lxTFBRZFdpb1B5bjgtWG5SVWpZXzhmOGp6WGI1N3YyNHQtRmRra3ZQM1ROUFNkY3loT3BpTmxpOXNRVlRsSFhFMVNXb3pGczg?oc=5",
       "topics": [
         "taichung"
       ],
@@ -1729,6 +3888,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "7cae21e259093a47989f",
+      "title": "仿沈伯洋政策島！網自製「台中恐怖島」竟被查水表遭違社維法送辦| 社會",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1FdmpBZVZsV2ZmVENwRGdhYWdwWmVETUVQbjlnRUc1ako2MW11MnFDVmhxaXEtaFpKN2dSLTBNdV8yYzZ2MG5Jag?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "79bed743f7977e67694c",
       "title": "輔選李四川、周韋翰 侯友宜：棒子不能亂交",
       "date": "2026-10-26",
@@ -1847,6 +4020,20 @@
       "date": "2026-10-26",
       "source": "中央社",
       "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5SZEhQNmVjajRZYmtycWJ3cFJGNlhlWHRfTDBiREpXa2gxMDBRaFg1UkFJVFNCQnpjYVJkQjVRamVVZ20xWEVELWVEWQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "735189f62cabac7a0db8",
+      "title": "砸重金首創營養補給與特訓！「中信盃黑豹旗」打造青棒最強後盾",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFByQ3A5YWl1bk1DRUEzVU5SQXVrYnpfNXVXN2UyT0dFemhRWG1NMnFoVzlyZWYtMC1UNUNOQWIxT1pFb2Q5OWtHRNIBTEFVX3lxTFBGQ1lTZHllLUdYZzVvOWNTbDcxUDJLR0Y1X1BEeHg2cTY0UnRNVkZyY0Q2MzZVOU16c2tUcGtiTWt0WXFSb0t4ZDF4X0Q?oc=5",
       "topics": [
         "taichung"
       ],
@@ -2136,6 +4323,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "58feef6f8a70587af7af",
+      "title": "秋冬遊谷關、梨山54店家集點換好禮| 中彰投| 地方 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBoQXNQWkVpOUJHQWlBaUFFOEdjeHlVODNtYVl5SlRkWUZEZ1FmTTZVSWFTalVXOUZVSmUwRE9tM00yNWRtd3kzcUtmYmVBSnBP?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "58e96237b4644ac2783d",
       "title": "明基材轉型計／偏光片龍頭不坐著挨打明基材以新科技轉進半導體界| 財經",
       "date": "2026-10-26",
@@ -2262,6 +4463,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "4a26d39de3a6695b992f",
+      "title": "假日急診分流再擴大！「UCC」台南中西區+1、台北華山市場明年春節啟用",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5fMFpVelQwVkNWMnZkRFYtR0Z1LUdHampSX3pHTjhzcFVaaGxoQnJyRlRuTVJNdUFiVEVqdGRfbW1zcVdvOHRwMNIBTEFVX3lxTE9aLTZLX0NVS0JVb29Hb0xLM0s1cUwyNlJVWFBySm1lT3RJM0tuM042c05QQVhzQzFISlQ5em80NkpKVXQ2OGJMUE5QaTU?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "47f4f3807357fab73d7d",
       "title": "# 洪培英 - 中央社 CNA",
       "date": "2026-10-26",
@@ -2309,6 +4524,20 @@
       "date": "2026-10-26",
       "source": "聯合報",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1laUdJd2gtNENHVHJfTTdKdlg0VUNZU2RZUVJWNUp5d0NQVjZqZnhvWlNQaC0xMllUNk1MVDFZT3FLSVdySDE0MDZWZ2t2aHNu0gFWQVVfeXFMT1FJX1Z0Wm55d1VBbEE0ek8xWU9la1UzcXN5cWl0T0I0MzdpMFZMSFZLNkc0QktYZHZLNW1JelBsLUpBY1owdTgxZ2pNUklUa2RmM2hadXc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "44453f486485bed2a5a1",
+      "title": "「被鐵路耽擱便當店」再創佳績！台鐵便當年收8.76億排骨便當穩居冠軍| 生活",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1qcDVYNFBYUnNicHFPWU5GRnVacGNQcUZmZG5iYm1RWTIzUDAwQzdBSzVEUkxPWlZsQ0FPS2w0TUI0dEFHS1l0SQ?oc=5",
       "topics": [
         "taichung"
       ],
@@ -2381,6 +4610,21 @@
       "source": "聯合報",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vQmxPaEx1Tk05d3VYbVpBNGhjb1ZTTjNRV3hHbGJkTWVEalo3WTUtQW9EU21vZmR3Z1hpRG1QdzcwWVZxUTVoRkNNbDZZMExv0gFWQVVfeXFMTUk5dnVRaER3OWo1eERrTVJMZnhKUk50R1RBTk14YWFIWkhYT2ttMXlqaUZfb1NOVHJtMmxqbnpORlhoUVhJTUdab3RuNGxKYmlSTzB4aUE?oc=5",
       "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "36862862dfb3daa24e22",
+      "title": "綠營質疑台中毒駕增加 要求補防毒漏洞",
+      "date": "2026-10-26",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5NVkVrNVdfR000MmFZZmxFMW5UQjR6Vm1JZ3hjeDRRaXVDdEdJbjhVdWduOU5Jb2VxemZ0ZndROFNETVRpcTJnYVlJTWlVY1k0QTZPLTRzRHpUR3hsZnZnYXlNOUh3SFd5d2fSAW9BVV95cUxPcVJPVUNpRlRqcjNyYTQ5WWc5QXUyNmxXVmlUVHJfMUNRWUpyZW5JWkp1UWJnOXptNU0xb3FGSmxLUGhBUHhNNW5rNFBQbnc1Qm52WGFBTzlSRWRfeFNHVTdmU3p5Y1pqNEtnTGdaSzg?oc=5",
+      "topics": [
+        "chou-yong-hong",
         "taichung"
       ],
       "kind": "新聞",
@@ -2493,6 +4737,20 @@
       "date": "2026-10-26",
       "source": "聯合報",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUnd6SUVOX1NFNXYwOEpaMHZxcm5iMnV3bUdWLURIVkNxYUxzdmdKeExkSWd1SzB4ZW1JYkE1bjNhdzcyU0lwUGc3OTBGWE10Q2k1b3p0YVpyRzE1UkJrczhwYkl4UDRKYjE4MGFPWEtOSEF0bEVBSGRPYTh3ZGVOcA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "2c2f39ab2ff1a8bd2655",
+      "title": "兄弟反目「釘孤枝」哥拿開山刀猛砍弟頸胸重傷 上訴求輕判法官駁回 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1FTTdERzJYYzFKSHZLVWRwY2k2bnRvMl80V1JjVk9HVFc1TUFMejc0ZUpFOWo2aUVBUkl1eGkyUlZyRlNSZmw1TEJkbDVrbmNa0gFWQVVfeXFMTmpJZlVoTk14VGoyTlh1cHpCUVo5ZFUyNlR4TTZFbGxTT1NLRENtbVRpOWljWXJPOW9PZGJIR3NiSW1mNmF1TTFPSU9hdlpzTnZDcXZxTXc?oc=5",
       "topics": [
         "taichung"
       ],
@@ -2698,6 +4956,20 @@
       "origin": "媒體官方 RSS"
     },
     {
+      "id": "2057f3b3e8769f7ace12",
+      "title": "彰化文創精品認證徵選開跑ESG納入評選指標| 中彰投| 地方 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBtTWRnREQyd3R4UjRBalpFaURlTWp2NEVIQUhETzZrUUNnZkZmaVFYc2ROd2o0bWdMTGpoUzYwNkNvb0NrSVFCSVNRQ3lsSHBS?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "1f6144a4fa96d7492f05",
       "title": "台南UCC服務量全國第一 11月擴增據點",
       "date": "2026-10-26",
@@ -2824,6 +5096,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "10d1be59a49736e48998",
+      "title": "中市大肚座談又被摸鼻子 江啟臣怪這個人但說能配合 - UDN",
+      "date": "2026-10-26",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5OTnU2VF9PR3ZNd3FsSkVNZW51NFFad0duMnhsSmJOUEtzVm9KN2I1SUUxWjY4a2tLcFRIeEsyOFNFb2ljRDRHWmd6b3ZDajkyZERv0gFYQVVfeXFMTUs1MklHNnYwMEZmQlRIRVM0UWNMOTBxaXVQZy1xZmpJalhlMFpISEwyUVBDaUZzWktpd3RZQVZwWm1Pby0wVUtULUZWaGU4R29ZQ1JYeUIyQw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "108472458e71902f74ed",
       "title": "收假北返人潮湧現！台鐵今再加開4班車 「台北到台中2小時」時刻表曝",
       "date": "2026-10-26",
@@ -2936,6 +5222,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "093d065095d7a4b955d9",
+      "title": "不為房價觀光！沈伯洋5方向推「台北水文化復興」：讓市民重回水邊生活",
+      "date": "2026-10-26",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1GZVVJYWJFdTBLSzVjenE0dnVtNzZjcHBxUkFWVk9LWlFfTWtiTjQ3NVc0M2NWSFhwRDNWX0JmQmdBQlQwNGNuaNIBTEFVX3lxTE1KMVFIY3dBSjc2QWR2R1F5UTA1MXNaa1d3RmdvckJnS1lwNDhGN01aQkxCT2VZa2hOZnhZc050clhMeUpxclo5UzVjOWo?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "086499f9e05df3cc49b2",
       "title": "與 台中軟體園區 相關的新聞 - 聯合影音",
       "date": "2026-10-26",
@@ -2971,6 +5271,20 @@
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5UUXBtZ3RNeVl0MWtraVNXQkloMXJCVGVaNHF4MmlfeU1tVUFEd19LY3huSUYtSGFCOW1VdWhCUkZEUWJ3bE5KWUlwcy15UFk0SU5YRkRITTJfbTRzSjA2ZW1FbW5aMmF0bFBUSXI1NNIBb0FVX3lxTE5UUXBtZ3RNeVl0MWtraVNXQkloMXJCVGVaNHF4MmlfeU1tVUFEd19LY3huSUYtSGFCOW1VdWhCUkZEUWJ3bE5KWUlwcy15UFk0SU5YRkRITTJfbTRzSjA2ZW1FbW5aMmF0bFBUSXI1NA?oc=5",
       "topics": [
         "chou-yong-hong"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "069e60de6716336a8255",
+      "title": "LIVE／李四川競總主委涉恐嚇！嗆嫌深坑票太多 陳乃瑜13:30提告現場直擊 - 民視新聞網",
+      "date": "2026-10-26",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9VcmNxTXRZbzNveDNPZ21SdVNNc21ZVFlIaU5CTVQ3UmxWbWFDV2xiZFBGMkViSm1NVW1JSFBSSGZ1ZHNtdUV3ZWdYRTVDVjJ2eDhpVlVnLVhBUlhwTVNmNA?oc=5",
+      "topics": [
+        "taichung"
       ],
       "kind": "新聞",
       "note": "",
@@ -3936,6 +6250,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "b4e40e111edf1cd701f7",
+      "title": "# 楊惟敬 - 中央社 CNA",
+      "date": "2026-10-25",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9kMTFZcV9vU1RqTW9PZEJhYXV5NjU1d1NVQXBmRE02LUNCeUF5djM2bW9WOG9VQmJiWFYwbmJFeVZ6NkZFZlV4dmVsTQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "b3513c52de956696adf9",
       "title": "薔琵來勢洶洶！13縣市24日颱風假、9縣市正常上班上課",
       "date": "2026-10-25",
@@ -4109,6 +6437,48 @@
       "date": "2026-10-25",
       "source": "自由時報",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBWbW5odzdHdXprVEVJV05Bd3VSUERPSzdTTFNwVWFTVnFHQnZJOUxzOUdodTRnVzY5N2dKeUxWQWZHcXUtMk9WbnFBZV9lNXdBSHFZRE9vZU1lejhxU003QlByRVdlWjJFRlHSAW9BVV95cUxPQTRwOEgtV2dTbUNTQnJWRDFYeE9NOE1FV1NsVm1ndFI0bnJXTlFubFpHUW1aUnBLSENkZnAxaXl4aDBwLXFhbC02bHZnRWVuMmtKandTbkI0aWF6UzlwWk03NzBsdmt6aGNIVFpLQlk?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9fe6c568cc7f3f843135",
+      "title": "吸引逾2萬人觀看！沈伯洋「市政Debug松」太狂 網驚嘆：完成度超高",
+      "date": "2026-10-25",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5MY1JqV2U4XzJuYWNlaFRBaVZ6TEQwRjBvb1VsaXFsZ1lqanhJbVNnYVdxLXI3MGQ3TExpWmxUMnZKbTZONzZxTtIBTEFVX3lxTE5ZdFZNeUtXRXNzSm5zbFFZNHpVdFJ1dVN1emJnSmZ4di1oclVoRnBQSTFuS3dLdDdEaVo0dVM1ZWdyZm91T1VBOFhpVVQ?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9ec2ed7da3c5c5ff10b0",
+      "title": "好心沒好報！色翁裝病騙彩券行女店員上門 鎖門強摸下體賠60萬 - UDN",
+      "date": "2026-10-25",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB2QjZDWXhOdUEySzUyNVZFVFQ3Y3hNbXEwVjlQMk8tSmpOWHBhTWh3MFp6N2doSl9EU3lLal9BYW45a3lpcU5OQUIxQ3lqSkFw?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "9d451c00ce7106b99bb3",
+      "title": "有兩百萬粉絲的Loveez甜蜜襲擊7-11！這天起LINE貼圖免費下載| 生活",
+      "date": "2026-10-25",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBHUFJnSWlrRWhxc3Y5Ykp2ZURaRWNrMXBLSW9wYnRaWFdKakVVYWloRUJSV3o4eUZwajF2cHIxaTFZa3ZjLVFfQQ?oc=5",
       "topics": [
         "taichung"
       ],
@@ -4470,6 +6840,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "7c0453595e1463dff682",
+      "title": "蔣友柏突發聲「點名兄弟1事」重擊！震撼爆出「都是強求」內幕全說了：有一點崩 - 民視新聞網",
+      "date": "2026-10-25",
+      "source": "民視新聞",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9KRGNTUkdjZ2JlMTFqZnN2Qk0wQ0ZlYjJOV25fdGRMLXJSYnVfSTZoZ2ZUWXNkMWlCZGRON0ZDdnk4Sk1LR0dER3pKVmtkejlBYnZPRE1PNldQV2JtR21heA?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "7aa27f572f96a359a83f",
       "title": "# 余曉涵 - 中央社 CNA",
       "date": "2026-10-25",
@@ -4806,6 +7190,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "65def85fb8d24da61198",
+      "title": "星宇航空台中名古屋開航 11月起天天直飛 - 經濟日報",
+      "date": "2026-10-25",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWWlYX1U0cTNWZFJib25RYWR4YVl5RC1yWjE4WlRjTklPYXV1b2I5ZjY4RDNuQlhLZUhoYU1FdlpVaUdSc2dDMzBSQkp2NkswUzQ3OVRNR2MwQ00yTWFYc3Fsa2Y4ZERDSE9QaHh1d0hJWE9oNzBvaWU2SjJOdURjONIBX0FVX3lxTE41aFBvc210ZUF1WEV5U0hKZko4bHV0SEdTMzl6V2RxUGZMWFJqLVItS2tLdktvSVNRU3ZIUWdFbjV0YnRoblVtUDdQdWVRV1NFdTFTV2otMTdvS2paYnZz?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "6519749e269a81d9d30a",
       "title": "星宇航空台中名古屋開航 11月起天天直飛 - 經濟日報",
       "date": "2026-10-25",
@@ -5007,6 +7405,20 @@
       "date": "2026-10-25",
       "source": "自由時報",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ndnk2RlFIci1xdVdGcWRnNnVqS0ItRzFVVDRXMThwVUlGRndhT0k0ZnJoN3dTbjNCSE1wWHBkVXFFckxCMWhKQjk5SG0tYzJydjQ5RW1QZDlEZ3lwS21jSXZlTFFkM3FO0gFuQVVfeXFMTk1SN1kxelZ2RjNJZXh0aHVjLXdhdlluTmdWelRBaTBYQURXeko1THFyLXJONi14anRUZHZFbUJ4Y1RneHVfNnRBMTZJeEU3ZERJZHEyMU1KdzluaGpXTEVydWxITnplM3Zmajg1LWc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "5853aa4ccd2b427893ac",
+      "title": "蘋果示警：iPhone快拆掉「一款配件」 恐傷鏡頭拍出來全成模糊廢片| 科技",
+      "date": "2026-10-25",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5SUWNEMlVnR0tFTjdpd2QwVS1IVlpabmpEQzRaSWhyd3N2T1lIZ0xNZ3NBV0FKSkxqQzdtRExpemR4TFJGRlNGRg?oc=5",
       "topics": [
         "taichung"
       ],
@@ -5396,6 +7808,20 @@
       "origin": "媒體官方 RSS"
     },
     {
+      "id": "365dfff49a133db6c41b",
+      "title": "宏信大藥局135週年迎日本藥師後代重訪 長榮獎學金同步鼓勵年輕學子 - 經濟日報",
+      "date": "2026-10-25",
+      "source": "聯合報",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE82OEYwMTJTQUQzdkNxSFB4ZXIxSDMwbkFDSUN6cnBWVVczSEY2QVlTUHFsU1VFTGdnM3R3UXhhVEQ0OUVremxVY2FPajRpeHdUYVp0SXd6a1lVZ9IBX0FVX3lxTE5VU013MFI3RnY2c3ZaLVdOOV9scTQwY3RDNkcwMFZIYzBPWmtqS1VzN3lrMko2b2szYnpLT25ScFdieGVRN1ZacEhLZlZmdXRsNHJORWVQSThtOUpCRkpN?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "35e20e3cc57a21a77927",
       "title": "藍白輔選韓國瑜站台籲讓李四川苦盡甘來| 政治 - 中央社 CNA",
       "date": "2026-10-25",
@@ -5499,6 +7925,20 @@
       "date": "2026-10-25",
       "source": "聯合報",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9hQVBNSEdTcU9WS3hjUWRzdnpkWmtYdnFuMlVTVW9YaUZydlZUbE5kcG02bW1fNnlsNWxGM3hQbHA0aGY2ZWFJVWpEbm9KcWFxSFln?oc=5",
+      "topics": [
+        "chou-yong-hong"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "2dc1a45239ca048ccfde",
+      "title": "李文傑競選總部成立 江啟臣、盧秀燕、胡志強站台加持",
+      "date": "2026-10-25",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE01N3pXdFp1MHhJalk3cXZjRjJSeWs2SmlyMU1XSjczbTRsUGJIelBYSWpkdkcyR2hoU2ZlUndaYU5hc2pHUmU5bTdiRGNTMGxTWlA4LVRTV2ZWLXN5UzNDM09yNVBzVjJjV3fSAW9BVV95cUxPWURNLWFQVjNLeTMzdmZzRkMteU9LRk1jS1lCbDBfY05QTTA0Ql9pajVIV3NiZ19ULTR0TnBVdTJralRLZUhrcHA3RDhBbWtjRVdkMEF5RTgtU3ptRnBqNGU4NXp1SlI5WWZRWGkzWjA?oc=5",
       "topics": [
         "chou-yong-hong"
       ],
@@ -5906,6 +8346,7 @@
       "source": "自由時報",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5OR0VnWlhvXzdvTDE0cC1KMzl6VXVJWG13R2QzMVBwOFZ5MEc3ZDNxVk5ZLXE2ems4SVF4QkY0LUxCUXFPX2tNZHZEZ3RUVHNKV2hxSlVoVjBIYTYzbk9Yb1plZWQzMDdGalHSAW9BVV95cUxOU3pjVjA4cVR5bjgzZnNvdjUwYlNMU2VsWGVEWGhUSVpiN1lVUjhlRE8tM3Z1RFN6UTVQZnBYZ2Y4Q1dwdFFhUVNOSDNIMU9yUW9idVVOZVN0cTJMQlhsb2VzMG9HV0RkNHVHYVBYMzQ?oc=5",
       "topics": [
+        "chou-yong-hong",
         "taichung"
       ],
       "kind": "新聞",
@@ -6196,6 +8637,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "f91c5c5bb1a9407b6b5d",
+      "title": "台南市 | 關鍵字新聞 - 中央社 CNA",
+      "date": "2026-10-24",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Sdll3QV85ZHdaMFkwX25TTENMQ3BCc082elhuYTN0a0VoUmxxQ0hwWVBQWDdaT2k5LVhPNEdtU28zejUydXdjUg?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
       "id": "f8ef9c02685c7ccd3eff",
       "title": "昔甜美主播不忍了！痛訴演藝圈黑幕：試鏡竟遭高層逼脫褲 - 三立新聞網SETN.com",
       "date": "2026-10-24",
@@ -6355,6 +8810,20 @@
       "date": "2026-10-24",
       "source": "三立新聞",
       "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9DSUM3QUlUTEhPalhsd1V1RVdzRnlIZy04dFBHV21fenZwM3JXaHNTb1dFaVA4LVA4QXlZU0VuamlxZmhnZnNDVNIBTEFVX3lxTE5lXzRtelQ1Si1qR0ZCSXVYTndaUkFpcEp1c2hsR3BSWFQzQjhpNzdxSWVxTTFvSm1vUUljQ1lOT0FyUGNTekdoUG1xT3Y?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "ecbcd84ecbcc0f0ee3c0",
+      "title": "中華民國刑法 | 關鍵字新聞 - 中央社 CNA",
+      "date": "2026-10-24",
+      "source": "中央社",
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFA3YXdXMEtFTm4tR2FEV1pManJBd3Rkc0dXZGUzUGszMnQydkN0anVlcU9FTlYwWi0yeEx0d1J6Qlo0U1dvR01V?oc=5",
       "topics": [
         "taichung"
       ],
@@ -8710,6 +11179,20 @@
       "date": "2026-10-24",
       "source": "自由時報",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1WYlhSYmg1SWN6UlZKVF90N0J1aXAxLUtVUEtJNzE2aGcwNlNybWozOUVfeDNQcmpmczRleWtmRUM5Nkx0OVUyVWRGYWRWWjQ3XzFWQUtveHlqdFAtS0hRQzAxcGpXWmY30gFuQVVfeXFMUFl2T0RJcnk4ZnZBcGtsaVZBYW9mUEd3WDExOFZLODZtY20zUXUtZE9wZ2Y5dWZlSDlqNG1iXzdYTjczc0JCZUJsT2lFZ29aaDhYdWlXX2g2X0FzS0s2c2lqQ0hJaWNpNEV4MENreGc?oc=5",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "4e2f505e5a83dd1fa7fb",
+      "title": "沈伯洋市政Debug松座談會與成果展示",
+      "date": "2026-10-24",
+      "source": "三立新聞",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9BNVlmSDNwUk14eWE5T2dENVNQNU5kbXZIbWZERjZaSjhROEhLSHhwSE8zM3lfSlFwY21QMTdtX1c1OFlvNU1ZTVNSenhSQQ?oc=5",
       "topics": [
         "taichung"
       ],
@@ -19314,13 +21797,13 @@
     }
   ],
   "meta": {
-    "last_checked": "2026-10-27T05:00:54+08:00",
+    "last_checked": "2026-10-27T13:00:34+08:00",
     "mode": "recent",
     "lookback_days": 3,
     "queries_attempted": 46,
     "query_failures": 0,
-    "added": 41,
-    "total_auto": 1376,
+    "added": 176,
+    "total_auto": 1552,
     "warning": "Google 新聞及 RSS 可能漏新聞；不保證全部相關報導。沒有設定重要性或新聞量篩選門檻。"
   }
 }
