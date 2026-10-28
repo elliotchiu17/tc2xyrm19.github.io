@@ -28865,12 +28865,12 @@
     }
   ],
   "meta": {
-    "last_checked": "2026-10-28T23:05:43+08:00",
+    "last_checked": "2026-10-29T05:07:36+08:00",
     "mode": "recent",
     "lookback_days": 3,
     "queries_attempted": 46,
-    "query_failures": 0,
-    "added": 110,
+    "query_failures": 45,
+    "added": 0,
     "total_auto": 2054,
     "warning": "Google 新聞及 RSS 可能漏新聞；不保證全部相關報導。沒有設定重要性或新聞量篩選門檻。"
   }
