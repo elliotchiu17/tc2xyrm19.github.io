@@ -101,11 +101,24 @@ export async function enqueueSearchJob({topicId,keyword,source,start,end,mode}) 
     info:'等待背景更新程式處理', cursor:'', errors:[]
   });
 }
-export function watchSearchJobs(next,error) {
-  return onSnapshot(query(collection(db,'search_jobs'),orderBy('createdAt','desc'),limit(12)),snap => {
+export function watchSearchJobs(next, error) {
+  return onSnapshot(
+    query(
+      collection(db, 'search_jobs'),
+      orderBy('createdAt', 'desc'),
+      limit(12)
+    ),
+    snap => {
+      next(snap.docs.map(d => ({
+        ...d.data(),
+        id: d.id
+      })));
+    },
+    error
+  );
+}
 
-
-  export async function deleteSearchJob(id) {
+export async function deleteSearchJob(id) {
   if (!auth.currentUser || !id) {
     throw new Error('缺少管理員身分或工作 ID');
   }
