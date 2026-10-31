@@ -4,6 +4,7 @@ import { firebaseConfig } from './firebase-config.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
 import { getFirestore, collection, doc, getDoc, setDoc, addDoc, serverTimestamp, getDocs, writeBatch, query, orderBy, startAt, endAt, startAfter, limit, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
+import { getFirestore, collection, doc, getDoc, deleteDoc, setDoc, addDoc, serverTimestamp, getDocs, writeBatch, query, orderBy, startAt, endAt, startAfter, limit, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -103,6 +104,16 @@ export async function enqueueSearchJob({topicId,keyword,source,start,end,mode}) 
 }
 export function watchSearchJobs(next,error) {
   return onSnapshot(query(collection(db,'search_jobs'),orderBy('createdAt','desc'),limit(12)),snap => {
+
+
+    //新增刪除功能
+    export async function deleteSearchJob(id) {
+  if (!auth.currentUser || !id) {
+    throw new Error('缺少管理員身分或工作 ID');
+  }
+
+  await deleteDoc(doc(db, 'search_jobs', id));
+}
     next(snap.docs.map(d => ({...d.data(),id:d.id})));
   },error);
 }
