@@ -122,7 +122,25 @@ async function submitImportJob(){
 function showJobStatus(jobs){const list=$('jobStatusList');list.replaceChildren();if(!jobs.length){list.append(node('p','', '尚無匯入任務。'));return}
   for(const j of jobs){const el=node('div','job-status-item');const stat={pending:'等候執行',running:'正在蒐集',done:'完成',partial:'部分完成／未能取得全部',failed:'失敗'}[j.status]||j.status;
     append(el,node('strong','',`${j.keyword||'—'} · ${j.source||'—'}　${stat}`),node('div','',`${j.start||'—'} ～ ${j.end||'—'}｜已取得 ${j.found||0}／新增 ${j.added||0}／重複 ${j.duplicate||0}／略過 ${j.skipped||0}｜處理 ${j.pages||0} 頁`),node('div','',j.info||''));
-    if(j.errors?.length)el.append(node('small','job-error','最近問題：'+String(j.errors.at(-1)).slice(0,240)));
+//插入可刪除功能
+ if (state.admin && j.status !== 'running') {
+  el.append(btn('× 刪除紀錄', async () => {
+    if (!confirm('確定刪除此筆匯入紀錄？\n這不會刪除已收錄的新聞。')) {
+      return;
+    }
+
+    try {
+      await cloud.deleteSearchJob(j.id);
+      notify('已刪除匯入紀錄');
+    } catch (e) {
+      notify('刪除失敗：' + safeErr(e));
+    }
+  }, 'small-danger'));
+}
+
+                       
+//插入可刪除功能                       
+if(j.errors?.length)el.append(node('small','job-error','最近問題：'+String(j.errors.at(-1)).slice(0,240)));
     list.append(el);
   }
 }
