@@ -105,4 +105,10 @@ export function watchSearchJobs(next,error) {
   return onSnapshot(query(collection(db,'search_jobs'),orderBy('createdAt','desc'),limit(12)),snap => {
 
 
-  
+  export async function deleteSearchJob(id) {
+  if (!auth.currentUser || !id) {
+    throw new Error('缺少管理員身分或工作 ID');
+  }
+
+  await deleteDoc(doc(db, 'search_jobs', id));
+}
