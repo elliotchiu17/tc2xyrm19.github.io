@@ -25,5 +25,11 @@ service cloud.firestore {
         && request.resource.data.mode in ['rss','site']
         && request.resource.data.createdBy == request.auth.uid;
       // 工作狀態只由受保護的 GitHub Actions 服務帳戶更新。
-  allow update, delete: if false;
-
+      allow update, delete: if false;
+    }
+    match /admin_probe/{probeId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+  }
+}
