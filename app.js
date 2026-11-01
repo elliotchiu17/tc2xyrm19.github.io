@@ -39,7 +39,10 @@ state.entries = state.entries.map(x =>
 
   try {
     await cloud.deleteArticle(a.id);
-    subscribe();
+   state.extraRows = state.extraRows.filter(x => x.id !== a.id);
+state.entries = state.entries.filter(x => x.id !== a.id);
+
+renderList();
     notify('新聞已從 Firebase 永久刪除');
   } catch (e) {
     notify('刪除失敗：' + safeErr(e));
@@ -69,7 +72,51 @@ function showCatalog(){if(!state.admin)return;editCatalog=structuredClone(state.
 function makeId(name){return 'topic-'+[...new TextEncoder().encode(name)].reduce((a,b)=>((a*31+b)>>>0),7).toString(36)}
 function renderCatalog(){
   const topics=$('catalogTopics'),sources=$('catalogSources');topics.replaceChildren();sources.replaceChildren();
-  for(const t of editCatalog.topics){const row=node('div','setting-item');append(row,node('span','',t.name),btn('移除',()=>{if(!confirm(`移除「${t.name}」的追蹤分類？`))return;editCatalog.topics=editCatalog.topics.filter(x=>x.id!==t.id);renderCatalog()},'small-danger'));topics.append(row)}
+//修改左側欄位//
+  for (const [i, t] of editCatalog.topics.entries()) {
+  const row = node('div', 'setting-item');
+
+  const content = node('div', 'topic-setting-content');
+  content.append(node('strong', '', t.name));
+
+  const groupInput = node('input');
+  groupInput.type = 'text';
+  groupInput.placeholder = '資料夾名稱（留空＝不收進資料夾）';
+  groupInput.value = t.group || '';
+  groupInput.maxLength = 40;
+  groupInput.addEventListener('input', () => {
+    t.group = groupInput.value.trim();
+  });
+  content.append(groupInput);
+
+  const controls = node('div', 'topic-order-controls');
+
+  controls.append(btn('↑', () => {
+    if (i === 0) return;
+    [editCatalog.topics[i - 1], editCatalog.topics[i]] =
+      [editCatalog.topics[i], editCatalog.topics[i - 1]];
+    renderCatalog();
+  }));
+
+  controls.append(btn('↓', () => {
+    if (i === editCatalog.topics.length - 1) return;
+    [editCatalog.topics[i], editCatalog.topics[i + 1]] =
+      [editCatalog.topics[i + 1], editCatalog.topics[i]];
+    renderCatalog();
+  }));
+
+  controls.append(btn('移除', () => {
+    if (!confirm(`移除「${t.name}」的追蹤分類？`)) return;
+    editCatalog.topics = editCatalog.topics.filter(x => x.id !== t.id);
+    renderCatalog();
+  }, 'small-danger'));
+
+  append(row, content, controls);
+  topics.append(row);
+}
+
+  //修改到這裡/
+  
   for(const src of editCatalog.sources){const row=node('div','setting-item source-setting');const content=node('div','source-setting-content');content.append(node('strong','',src.name));const inp=node('input');inp.type='url';inp.placeholder='https://新聞媒體的官網網址';inp.value=src.home_url||('https://'+(src.site_query||''));inp.addEventListener('input',()=>src.home_url=inp.value.trim());content.append(inp);append(row,content,btn('移除',()=>{if(!confirm(`移除「${src.name}」？`))return;editCatalog.sources=editCatalog.sources.filter(x=>x.name!==src.name);renderCatalog()},'small-danger'));sources.append(row)}
 }
 async function saveCatalog(){if(!state.admin)return;const button=$('saveCatalogBtn');button.disabled=true;try{if(editCatalog.sources.some(x=>x.home_url&&!/^https:\/\/[^\s/]+/i.test(x.home_url)))throw Error('媒體官網網址請使用 https:// 開頭');await cloud.saveCatalog(editCatalog);state.catalog=structuredClone(editCatalog);if(!state.catalog.topics.some(x=>x.id===state.topic))state.topic='all';$('catalogDialog').close();render();notify('關鍵字與媒體已儲存至雲端')}catch(e){notify('設定未儲存：'+safeErr(e))}finally{button.disabled=false}}
