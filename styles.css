@@ -35,3 +35,63 @@
   font-family: "Noto Serif TC", "PMingLiU", Georgia, serif;
   font-weight: 750;
 }
+
+/*分類關鍵字的排版*/
+/* 關鍵字管理：排序與資料夾設定 */
+.topic-setting-content {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.topic-setting-content input {
+  width: 100%;
+  padding: 9px 11px;
+  background: #fffdf8;
+  border: 1px solid #ded2bd;
+  border-radius: 7px;
+  color: #342e27;
+}
+
+.topic-order-controls {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topic-order-controls button {
+  padding: 7px 11px;
+}
+
+/* 左側可收合資料夾 */
+.topic-folder {
+  margin: 4px 0;
+  border-radius: 10px;
+}
+
+.topic-folder-title {
+  cursor: pointer;
+  padding: 12px 14px;
+  color: #765833;
+  background: #e9dbc4;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: 750;
+  list-style: none;
+}
+
+.topic-folder-title::-webkit-details-marker {
+  display: none;
+}
+
+.topic-folder[open] > .topic-btn {
+  margin: 5px 0 5px 13px;
+  width: calc(100% - 13px);
+  font-size: 15px;
+}
+
+.topic-folder-title:hover {
+  background: #e2d0af;
+}
