@@ -24,7 +24,15 @@ function nav(){const root=$('topicNav');root.replaceChildren();for(const t of [{
 function yearMonths(){const yroot=$('yearChips');yroot.replaceChildren();const yearNow=+now.slice(0,4);for(let y=Math.max(yearNow,state.year);y>=2016;y--){const b=btn(y,()=>{state.year=y;state.month='all';render();subscribe()},y===state.year?'active':'');b.setAttribute('aria-pressed',String(y===state.year));yroot.append(b)}const mroot=$('monthChips');mroot.replaceChildren();for(const m of [{value:'all',name:'全年'},...Array.from({length:12},(_,i)=>({value:i+1,name:String(i+1).padStart(2,'0')+'月'}))]){const b=btn(m.name,()=>{state.month=m.value;render();subscribe()},m.value===state.month?'active':'');mroot.append(b)}}
 function sourceSelects(){const existing=state.source;const names=[...new Set([...state.catalog.sources.map(x=>x.name),...state.entries.map(x=>x.source)])];const s=$('sourceSelect');s.replaceChildren(new Option('所有媒體來源','all'));for(const n of names)s.append(new Option(n,n));state.source=names.includes(existing)?existing:'all';s.value=state.source;const form=$('articleSource'),old=form.value;form.replaceChildren();for(const n of names)form.append(new Option(n,n));form.append(new Option('其他（自行輸入）','__other'));if(names.includes(old))form.value=old}
 function articleCard(a){const row=node('article','article-card'+(a.hidden?' excluded':''));row.append(node('div','article-icon',a.kind==='影音'?'▷':'▤'));const body=node('div','article-body'),meta=node('div','article-meta');append(meta,node('span','source-name',a.source),node('span','','·'),node('time','article-date',a.date.replaceAll('-','.')),node('span','article-kind',a.hidden?'已排除':a.kind));body.append(meta);const title=node('h4','article-title');if(a.url){const link=node('a','',a.title);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';title.append(link)}else title.textContent=a.title;body.append(title);if(a.note)body.append(node('p','article-note',a.note));const tags=node('div','article-tags');for(const t of state.catalog.topics.filter(t=>(a.topics||[]).includes(t.id)))tags.append(node('span','article-tag',t.name));if(a.archive_url){const link=node('a','article-link','↗ 查看保存附件');link.href=a.archive_url;link.target='_blank';link.rel='noopener noreferrer';tags.append(link)}body.append(tags);
-  if(state.admin){const actions=node('div','article-actions');actions.append(btn('✎ 編輯',()=>openEditor(a),'edit-btn'));actions.append(btn(a.hidden?'↶ 復原':'× 排除',async()=>{if(!confirm(a.hidden?`復原「${a.title}」並重新公開？`:`將「${a.title}」從公開頁面排除？`))return;try{await cloud.setHidden(a,!a.hidden);subscribe();notify(a.hidden?'已復原並同步雲端':'已排除並同步雲端')}catch(e){notify('操作未完成：'+safeErr(e))}}));
+  if(state.admin){const actions=node('div','article-actions');actions.append(btn('✎ 編輯',()=>openEditor(a),'edit-btn'));actions.append(btn(a.hidden?'↶ 復原':'× 排除',async()=>{if(!confirm(a.hidden?`復原「${a.title}」並重新公開？`:`將「${a.title}」從公開頁面排除？`))return;try{await cloud.setHidden(a, !a.hidden);
+state.extraRows = state.extraRows.map(x =>
+  x.id === a.id ? {...x, hidden: !a.hidden} : x
+);
+state.entries = state.entries.map(x =>
+  x.id === a.id ? {...x, hidden: !a.hidden} : x
+);renderList();notify(a.hidden?'已復原並同步雲端':'已排除並同步雲端')}catch(e){notify('操作未完成：'+safeErr(e))}}));
+
+                  
 // 新增永久刪除功能
  actions.append(btn('永久刪除', async () => {
   if (!confirm(`確定要永久刪除「${a.title}」嗎？\n\n這項操作無法復原。`)) return;
