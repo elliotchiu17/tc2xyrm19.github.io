@@ -95,3 +95,85 @@
 .topic-folder-title:hover {
   background: #e2d0af;
 }
+
+
+
+/* 主題備忘錄 */
+
+.topic-memo {
+  margin: 28px 0;
+  padding: 26px 30px;
+  border: 1px solid #d9ccb5;
+  border-radius: 18px;
+  background: #faf7f0;
+}
+
+.topic-memo[hidden] {
+  display: none !important;
+}
+
+.topic-memo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.topic-memo-header h3 {
+  margin: 6px 0 0;
+  font-size: 24px;
+  color: #352f27;
+}
+
+#topicMemo {
+  width: 100%;
+  min-height: 110px;
+  padding: 14px 16px;
+  border: 1px solid #e0d4c1;
+  border-radius: 10px;
+  background: #fffdf8;
+  color: #514637;
+  font: inherit;
+  font-size: 17px;
+  line-height: 1.8;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+#topicMemo[readonly] {
+  background: transparent;
+  border-color: transparent;
+  padding-left: 0;
+  resize: none;
+}
+
+#saveTopicMemo {
+  padding: 11px 18px;
+  background: #876b43;
+  color: #fffdf8;
+  border: none;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#saveTopicMemo:hover {
+  background: #6e5433;
+}
+
+@media (max-width: 700px) {
+  .topic-memo {
+    padding: 20px;
+  }
+
+  .topic-memo-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  #topicMemo {
+    font-size: 16px;
+  }
+}
