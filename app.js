@@ -131,6 +131,39 @@ closeMobile();
 
 
 /*新增的內容到這裡*/
+function renderTopicMemo() {
+  const wrap = $('topicMemoWrap');
+  const field = $('topicMemo');
+  const save = $('saveTopicMemo');
+
+  if (state.topic === 'all') {
+    wrap.hidden = true;
+    return;
+  }
+
+  const topic = state.catalog.topics.find(
+    t => t.id === state.topic
+  );
+
+  if (!topic) {
+    wrap.hidden = true;
+    return;
+  }
+
+  wrap.hidden = false;
+  field.readOnly = !state.admin;
+  save.hidden = !state.admin;
+
+  // 不覆蓋管理員正在輸入、但尚未儲存的文字
+  if (
+    document.activeElement !== field ||
+    field.dataset.topic !== state.topic
+  ) {
+    field.value = topic.memo || '';
+  }
+
+  field.dataset.topic = state.topic;
+}
 
 function yearMonths(){const yroot=$('yearChips');yroot.replaceChildren();const yearNow=+now.slice(0,4);for(let y=Math.max(yearNow,state.year);y>=2016;y--){const b=btn(y,()=>{state.year=y;state.month='all';render();subscribe()},y===state.year?'active':'');b.setAttribute('aria-pressed',String(y===state.year));yroot.append(b)}const mroot=$('monthChips');mroot.replaceChildren();for(const m of [{value:'all',name:'全年'},...Array.from({length:12},(_,i)=>({value:i+1,name:String(i+1).padStart(2,'0')+'月'}))]){const b=btn(m.name,()=>{state.month=m.value;render();subscribe()},m.value===state.month?'active':'');mroot.append(b)}}
 function sourceSelects(){const existing=state.source;const names=[...new Set([...state.catalog.sources.map(x=>x.name),...state.entries.map(x=>x.source)])];const s=$('sourceSelect');s.replaceChildren(new Option('所有媒體來源','all'));for(const n of names)s.append(new Option(n,n));state.source=names.includes(existing)?existing:'all';s.value=state.source;const form=$('articleSource'),old=form.value;form.replaceChildren();for(const n of names)form.append(new Option(n,n));form.append(new Option('其他（自行輸入）','__other'));if(names.includes(old))form.value=old}
@@ -164,7 +197,7 @@ body.append(actions)}row.append(body);return row}
 
 
 function renderList(){const list=$('articleList');list.replaceChildren();const items=visibleEntries().sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));updateNewsCount();$('headlineCount').textContent=state.entries.length.toLocaleString('zh-TW');if(state.loading){list.append(node('div','empty-state','正在讀取 Firebase 新聞資料…'));return}if(!items.length){const empty=node('div','empty-state');append(empty,node('div','empty-icon','✳'),node('h3','',state.entries.length?'目前篩選沒有相符紀錄':'這個期間還沒有新聞紀錄'),node('p','',state.admin?'可以點「新增新聞報導」，儲存後立即發布到雲端。':'這代表資料庫尚未收錄相應新聞，不代表媒體沒有報導。'));if(state.admin)empty.append(btn('＋ 新增新聞',()=>openEditor(),'primary-btn'));list.append(empty)}else for(const entry of items)list.append(articleCard(entry));$('loadMoreBtn').hidden=!state.hasMore;$('loadMoreBtn').disabled=state.loading}
-function render(){nav();yearMonths();sourceSelects();$all('#typeTabs button').forEach(b=>b.classList.toggle('active',b.dataset.kind===state.kind));$('adminBar').hidden=!state.admin;$('addArticleTop').hidden=!state.admin;$('autoImportSideBtn').hidden=!state.admin;$('manageCatalogBtn').hidden=!state.admin;$('adminToggle').setAttribute('aria-pressed',String(state.admin));$('adminToggleText').textContent=state.admin?'管理員：'+(state.user?.displayName||'已登入'):(state.user?'檢視登入／UID':'Google 管理員登入');$('syncStatus').textContent=state.admin?'管理員已驗證 · Firebase 雲端':state.user?'Google 已登入 · 尚未授權管理員':'公開閱覽 · Firebase 雲端';renderList()}
+renderTopicMemo();function render(){nav();yearMonths();sourceSelects();$all('#typeTabs button').forEach(b=>b.classList.toggle('active',b.dataset.kind===state.kind));$('adminBar').hidden=!state.admin;$('addArticleTop').hidden=!state.admin;$('autoImportSideBtn').hidden=!state.admin;$('manageCatalogBtn').hidden=!state.admin;$('adminToggle').setAttribute('aria-pressed',String(state.admin));$('adminToggleText').textContent=state.admin?'管理員：'+(state.user?.displayName||'已登入'):(state.user?'檢視登入／UID':'Google 管理員登入');$('syncStatus').textContent=state.admin?'管理員已驗證 · Firebase 雲端':state.user?'Google 已登入 · 尚未授權管理員':'公開閱覽 · Firebase 雲端';renderList()}
 function closeMobile(){$('sidebar').classList.remove('open');$('mobileBackdrop').hidden=true}
 function subscribe(){refreshCount();if(stopWatch){stopWatch();stopWatch=null}const token=++loadToken;state.entries=[];state.firstPage=[];state.extraRows=[];state.nextPage=null;state.hasMore=false;state.loading=true;renderList();stopWatch=cloud.watchNews({admin:state.admin,prefix:keyPrefix(),pageSize:PAGE},(rows,last)=>{if(token!==loadToken)return;state.firstPage=rows;state.entries=[...new Map([...rows,...state.extraRows].map(r=>[r.id,r])).values()];if(!state.extraRows.length){state.nextPage=last;state.hasMore=rows.length===PAGE;}state.loading=false;render();refreshCount()},e=>{if(token!==loadToken)return;state.loading=false;state.entries=[];notify('讀取失敗：'+safeErr(e));$('syncStatus').textContent='雲端讀取失敗';renderList()})}
 async function loadMore(){if(!state.hasMore||state.loading)return;const token=loadToken;state.loading=true;$('loadMoreBtn').disabled=true;try{const result=await cloud.moreNews({admin:state.admin,prefix:keyPrefix(),pageSize:PAGE,last:state.nextPage});if(token!==loadToken)return;const map=new Map(state.entries.map(x=>[x.id,x]));for(const r of result.entries)map.set(r.id,r);state.extraRows=[...new Map([...state.extraRows,...result.entries].map(x=>[x.id,x])).values()];state.entries=[...map.values()];state.nextPage=result.last;state.hasMore=result.entries.length===PAGE} catch(e){notify('無法載入更多：'+safeErr(e))}finally{if(token===loadToken){state.loading=false;renderList()}}}
@@ -179,6 +212,46 @@ async function submitArticle(e){e.preventDefault();if(!state.admin)return;const 
 function loginUI(){const user=state.user;$('uidPanel').hidden=!user;$('googleLoginBtn').hidden=!!user;$('recheckAdminBtn').hidden=!user;$('logoutBtn').hidden=!user;if(user){$('uidValue').textContent=user.uid;$('loginUserStatus').textContent=`目前登入：${user.email||user.displayName||'Google 帳號'}。${state.admin?'已通過管理員權限驗證，可以編輯雲端資料。':'尚未通過管理員 UID 驗證，請先發布 Firestore 安全規則。'}`}else $('loginUserStatus').textContent='目前尚未登入。'}
 async function authChanged(user){state.user=user;state.admin=false;if(user){try{state.admin=await cloud.checkAdmin()}catch(e){if(!/permission-denied/.test(str(e?.code)))notify('管理員權限檢查：'+safeErr(e))}}render();loginUI();subscribe();beginJobs()}
 async function startLogin(){const button=$('googleLoginBtn');button.disabled=true;try{await cloud.login();notify('Google 已登入，正在驗證管理員身分')}catch(e){notify('登入失敗：'+safeErr(e))}finally{button.disabled=false}}
+async function saveTopicMemo() {
+  if (!state.admin || state.topic === 'all') return;
+
+  const button = $('saveTopicMemo');
+  const topicId = state.topic;
+  const memo = $('topicMemo').value.trim();
+
+  button.disabled = true;
+  button.textContent = '儲存中…';
+
+  try {
+    // 先讀取最新設定，避免覆蓋其他主題的修改
+    const catalog = await cloud.loadCatalog();
+
+    if (!catalog || !Array.isArray(catalog.topics)) {
+      throw new Error('無法讀取主題設定');
+    }
+
+    const topic = catalog.topics.find(
+      t => t.id === topicId
+    );
+
+    if (!topic) {
+      throw new Error('找不到對應關鍵字');
+    }
+
+    topic.memo = memo;
+
+    await cloud.saveCatalog(catalog);
+    state.catalog = structuredClone(catalog);
+
+    renderTopicMemo();
+    notify('備忘錄已儲存至 Firebase');
+  } catch (e) {
+    notify('備忘錄儲存失敗：' + safeErr(e));
+  } finally {
+    button.disabled = false;
+    button.textContent = '儲存備忘錄';
+  }
+}
 function showCatalog(){if(!state.admin)return;editCatalog=structuredClone(state.catalog);renderCatalog();$('catalogDialog').showModal();closeMobile()}
 function makeId(name){return 'topic-'+[...new TextEncoder().encode(name)].reduce((a,b)=>((a*31+b)>>>0),7).toString(36)}
 function renderCatalog(){
@@ -318,6 +391,10 @@ function wire(){for(const close of $all('[data-close]'))close.addEventListener('
   for(const id of ['addArticleTop','addArticleBtn'])$(id).addEventListener('click',()=>openEditor());$('articleForm').addEventListener('submit',submitArticle);$('sourceSearchBtn').addEventListener('click',showSearch);$('openExternalSearchBtn').addEventListener('click',externalSearch);$('updateHelpBtn').addEventListener('click',()=>{$('helpDialog').showModal();closeMobile()});$('autoImportSideBtn').addEventListener('click',showSearch);$('autoImportHelpBtn').addEventListener('click',showSearch);$('autoImportBtn').addEventListener('click',submitImportJob);$('externalSource').addEventListener('change',updateSearchAvailability);$('manageCatalogBtn').addEventListener('click',showCatalog);
   $('addTopicSetting').addEventListener('click',()=>{const name=str($('newTopic').value);if(!name)return;if(editCatalog.topics.some(x=>x.name===name)){notify('追蹤主題已存在');return}let id=makeId(name);while(editCatalog.topics.some(x=>x.id===id))id+='x';editCatalog.topics.push({id,name,terms:[name]});$('newTopic').value='';renderCatalog()});$('addSourceSetting').addEventListener('click',()=>{const name=str($('newSource').value);if(!name)return;if(editCatalog.sources.some(x=>x.name===name)){notify('媒體已存在');return}const url=str($('newSourceUrl').value);if(url&&!/^https:\/\/[^\s/]+/i.test(url)){notify('請輸入 https:// 開頭的媒體官網網址');return}editCatalog.sources.push({name,site_query:'',home_url:url});$('newSourceUrl').value='';$('newSource').value='';renderCatalog()});$('saveCatalogBtn').addEventListener('click',saveCatalog);
   $('searchInput').addEventListener('input',e=>{state.query=e.target.value.trim();renderList()});$('sourceSelect').addEventListener('change',e=>{state.source=e.target.value;renderList()});$('typeTabs').addEventListener('click',e=>{const b=e.target.closest('[data-kind]');if(!b)return;state.kind=b.dataset.kind;render()});$('loadMoreBtn').addEventListener('click',loadMore);
+$('saveTopicMemo').addEventListener(
+  'click',
+  saveTopicMemo
+);                
 }
 async function begin(){wire();render();try{const catalog=await cloud.loadCatalog();if(catalog&&Array.isArray(catalog.topics)&&Array.isArray(catalog.sources))state.catalog=catalog;state.configLoaded=true;render()}catch(e){notify('載入主題設定失敗，暫時顯示預設四組：'+safeErr(e))}cloud.onUser(authChanged)}
 begin();
