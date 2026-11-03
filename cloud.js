@@ -54,6 +54,32 @@ export function watchNews({admin, prefix, pageSize}, next, error) {
     next(page.entries, page.last);
   }, error);
 }
+
+//*新增部分*//
+
+export async function countNews({admin, prefix, topic}) {
+  const [from, to] = dateRange(prefix);
+  const coll = admin ? 'articles' : 'public_articles';
+
+  const conditions = [
+    where('date', '>=', from),
+    where('date', '<=', to)
+  ];
+
+  if (topic !== 'all') {
+    conditions.push(
+      where('topics', 'array-contains', topic)
+    );
+  }
+
+  const q = query(collection(db, coll), ...conditions);
+  const result = await getCountFromServer(q);
+
+  return result.data().count;
+}
+
+
+//*新增完畢*//
 export async function moreNews({admin, prefix, pageSize, last}) {
   if (!last) return {entries: [], last: null};
   const snap = await getDocs(newsQuery(admin ? 'articles' : 'public_articles', prefix, pageSize, last));
