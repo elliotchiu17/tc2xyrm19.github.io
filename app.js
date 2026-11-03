@@ -7,6 +7,49 @@ const dateTW=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'n
 const now=dateTW();
 const state={catalog:structuredClone(DEFAULT),topic:'all',year:+now.slice(0,4),month:+now.slice(5,7),kind:'all',source:'all',query:'',user:null,admin:false,entries:[],firstPage:[],extraRows:[],nextPage:null,hasMore:false,loading:false,configLoaded:false,uidShown:false};
 const PAGE=90;
+//*新增內容*//
+
+let totalCount = null;
+let countRequest = 0;
+
+function updateNewsCount() {
+  const total = totalCount === null
+    ? '查詢中…'
+    : totalCount;
+
+  const loaded = visibleEntries().length;
+
+  $('resultCount').textContent =
+    `共有 ${total} 則 · 已載入 ${loaded} 則`;
+}
+
+async function refreshCount() {
+  const request = ++countRequest;
+  totalCount = null;
+  updateNewsCount();
+
+  try {
+    const count = await cloud.countNews({
+      admin: state.admin,
+      prefix: keyPrefix(),
+      topic: state.topic
+    });
+
+    if (request !== countRequest) return;
+
+    totalCount = count;
+  } catch (e) {
+    if (request !== countRequest) return;
+
+    totalCount = '暫無法取得';
+    console.error('新聞總數查詢失敗：', e);
+  }
+
+  updateNewsCount();
+}
+
+
+//*新增完畢*//
 let stopWatch=null, stopJobs=null, loadToken=0, notifyTimer=null;
 let editCatalog=null;
 const str=v=>typeof v==='string'?v.trim():'';
