@@ -43,6 +43,26 @@
         <div class="section-top"><div><div class="section-kicker">BROWSE THE ARCHIVE</div><h2 id="archiveTitle">全部主題</h2><p class="section-description" id="archiveDesc">依原始發布日期整理的新聞與影音紀錄。</p></div><button id="addArticleTop" class="primary-btn add-top" type="button" hidden>＋ 新增新聞報導</button></div>
         <div class="browse-year"><div class="browse-label">選擇年份 <small>YEAR</small></div><div class="year-chips" id="yearChips"></div></div>
         <div class="browse-month"><div class="browse-label">選擇月份 <small>MONTH</small></div><div class="month-chips" id="monthChips"></div></div>
+
+        <div class="topic-memo" id="topicMemoWrap" hidden>
+  <div class="topic-memo-header">
+    <div>
+      <span class="section-kicker">TOPIC NOTES</span>
+      <h3>主題備忘錄</h3>
+    </div>
+    <button type="button" id="saveTopicMemo" hidden>
+      儲存備忘錄
+    </button>
+  </div>
+
+  <textarea
+    id="topicMemo"
+    rows="3"
+    maxlength="3000"
+    placeholder="記錄這個主題的新聞收錄進度、待辦事項或其他備註…"
+  ></textarea>
+</div>
+      
         <div class="filter-panel">
           <label class="search-holder"><span>⌕</span><input id="searchInput" placeholder="搜尋目前已載入的新聞標題、備註…" type="search" autocomplete="off"></label>
           <div class="filter-options"><div class="type-tabs" id="typeTabs"><button type="button" data-kind="all" class="active">全部</button><button type="button" data-kind="新聞">新聞</button><button type="button" data-kind="影音">影音</button></div><label class="select-holder"><span class="sr-only">媒體來源</span><select id="sourceSelect"><option value="all">所有媒體來源</option></select><span class="select-down">⌄</span></label></div>
