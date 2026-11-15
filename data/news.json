@@ -71,6 +71,20 @@
       "origin": "Google 新聞 RSS"
     },
     {
+      "id": "c0bba3db75e857fc027c",
+      "title": "惡劣！台中女毒駕斑馬線撞昏行人 竟找人冒名頂替遭羈押",
+      "date": "2026-11-15",
+      "source": "自由時報",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5641449",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "媒體官方 RSS"
+    },
+    {
       "id": "bb01af0bbeea19a9eec1",
       "title": "5縣市大雨特報！鋒面通過東北季風接力 這天冷空氣襲台「恐急凍12度」 - 三立新聞網SETN.com",
       "date": "2026-11-15",
@@ -213,6 +227,20 @@
       "note": "",
       "archive_url": "",
       "origin": "Google 新聞 RSS"
+    },
+    {
+      "id": "1c9ecf76f994e81d9ef8",
+      "title": "羅一鈞開唱了 郭子百人瑜伽腹痛翻滾狂奔「大解放」",
+      "date": "2026-11-15",
+      "source": "自由時報",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5641485",
+      "topics": [
+        "taichung"
+      ],
+      "kind": "新聞",
+      "note": "",
+      "archive_url": "",
+      "origin": "媒體官方 RSS"
     },
     {
       "id": "181d6923aeeace667987",
@@ -108088,13 +108116,13 @@
     }
   ],
   "meta": {
-    "last_checked": "2026-11-15T07:54:20+08:00",
+    "last_checked": "2026-11-15T14:30:49+08:00",
     "mode": "recent",
     "lookback_days": 3,
     "queries_attempted": 46,
-    "query_failures": 0,
-    "added": 40,
-    "total_auto": 7687,
+    "query_failures": 45,
+    "added": 2,
+    "total_auto": 7689,
     "warning": "Google 新聞及 RSS 可能漏新聞；不保證全部相關報導。沒有設定重要性或新聞量篩選門檻。"
   }
 }
