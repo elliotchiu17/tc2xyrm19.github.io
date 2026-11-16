@@ -54,37 +54,66 @@ export function watchNews({admin, prefix, pageSize}, next, error) {
     next(page.entries, page.last);
   }, error);
 }
-
-//*新增部分*//
-
-export async function countNews({admin, prefix, topic}) {
-  const [from, to] = dateRange(prefix);
-  const coll = admin ? 'articles' : 'public_articles';
-
-  const conditions = [
-    where('date', '>=', from),
-    where('date', '<=', to)
-  ];
-
-  if (topic !== 'all') {
-    conditions.push(
-      where('topics', 'array-contains', topic)
-    );
-  }
-
-  const q = query(collection(db, coll), ...conditions);
-  const result = await getCountFromServer(q);
-
-  return result.data().count;
-}
-
-
-//*新增完畢*//
 export async function moreNews({admin, prefix, pageSize, last}) {
   if (!last) return {entries: [], last: null};
   const snap = await getDocs(newsQuery(admin ? 'articles' : 'public_articles', prefix, pageSize, last));
   return pageFromSnapshot(snap);
 }
+// 2026-11 分頁升級：同一主題、年月讀取一批，瀏覽器端每頁 20 則。
+// 主題+日期組合查詢需要複合索引（Firestore Console 可依報錯連結建立）。
+export async function fetchArchiveBatch({admin, prefix, topic='all', batchSize=350, last=null}) {
+  const [from, to] = dateRange(prefix);
+  const coll = admin ? 'articles' : 'public_articles';
+  const fields = [];
+  if (topic !== 'all') fields.push(where('topics', 'array-contains', topic));
+  fields.push(where('date', '>=', from), where('date', '<=', to), orderBy('date', 'desc'));
+  if (last) fields.push(startAfter(last));
+  fields.push(limit(batchSize + 1));
+  const result = await getDocs(query(collection(db, coll), ...fields));
+  const docs = result.docs.slice(0, batchSize);
+  return {
+    entries: docs.map(d => ({...d.data(), id:d.id})),
+    // 多取 1 筆，用來判斷是否真的還有下一批，避免多出空白按鈕。
+    hasMore: result.docs.length > batchSize,
+    last: docs.at(-1) || null
+  };
+}
+
+export async function countArchive({admin, prefix, topic='all'}) {
+  const [from,to] = dateRange(prefix);
+  const coll = admin ? 'articles' : 'public_articles';
+  const conditions = [];
+  if (topic !== 'all') conditions.push(where('topics','array-contains',topic));
+  conditions.push(where('date','>=',from),where('date','<=',to));
+  const result=await getCountFromServer(query(collection(db,coll),...conditions));
+  return result.data().count;
+}
+
+// 索引尚未建立時的保守降級：只在「單一月份」使用日期索引讀取至多 1200 篇。
+// 若達上限會標明數量不完整，不能把它當作全集。
+export async function fetchMonthWithoutComposite({admin,prefix,topic,batchSize=1200}) {
+  if (!/^\d{4}-\d{2}$/.test(prefix)) throw new Error('全年資料量較大，請建立主題與日期的複合索引。');
+  const coll=admin?'articles':'public_articles';
+  const [from,to]=dateRange(prefix);
+  const snap=await getDocs(query(collection(db,coll),where('date','>=',from),where('date','<=',to),orderBy('date','desc'),limit(batchSize+1)));
+  return {
+    entries:snap.docs.slice(0,batchSize).map(d=>({...d.data(),id:d.id})).filter(d=>topic==='all'||(d.topics||[]).includes(topic)),
+    incomplete:snap.size>batchSize
+  };
+}
+
+export async function deleteArticle(id) {
+  if(!id)throw new Error('缺少新聞 ID');
+  const batch=writeBatch(db);
+  batch.delete(doc(db,'articles',id));
+  batch.delete(doc(db,'public_articles',id));
+  await batch.commit();
+}
+export async function deleteSearchJob(id) {
+  if(!auth.currentUser||!id)throw new Error('缺少管理員身分或工作 ID');
+  await deleteDoc(doc(db,'search_jobs',id));
+}
+
 function publicRecord(r){const {hidden,...rest}=r;return rest;}
 export async function upsertArticle(record,oldId){
   const batch=writeBatch(db),newId=record.id;
@@ -95,17 +124,6 @@ export async function upsertArticle(record,oldId){
   await batch.commit();
 }
 export async function setHidden(record,hidden){await upsertArticle({...record,hidden});}
-/* 新增完全刪除功能 */
-export async function deleteArticle(id) {
-  if (!id) throw new Error('缺少新聞 ID');
-
-  const batch = writeBatch(db);
-
-  batch.delete(doc(db, 'articles', id));
-  batch.delete(doc(db, 'public_articles', id));
-
-  await batch.commit();
-}
 export async function importArticles(records,onProgress){
   const chunks=Array.from({length:Math.ceil(records.length/180)},(_,i)=>records.slice(i*180,(i+1)*180));
   let count=0;
@@ -127,27 +145,8 @@ export async function enqueueSearchJob({topicId,keyword,source,start,end,mode}) 
     info:'等待背景更新程式處理', cursor:'', errors:[]
   });
 }
-export function watchSearchJobs(next, error) {
-  return onSnapshot(
-    query(
-      collection(db, 'search_jobs'),
-      orderBy('createdAt', 'desc'),
-      limit(12)
-    ),
-    snap => {
-      next(snap.docs.map(d => ({
-        ...d.data(),
-        id: d.id
-      })));
-    },
-    error
-  );
-}
-
-export async function deleteSearchJob(id) {
-  if (!auth.currentUser || !id) {
-    throw new Error('缺少管理員身分或工作 ID');
-  }
-
-  await deleteDoc(doc(db, 'search_jobs', id));
+export function watchSearchJobs(next,error) {
+  return onSnapshot(query(collection(db,'search_jobs'),orderBy('createdAt','desc'),limit(12)),snap => {
+    next(snap.docs.map(d => ({...d.data(),id:d.id})));
+  },error);
 }
