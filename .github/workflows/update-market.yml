@@ -1,0 +1,43 @@
+name: Refresh daily closing indices
+on:
+  workflow_dispatch:
+  schedule:
+    # Times use Taiwan (Asia/Taipei) local timezone, including weekends
+    # for Friday US closes / exchange holiday edge cases.
+    - cron: '30 3,7,18 * * *'
+      timezone: 'Asia/Taipei'
+permissions:
+  contents: write
+concurrency:
+  group: daily-eod-indices
+  cancel-in-progress: false
+jobs:
+  daily-close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update verified daily closes (TWSE, TAIFEX, optional Twelve Data)
+        env:
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+          TD_SYMBOL_SPX: ${{ vars.TD_SYMBOL_SPX }}
+          TD_SYMBOL_IXIC: ${{ vars.TD_SYMBOL_IXIC }}
+          TD_SYMBOL_DJI: ${{ vars.TD_SYMBOL_DJI }}
+          TD_SYMBOL_SOX: ${{ vars.TD_SYMBOL_SOX }}
+          TD_SYMBOL_N225: ${{ vars.TD_SYMBOL_N225 }}
+          TD_SYMBOL_KS11: ${{ vars.TD_SYMBOL_KS11 }}
+          TD_SYMBOL_STOXX50E: ${{ vars.TD_SYMBOL_STOXX50E }}
+        run: python scripts/update_market_quotes.py
+      - name: Save only new validated closing prices
+        run: |
+          if ! git diff --quiet -- market-quotes.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add market-quotes.json
+            git commit -m 'Update daily index closing prices'
+            git push
+          fi
