@@ -50,6 +50,10 @@ function pageButtons(root,pages){
 let stopWatch=null, stopJobs=null, loadToken=0, notifyTimer=null;
 let editCatalog=null;
 const str=v=>typeof v==='string'?v.trim():'';
+function closeMobile(){
+  $('sidebar').classList.remove('open');
+  $('mobileBackdrop').hidden=true;
+}
 function notify(s){const t=$('toast');t.textContent=s;t.classList.add('show');clearTimeout(notifyTimer);notifyTimer=setTimeout(()=>t.classList.remove('show'),4100)}
 function node(tag,cls='',txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=String(txt);return e}
 function append(p,...els){els.forEach(x=>x&&p.append(x));return p}
