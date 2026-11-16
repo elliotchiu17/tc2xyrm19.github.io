@@ -1,121 +1,84 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f5efdf"><meta name="description" content="個人新聞與影音檔案：依主題、年份和月份瀏覽，Firebase 雲端同步。">
-<title>輿情觀測室｜雲端新聞檔案</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css">
-<script type="module" src="app.js"></script>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#e9e4d4"/><title>Komorebi | 個人投資研究</title>
+<link rel="stylesheet" href="styles.css?v=20261112v110"/>
 </head>
-<body>
+<body class="guest-mode">
 <div class="app-shell">
-  <aside class="sidebar" id="sidebar">
-    <div class="brandline"><div class="brand-seal">✳</div><div><div class="brand-en">THE DAILY ARCHIVE</div><div class="brand-cn">輿情觀測室<span>．</span></div></div></div>
-    <p class="side-intro">把新聞留在時間裡。<br>按主題、年份與月份慢慢整理。</p>
-    <div class="side-divider"></div>
-    <div class="side-section-title">追蹤主題 <span>TOPICS</span></div>
-    <nav class="topic-nav" id="topicNav" aria-label="追蹤主題"></nav>
-    <div class="side-divider"></div>
-    <div class="side-section-title">資料整理 <span>ARCHIVE</span></div>
-    <button class="side-utility" id="sourceSearchBtn" type="button"><span class="side-ico">⌕</span> 搜尋原始新聞 <span class="side-arrow">↗</span></button>
-    <button class="side-utility" id="autoImportSideBtn" type="button" hidden><span class="side-ico">↻</span> 自動匯入／更新 <span class="side-arrow">›</span></button>
-    <button class="side-utility" id="manageCatalogBtn" type="button" hidden><span class="side-ico">⚙</span> 關鍵字與媒體 <span class="side-arrow">›</span></button>
-    <button class="side-utility" id="updateHelpBtn" type="button"><span class="side-ico">ⓘ</span> 資料與使用說明 <span class="side-arrow">›</span></button>
-    <div class="sidebar-bottom">
-      <div class="sidebar-legend"><span class="status-dot"></span><span id="syncStatus">正在連接 Firebase…</span></div>
-      <button class="admin-toggle" id="adminToggle" type="button" aria-pressed="false"><span>✎</span><span id="adminToggleText">Google 管理員登入</span><span class="side-arrow">→</span></button>
-      <div class="side-privacy">公開閱覽 · 只有指定管理員可以編輯</div>
-    </div>
-  </aside>
-  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
-  <main class="main">
-    <header class="topbar">
-      <button class="mobile-menu" id="mobileMenu" aria-label="開啟選單" type="button">☰</button>
-      <span class="top-crumb">NEWS INDEX <span>/</span> <strong id="crumbTopic">全部主題</strong></span>
-      <span class="top-right"><span class="tiny-sun">✳</span> TAICHUNG · CLOUD ARCHIVE</span>
-    </header>
-    <div class="content-wrap">
-      <div class="eyebrow">A PERSONAL NEWS COLLECTION <span class="eyebrow-dash"></span> EST. 2025</div>
-      <div class="page-heading"><div><h1>收集新聞，<em>留下紀錄。</em></h1><p>按主題、年份與月份歸檔。新增之後，雲端永久保存。</p></div><div class="heading-stats"><span id="headlineCount">—</span><small>目前已載入紀錄</small></div></div>
-      <div class="thin-rule"></div>
-      <section class="archive" aria-labelledby="archiveTitle">
-        <div class="section-top"><div><div class="section-kicker">BROWSE THE ARCHIVE</div><h2 id="archiveTitle">全部主題</h2><p class="section-description" id="archiveDesc">依原始發布日期整理的新聞與影音紀錄。</p></div><button id="addArticleTop" class="primary-btn add-top" type="button" hidden>＋ 新增新聞報導</button></div>
-        <div class="browse-year"><div class="browse-label">選擇年份 <small>YEAR</small></div><div class="year-chips" id="yearChips"></div></div>
-        <div class="browse-month"><div class="browse-label">選擇月份 <small>MONTH</small></div><div class="month-chips" id="monthChips"></div></div>
+<aside class="sidebar">
+<div class="identity"><div class="brand-icon">✳</div><div><div class="brand">KOMOREBI</div><div class="brand-sub">INVESTMENT NOTEBOOK</div></div></div>
+<div class="side-caption">RESEARCH WORKSPACE</div>
+<nav class="nav" aria-label="網站導覽">
+<button class="nav-item active" data-view="home"><span>⌂</span> 總覽首頁</button>
+<button class="nav-item" data-view="etf"><span>▤</span> 金融商品 · ETF</button>
+<button class="nav-item" data-view="calendar"><span>▦</span> 除息月曆</button>
+<button class="nav-item private-ui" data-view="personal"><span>◈</span> 個人理財</button>
+</nav>
+<div class="side-caption secondary-label">FUTURE COLLECTIONS</div>
+<div class="future-nav"><div>◎　全球市場 <small>規劃中</small></div><div>⌘　投資主題 <small>規劃中</small></div><div>▧　研究文章 <small>規劃中</small></div></div>
+<div id="cloud-status" class="cloud-side-status">Firebase 尚未設定</div><div class="sidebar-bottom"><div class="leaf">❧</div><div class="muted">一座慢慢長大的<br/>私人投資研究庭園。</div><small>PROTOTYPE · 0.2</small></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="breadcrumb">PERSONAL RESEARCH <span>/</span> <span id="crumb">總覽首頁</span></div><div class="topbar-right"><span class="demo-indicator">● 示範資料</span><button id="login-open" class="login-chip" type="button">登入 / 帳戶</button></div></header>
+<section id="view-home" class="view active">
+<div class="hero"><div><div class="eyebrow">MARKET OVERVIEW · DAILY RESEARCH</div><h1>今日市場，慢慢看。</h1><p>彙整重要市場、收藏的標的，為下一次研究留下線索。</p><button class="pill-btn" data-go="etf">探索 ETF　↗</button></div><div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="hill h1"></div><div class="hill h2"></div><div class="flower">✿</div></div></div>
+<div class="section-heading"><div><div class="eyebrow">01 / WORLD MARKETS</div><h2>全球主要指數</h2></div><span class="subtle"><span id="market-updated">每日收盤行情</span></span></div>
+<div class="indices" id="indices"></div><p class="market-disclaimer">九項市場顯示最近一個已確認交易日的收盤價，日期以當地市場為準。漲跌幅相對前一交易日收盤；台指期採最近月份契約一般交易時段的收盤價，不是加權指數或夜盤價格。資料可能延遲，僅供研究參考。</p>
+<div class="home-lower"><section class="panel home-watch private-ui"><div class="panel-top"><div><div class="eyebrow">02 / MY LIST</div><h2>我的觀察清單</h2></div><button class="text-btn" data-go="personal">查看全部 ↗</button></div><div id="home-watch-items" class="compact-items"></div></section><section class="panel research-card private-ui"><div class="eyebrow">03 / RESEARCH DESK</div><h2>靈感與研究備忘</h2><p>收藏感興趣的商品，隨手留下投資理由；正式版會在這裡彙整你的研究進度與最新資料。</p><div class="research-ornament">✳ <span>Knowledge grows quietly.</span></div><button class="text-btn" data-go="personal">打開私人筆記 ↗</button></section></div>
+</section>
+<section id="view-etf" class="view">
+<div class="page-head"><div class="eyebrow">FINANCIAL PRODUCTS / TAIWAN ETF</div><h1>台灣 ETF 資料庫</h1><p>依代號分類瀏覽，也可以搜尋、比較，並加入自己的觀察清單。官方名錄與分類資料持續更新；現階段優先整理完整標的，價格與配息尚未接入。</p></div>
+<div class="catalog-banner" id="catalog-status" aria-live="polite">正在讀取 ETF 名錄…</div><div class="panel controls-panel"><div class="control-title">依代號瀏覽 <span>可隨時切換</span></div><div class="prefix-tabs" id="prefix-tabs"></div><button id="group-add-toggle" class="soft-btn edit-ui" type="button">＋ 新增代號分類</button><button id="group-manage-toggle" class="soft-btn edit-ui" type="button">⚙ 管理分類</button><div id="group-manager" class="group-manager hidden"><h3>自訂代號分類管理</h3><div id="group-manager-list"></div></div><form id="group-add-form" class="new-etf hidden edit-ui"><label>分類名稱<input id="group-label" maxlength="24" required placeholder="例如 010xx 或 我的特別分類"/></label><label>代號前綴（可留空，作為手動分類）<input id="group-prefix" maxlength="8" placeholder="例如 010"/></label><label>指定標的代號（選填，逗號分隔）<input id="group-codes" placeholder="例如 0050,00878"/></label><button class="primary-btn" type="submit">新增分類</button></form><div class="filter-row"><label class="searchbox"><span>⌕</span><input id="etf-search" placeholder="搜尋代號或名稱，例如 0050" autocomplete="off"/></label><label class="filter-select"><span>類型</span><select id="etf-type"><option value="all">全部類型</option><option value="國內股票">國內股票</option><option value="海外股票">海外股票</option><option value="債券及固定收益">債券及固定收益</option><option value="主動式">主動式</option><option value="多資產">多資產</option><option value="槓桿反向">槓桿反向</option><option value="期貨型">期貨型</option><option value="待確認">待確認</option><option value="其他">其他</option></select></label><button id="new-etf-toggle" class="soft-btn edit-ui">＋ 新增待上市標的</button><button id="manage-etf-toggle" class="soft-btn edit-ui" type="button">✎ 編輯標的資料</button></div><form id="new-etf-form" class="new-etf hidden"><label>代號或暫定識別碼<input id="new-code" placeholder="例如 NEW001" required maxlength="15"/></label><label>名稱<input id="new-name" placeholder="ETF 名稱" required maxlength="80"/></label><button type="submit" class="primary-btn">加入資料庫</button><p class="form-hint">只儲存在此瀏覽器，正式版可改為雲端同步。</p></form></div>
+<div class="panel table-panel"><div class="panel-top"><div><div class="eyebrow">ETF UNIVERSE</div><h2>商品比較 <span id="etf-count" class="count"></span></h2></div><div class="subtle">按 ☆ 選擇觀察清單 · 按住 ⠿ 可拖曳調整 ETF 排列</div></div><div class="catalog-orderbar"><span>商品依代號排列；手動新增會按代號插入。可拖動每列左側 ⠿ 把手調整順序。</span><button id="reset-etf-order" class="soft-btn edit-ui" type="button">↺ 恢復代號順序</button></div><div class="table-scroll"><table class="data-table"><thead><tr><th class="edit-ui">排序</th><th class="edit-ui">編輯</th><th class="edit-ui">觀察</th><th>標的代號</th><th>名稱</th><th>最新收盤價</th><th>配息頻率</th><th>最近一次配息</th><th>最近除息日</th><th>總管理費</th><th>近一年含息報酬</th><th>基金保管銀行</th></tr></thead><tbody id="etf-tbody"></tbody></table></div><div class="table-footer"><span>— 代表不配息或尚無適用資料；N/A 代表無可比較資料。</span><span>按「編輯」可修改代號分組、上市狀態、配息、費用、備忘與保管銀行；行情與報酬率尚未接入。</span></div></div>
+</section>
 
-        <div class="topic-memo" id="topicMemoWrap" hidden>
-  <div class="topic-memo-header">
-    <div>
-      <span class="section-kicker">TOPIC NOTES</span>
-      <h3>主題備忘錄</h3>
-    </div>
-    <button type="button" id="saveTopicMemo" hidden>
-      儲存備忘錄
-    </button>
-  </div>
-
-  <textarea
-    id="topicMemo"
-    rows="3"
-    maxlength="3000"
-    placeholder="記錄這個主題的新聞收錄進度、待辦事項或其他備註…"
-  ></textarea>
-</div>
-      
-        <div class="filter-panel">
-          <label class="search-holder"><span>⌕</span><input id="searchInput" placeholder="搜尋目前已載入的新聞標題、備註…" type="search" autocomplete="off"></label>
-          <div class="filter-options"><div class="type-tabs" id="typeTabs"><button type="button" data-kind="all" class="active">全部</button><button type="button" data-kind="新聞">新聞</button><button type="button" data-kind="影音">影音</button></div><label class="select-holder"><span class="sr-only">媒體來源</span><select id="sourceSelect"><option value="all">所有媒體來源</option></select><span class="select-down">⌄</span></label></div>
-        </div>
-        <div class="admin-bar" id="adminBar" hidden><div><div class="admin-title">✎　管理模式 · 已連接雲端</div><p>按「儲存」就會寫入 Firebase；手機和其他裝置重新開啟網站即可看到。排除的新聞只有管理員能復原。</p></div><div class="admin-bar-buttons"><button id="addArticleBtn" class="primary-btn" type="button">＋ 新增新聞</button><button id="autoImportHelpBtn" class="secondary-btn" type="button">↻ 指定條件搜尋</button></div></div>
-        <div class="list-heading"><div><span class="list-kicker">ARCHIVE ENTRIES</span><h3 id="listHeading">新聞列表 <span id="resultCount">0 則</span></h3></div><span class="sort-hint">依發布日期 ↓　·　可載入更多</span></div>
-        <div class="article-list" id="articleList"></div>
-        <div class="load-footer"><button id="loadMoreBtn" class="load-more" type="button" hidden>載入更多新聞 ↓</button></div>
-      </section>
-      <div class="footer-note"><div class="footer-symbol">✳</div><div><h4>一座持續更新的新聞檔案室。</h4><p>標題、發布時間和連結用於建立索引；原文著作權屬新聞發布者。網站不會依重要性自動篩選新聞；外部搜尋亦不代表完整全集。</p></div></div>
-      <footer><span>© 2026 THE DAILY ARCHIVE</span><span>KEEP THE RECORD · KEEP THE CONTEXT</span></footer>
-    </div>
-  </main>
-</div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<dialog id="articleDialog" class="modal article-modal"><div class="modal-top"><div><span class="modal-kicker">CLOUD ARCHIVE EDITOR</span><h2 id="editorTitle">新增新聞報導</h2></div><button type="button" class="close-modal" data-close="articleDialog" aria-label="關閉">×</button></div>
-  <form id="articleForm" class="article-form"><input id="editId" type="hidden"><div class="form-row"><label class="form-field wide">新聞標題 <b>*</b><input id="articleTitle" maxlength="240" required placeholder="請輸入新聞標題"></label></div>
-    <div class="form-grid"><label class="form-field">發布日期 <b>*</b><input id="articleDate" required type="date"></label><label class="form-field">資料類型<select id="articleKind"><option value="新聞">新聞</option><option value="影音">影音／YouTube</option></select></label></div>
-    <div class="form-grid"><label class="form-field">新聞媒體 <b>*</b><select id="articleSource" required></select></label><label class="form-field">其他媒體名稱<input id="articleSourceOther" placeholder="選擇其他時填寫"></label></div>
-    <label class="form-field">原始新聞或影片網址<input id="articleUrl" type="url" placeholder="https://…"></label>
-    <label class="form-field">補充備註<textarea id="articleNote" rows="3" placeholder="你自己整理的新聞重點（請勿直接轉載未授權的全文）"></textarea></label>
-    <label class="form-field">授權附件網址（非必填）<input id="articleAttachment" placeholder="https://… 或 assets/docs/ 檔案路徑"></label>
-    <fieldset class="topic-fieldset"><legend>歸入哪些追蹤主題？<b>*</b> <small>可複選</small></legend><div id="articleTopicChecks" class="checks"></div></fieldset>
-    <div class="form-buttons"><button class="secondary-btn" type="button" data-close="articleDialog">取消</button><button id="saveArticleBtn" class="primary-btn" type="submit">儲存到 Firebase</button></div>
-    <p class="editor-reminder">只有出現「已儲存至雲端」才算完成。其他裝置重新開啟網站即可看到；不必下載 JSON。</p>
-  </form>
-</dialog>
-<dialog id="loginDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">SECURE ADMIN ACCESS</span><h2>Google 管理員登入</h2></div><button type="button" class="close-modal" data-close="loginDialog" aria-label="關閉">×</button></div>
-  <div class="help-content"><p>請使用你要指定為管理員的 Google 帳號登入。第一次登入後會顯示 Firebase UID，再用它設定資料庫安全規則。</p>
-    <div id="loginUserStatus" class="help-step">目前尚未登入。</div>
-    <div id="uidPanel" class="uid-panel" hidden><b>你的 Firebase UID</b><code id="uidValue"></code><button type="button" class="secondary-btn" id="copyUid">複製 UID</button><p>前往 Firebase → Firestore Database → 規則，將專案附的 <code>firestore.rules</code> 中 <code>REPLACE_WITH_YOUR_FIREBASE_UID</code> 換成上方 UID 並發布。發布後按「重新檢查權限」。</p></div>
-    <div class="help-actions"><button id="googleLoginBtn" type="button" class="primary-btn">以 Google 帳號登入</button><button id="recheckAdminBtn" type="button" class="secondary-btn" hidden>重新檢查權限</button><button id="logoutBtn" type="button" class="secondary-btn" hidden>登出</button></div>
-  </div>
-</dialog>
-<dialog id="catalogDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">ARCHIVE SETTINGS</span><h2>關鍵字與媒體管理</h2></div><button type="button" class="close-modal" data-close="catalogDialog" aria-label="關閉">×</button></div>
- <div class="help-content"><p>這些設定會直接儲存至 Firebase，其他裝置同步看到。移除分類不會刪除既有新聞。</p>
-  <div class="help-step"><b>目前的追蹤主題</b><div id="catalogTopics" class="setting-items"></div><div class="inline-add"><input id="newTopic" placeholder="新增主題，例如：交通建設" maxlength="40"><button class="secondary-btn" id="addTopicSetting" type="button">＋ 加入</button></div></div>
-  <div class="help-step"><b>目前的新聞來源</b><div id="catalogSources" class="setting-items"></div><div class="inline-add"><input id="newSource" placeholder="新增媒體名稱，例如：鏡新聞" maxlength="60"><input id="newSourceUrl" type="url" placeholder="官網網址，例如 https://www.mnews.tw/"><button class="secondary-btn" id="addSourceSetting" type="button">＋ 加入</button></div></div>
-  <div class="form-buttons"><button type="button" class="secondary-btn" data-close="catalogDialog">取消</button><button id="saveCatalogBtn" class="primary-btn" type="button">儲存設定到雲端</button></div>
+<section id="view-calendar" class="view">
+ <div class="page-head"><div class="eyebrow">DIVIDEND EVENTS / MONTHLY CALENDAR</div><h1>除息月曆</h1><p>以月份掌握 ETF 與股票的除息時程。按下標籤可查看最後買進日、除息日、發放日與股利資訊。</p></div>
+ <div class="panel calendar-panel">
+  <div class="calendar-topline"><div class="calendar-month-controls"><button id="cal-prev" type="button" class="soft-btn" aria-label="上個月">‹</button><h2 id="cal-month-title"></h2><button id="cal-next" type="button" class="soft-btn" aria-label="下個月">›</button><button id="cal-today" class="soft-btn" type="button">本月</button></div><button id="cal-add" type="button" class="primary-btn edit-ui">＋ 新增除息事件</button></div>
+  <div class="cal-filters"><label class="cal-check"><input id="cal-show-etf" type="checkbox" checked /> ETF</label><label class="cal-check"><input id="cal-show-stock" type="checkbox" checked /> 股票</label><label class="cal-search">搜尋<input id="cal-search" type="search" placeholder="代號或名稱"/></label></div>
+  <div class="cal-categories"><div class="cal-cat-title">分類與顏色 <button id="cal-add-category" type="button" class="soft-btn edit-ui">＋ 股票產業分類</button></div><div id="cal-categories"></div></div>
+  <div id="cal-message" class="mini-help" role="status" aria-live="polite"></div>
+  <div class="cal-scroll"><div id="calendar-grid" class="calendar-grid" aria-label="每月除息事件"></div></div>
  </div>
-</dialog>
-<dialog id="searchDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">OFFICIAL MEDIA SEARCH</span><h2>官方新聞搜尋／自動匯入</h2></div><button type="button" class="close-modal" data-close="searchDialog" aria-label="關閉">×</button></div>
- <div class="help-content"><p>先選關鍵字、媒體與日期。「開啟媒體官網」可供任何人使用；「送出自動匯入任務」目前只支援自由時報，管理員登入後才能使用。</p>
- <div class="form-grid"><label class="form-field">追蹤關鍵字<select id="externalTopic"></select></label><label class="form-field">新聞媒體<select id="externalSource"></select></label></div>
- <div class="form-grid"><label class="form-field">開始日期<input type="date" id="externalStart"></label><label class="form-field">結束日期<input type="date" id="externalEnd"></label></div>
- <label class="form-field" id="searchModeHolder">自由時報資料來源<select id="searchMode"><option value="site">官網日期搜尋（實驗，可能被阻擋）</option><option value="rss">官方 RSS（適合近期，不含完整歷史）</option></select></label>
- <p id="autoImportNote" class="import-note">請選擇來源。</p>
- <div class="help-actions"><button id="openExternalSearchBtn" type="button" class="secondary-btn">↗ 開啟對應新聞官網</button><button id="autoImportBtn" type="button" class="primary-btn">送出自動匯入任務</button></div>
- <div class="help-step"><b>最近的匯入進度</b><div id="jobStatusList" class="job-status-list"><p>登入管理員後顯示</p></div></div>
- </div>
-</dialog>
-<dialog id="helpDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">HOW IT WORKS</span><h2>資料與使用說明</h2></div><button type="button" class="close-modal" data-close="helpDialog" aria-label="關閉">×</button></div>
- <div class="help-content"><div class="help-step"><b>01　雲端永久儲存</b><p>使用管理員 Google 帳號登入，按「新增新聞」並儲存，資料會寫入 Firebase，其他裝置可查看，無須再次上傳 JSON。</p></div><div class="help-step"><b>02　主題、年份與月份</b><p>新聞依發布日期歸檔，預設顯示目前月份；可以選擇其他年份或全年。按「載入更多」逐批取得更多新聞，以免一次讀取數萬筆。</p></div><div class="help-step"><b>03　排除與復原</b><p>管理員可以排除不相關的新聞，公開頁面會移除，登入管理模式時仍能復原。</p></div><div class="help-step"><b>04　直接開啟媒體官網</b><p>自由時報可直接帶入關鍵字與日期；其他媒體先打開該媒體網站內的搜尋入口，依其實際功能操作。</p></div><div class="help-step"><b>05　自動匯入</b><p>管理員可選關鍵字、日期和自由時報資料來源並送出任務；完成 GitHub Actions 安全設定後由背景程式執行。官網日期搜尋是實驗功能，受阻時會回報失敗，不會假裝蒐集完成。</p></div></div>
-</dialog>
+</section>
+<div id="cal-editor-overlay" class="login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="cal-editor-title"><div class="login-panel cal-modal"><button class="login-close" id="cal-editor-close" type="button" aria-label="關閉">×</button><div class="eyebrow">DIVIDEND / EVENT EDITOR</div><h2 id="cal-editor-title">新增除息事件</h2><form id="cal-event-form" class="cal-form"><input id="cal-event-id" type="hidden"/><label>商品類別<select id="cal-kind"><option value="etf">ETF</option><option value="stock">股票</option></select></label><label>商品代號<input id="cal-code" required maxlength="16" placeholder="例如 0056 或 2330" /></label><label>標的名稱<input id="cal-name" required maxlength="90" placeholder="ETF / 股票名稱" /></label><label>分類（對應標籤顏色）<select id="cal-group"></select></label><label id="cal-frequency-row">ETF 配息性質<select id="cal-frequency"><option>未確認</option><option>N/A</option><option>月配</option><option>雙月配</option><option>季配</option><option>半年配</option><option>年配</option><option>不定期配</option></select></label><label>最後買進日<input id="cal-buy" required type="date" /></label><label>除息日<input id="cal-ex" required type="date" /></label><label>股利發放日<input id="cal-pay" required type="date" /></label><label id="cal-etf-dividend-row">ETF 每單位現金配息（元）<input id="cal-dividend" type="number" min="0" step="any" placeholder="例如 0.78" /></label><label class="hidden" id="cal-cash-dividend-row">股票現金股利（元／股）<input id="cal-cash" type="number" min="0" step="any" /></label><label class="hidden" id="cal-stock-dividend-row">股票股利（元／股，以面額表示）<input id="cal-stock" type="number" min="0" step="any" /></label><p class="cal-warning">最後買進日預設為除息前一個平日；台灣國定假日、臨時休市及不同市場交易曆需另外確認，請依證交所／公司公告修正。</p><div class="editor-actions"><button type="submit" class="primary-btn">儲存事件</button><button type="button" id="cal-delete" class="soft-btn hidden">刪除此事件</button></div></form></div></div>
+<div id="cal-detail-overlay" class="login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="cal-detail-title"><div class="login-panel cal-detail-panel"><button class="login-close" id="cal-detail-close" type="button" aria-label="關閉">×</button><div class="eyebrow">DIVIDEND NOTICE / EVENT DETAIL</div><h2 id="cal-detail-title">配息資訊</h2><div id="cal-detail-content"></div><div class="editor-actions"><button id="cal-detail-edit" class="soft-btn edit-ui" type="button">✎ 編輯</button><button id="cal-detail-go" class="primary-btn" type="button">查看對應商品</button></div></div></div>
+<div id="cal-category-overlay" class="login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="cal-category-title"><div class="login-panel cal-modal"><button class="login-close" id="cal-category-close" type="button" aria-label="關閉">×</button><h2 id="cal-category-title">新增股票產業分類</h2><form id="cal-category-form" class="cal-form"><label>分類名稱<input id="cal-category-name" maxlength="30" required placeholder="例如 半導體" /></label><label>標籤顏色<input id="cal-category-color" type="color" value="#bdd0b7"/></label><button type="submit" class="primary-btn">新增分類</button></form></div></div>
+
+<section id="view-personal" class="view">
+<div class="page-head"><div class="eyebrow">PRIVATE SPACE / PERSONAL FINANCE</div><h1>我的研究庭園</h1><p>收藏、持有與筆記互相獨立，讓判斷慢慢累積。</p><div class="privacy-note">♧ 本頁為私人功能原型；私人資料須登入管理員 Google 帳號；Firebase 尚未設定時請勿輸入敏感資料。</div></div>
+<div class="personal-tabs"><button class="personal-tab active" data-ptab="watch">觀察清單 <span id="watch-total"></span></button><button class="personal-tab" data-ptab="held">已投資清單</button><button class="personal-tab" data-ptab="notes">研究筆記與摘錄</button></div>
+<div id="personal-watch" class="personal-page active"><div class="panel"><div class="watch-group-toolbar"><label>觀察清單 <select id="watch-group-select" aria-label="選擇觀察清單"></select></label><button class="soft-btn" id="watch-group-add" type="button">＋ 新增一組觀察清單</button><button class="soft-btn" id="watch-group-rename" type="button">✎ 更名</button><button class="soft-btn" id="watch-group-delete" type="button">刪除這組</button></div><div class="panel-top"><div><div class="eyebrow">MY WATCHLIST</div><h2>我的觀察標的</h2></div><span class="subtle">⠿ 拖曳把手調整順序</span></div><p class="panel-description">從 ETF 資料庫勾選加入；每組觀察清單獨立收藏、獨立排序；同一檔可以同時加入多組，重新開啟仍會保留。</p><div id="watch-list" class="sortable-list"></div><div class="mini-help">操作：按住六點把手，向上或向下拖曳；靠近清單邊緣時會自動捲動。</div></div></div>
+<div id="personal-held" class="personal-page"><div class="panel"><div class="eyebrow">PORTFOLIO / PRIVATE</div><h2>已投資清單</h2><p class="panel-description">新增持倉摘要：投入成本已含手續費；損益兩平價由你手動填寫，不以公式自動推算。現價直接引用 ETF 資料庫的同一個價格欄位，目前報價尚未串接，會顯示 N/A。暫不支援精確已實現損益與交易流水。</p><form id="held-add" class="holdings-form"><label>標的代號<input id="held-code" required placeholder="例如 0050" /></label><label>持有股數<input id="held-shares" required type="number" min="0.000001" step="any" /></label><label>投入總成本（含手續費）<input id="held-cost" required type="number" min="0" step="any" /></label><label>損益兩平價（手動輸入）<input id="held-breakeven" type="number" min="0" step="any" placeholder="自行填寫" /></label><button class="primary-btn" type="submit">＋ 新增／更新持倉</button></form><div class="table-scroll"><table class="data-table holdings-table"><thead><tr><th>排序</th><th>代號</th><th>名稱</th><th>股數</th><th>投入成本</th><th>損益兩平價</th><th>現價</th><th>未實現損益</th><th>管理</th></tr></thead><tbody id="held-tbody"></tbody></table></div></div></div>
+<div id="personal-notes" class="personal-page"><div class="notes-grid"><div class="panel"><div class="eyebrow">QUICK NOTE</div><h2>研究備忘</h2><label class="field-label">備忘內容<textarea id="quick-note" rows="8" placeholder="記下想研究的商品、投資假設、下次要查的問題……"></textarea></label><p class="form-hint">登入後保存於私人研究空間。<span id="save-status"></span></p></div><div class="panel"><div class="eyebrow">PRIVATE CLIPPINGS</div><h2>私人文字摘錄</h2><p class="panel-description">不必跳到另一頁，直接貼上你希望留存的文字。可加入一張封面圖片，儲存後以圖文卡片呈現。請保留來源資訊，公開前重新檢查使用權限。</p><form id="clip-form"><label class="field-label">標題<input id="clip-title" required placeholder="例如：ETF 配息制度研究" maxlength="100"/></label><label class="field-label">來源（選填）<input id="clip-source" placeholder="來源名稱或網址" maxlength="300"/></label><label class="field-label">封面圖（選填，會壓縮成小圖儲存）<input type="file" id="clip-image" accept="image/jpeg,image/png,image/webp" /></label><p class="form-hint">照片會壓縮儲存在私人資料內；多篇圖卡建議未來串接 Firebase Storage。</p><label class="field-label">摘錄文字<textarea id="clip-text" required rows="5" placeholder="在此貼上文字……"></textarea></label><button class="primary-btn" type="submit">儲存私人摘錄</button></form></div></div><div class="panel clipping-panel"><div class="panel-top"><div><div class="eyebrow">ARCHIVE</div><h2>已存摘錄</h2></div><span class="subtle">私人收藏 · 圖文卡片</span></div><div id="clip-list"></div></div></div>
+</section>
+<div id="watch-picker-overlay" class="login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="watch-picker-title"><div class="login-panel watch-picker-panel"><button type="button" class="login-close" id="watch-picker-close" aria-label="關閉">×</button><div class="eyebrow">WATCHLIST / COLLECTIONS</div><h2 id="watch-picker-title">選擇觀察清單</h2><p id="watch-picker-subtitle" class="panel-description">可複選多組；勾選後按儲存。</p><div id="watch-picker-options" class="picker-options"></div><button type="button" id="watch-picker-new" class="soft-btn">＋ 建立新觀察清單</button><div class="editor-actions"><button id="watch-picker-save" class="primary-btn" type="button">儲存收藏</button><button id="watch-picker-cancel" class="soft-btn" type="button">取消</button></div></div></div>
+<div id="etf-editor-overlay" class="login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="etf-editor-title">
+<div class="login-panel etf-editor-panel"><button id="etf-editor-close" class="login-close" type="button" aria-label="關閉">×</button>
+<div class="eyebrow">CATALOG EDITOR / FIRESTORE</div><h2 id="etf-editor-title">管理 ETF 商品資料</h2>
+<p class="editor-explain">登入後修改的公開商品資料會同步到 Firestore 公開目錄（首次需發布）；私人 ETF 備忘錄、持倉及觀察清單不公開。修改前建議先備份。</p>
+<form id="etf-editor-form" class="editor-form">
+<label>ETF 代號<input id="editor-code" required maxlength="12" autocomplete="off" placeholder="例如 0050、00984D" /></label>
+<label>商品名稱<input id="editor-name" required maxlength="120" /></label>
+<fieldset class="editor-type-field"><legend>標的類型（可複選，儲存後立即更新篩選）</legend><div class="editor-type-grid" id="editor-types"><label><input type="checkbox" value="國內股票"/>國內股票</label><label><input type="checkbox" value="海外股票"/>海外股票</label><label><input type="checkbox" value="債券及固定收益"/>債券及固定收益</label><label><input type="checkbox" value="主動式"/>主動式</label><label><input type="checkbox" value="多資產"/>多資產</label><label><input type="checkbox" value="槓桿反向"/>槓桿反向</label><label><input type="checkbox" value="期貨型"/>期貨型</label><label><input type="checkbox" value="其他"/>其他</label></div><small>未勾選則歸為「待確認」。</small></fieldset>
+<label>發行投信<input id="editor-issuer" maxlength="150" /></label>
+<label>追蹤指數／參考指數<input id="editor-index" maxlength="240" /></label>
+<label>上市日期（YYYY.MM.DD）<input id="editor-listed" maxlength="20" placeholder="2026.11.06" /></label>
+<label>代號瀏覽分組<select id="editor-code-group"><option value="">自動依代號分類</option></select></label>
+<label>上市狀態<select id="editor-listing-status"><option value="listed">已上市（不顯示標籤）</option><option value="upcoming">即將上市</option><option value="soonDelist">即將下市</option><option value="unknown">待確認</option></select></label>
+<label>基金保管銀行<input id="editor-bank" maxlength="80" placeholder="待查證可留空" /></label>
+<label>配息頻率<select id="editor-freq"><option value="unknown">資料未知</option><option value="no_dividend">N/A／不配息</option><option value="月配">月配</option><option value="雙月配">雙月配</option><option value="季配">季配</option><option value="半年配">半年配</option><option value="年配">年配</option><option value="不定期配">不定期配</option></select></label>
+<label>最近一次每單位配息<input id="editor-latest" maxlength="35" placeholder="例如 0.50；沒有填 —" /></label>
+<label>最近一次除息日<input id="editor-exdate" maxlength="35" placeholder="YYYY.MM.DD／—" /></label>
+<fieldset class="fee-fields"><legend>費用資訊（年率 %）</legend><div class="fee-pair"><label>經理費<input id="editor-manager-fee" type="number" min="0" max="100" step="any" placeholder="例如 0.30" /></label><label>保管費<input id="editor-custody-fee" type="number" min="0" max="100" step="any" placeholder="例如 0.035" /></label></div><small>表格顯示兩項合計；不等於包含其他成本的實際總費用率。階梯式費率請記在備忘錄並以公告為準。</small></fieldset>
+<label class="editor-full">ETF 私人備忘錄<textarea id="editor-memo" rows="4" maxlength="4000" placeholder="例如投資理由、下次查資料事項、費用級距備註……"></textarea></label>
+<div class="editor-actions"><button class="primary-btn" type="submit">儲存修改</button><button id="editor-hide" class="soft-btn" type="button">從清單隱藏此標的</button><button id="editor-restore" class="soft-btn" type="button">恢復此標的</button></div>
+</form><div class="editor-tools"><strong>資料備份與恢復</strong><p>匯出或匯入修改、收藏、排序與筆記；匯入會取代本機的個人設定，請先備份。</p><div class="editor-actions"><button id="editor-export" class="soft-btn" type="button">↓ 匯出備份 JSON</button><label class="soft-btn upload-label">↑ 匯入備份 JSON<input id="editor-import" type="file" accept="application/json,.json" hidden /></label></div></div>
+<div id="editor-message" class="mini-help" role="status" aria-live="polite"></div>
+</div></div>
+<div id="login-modal" class="login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="login-title"><div class="login-panel"><button id="login-close" class="login-close" aria-label="關閉">×</button><div class="eyebrow">ACCOUNT / PRIVATE RESEARCH</div><h2 id="login-title">登入我的研究庭園</h2><p>使用 Google 登入管理公開 ETF 商品與私人理財資料。未登入也可閱讀公開商品目錄。</p><div class="cloud-actions"><button id="local-backup" type="button" class="soft-btn hidden">↓ 匯出備份 JSON</button><button id="google-signin" type="button" class="primary-btn">使用 Google 登入</button><button id="google-signout" type="button" class="soft-btn">登出</button><button id="cloud-init" type="button" class="soft-btn hidden">首次：將本機資料匯入空白雲端</button></div><div id="auth-message" class="mini-help" role="status">尚未設定 Firebase。</div><div id="public-catalog-status" class="mini-help" role="status">公開目錄狀態檢查中…</div><button id="public-publish" class="primary-btn hidden" type="button">首次：檢查並發布公開 ETF 商品資料</button><small>首次公開發布前請備份並確認 Firestore 規則已更新。公開目錄不會包含持倉、收藏或私人備忘錄。發布操作不會自動執行。</small></div></div><footer class="footer">KOMOREBI · INVESTMENT RESEARCH HUB <span>Market data depends on licensed feeds · check timestamps</span></footer>
+</main></div><script src="firebase-config.js?v=20261107b"></script><script type="module" src="firebase-sync.js?v=20261112v110"></script><script src="etf-fallback.js?v=20261106b"></script><script src="app.js?v=20261112v110"></script><script src="market-dashboard.js?v=20261116v103"></script><script src="dividend-calendar.js?v=20261112"></script>
 </body></html>
