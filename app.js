@@ -134,13 +134,17 @@ function articleCard(a){const row=node('article','article-card'+(a.hidden?' excl
 function renderList(){
   const list=$('articleList');list.replaceChildren();
   const items=visibleEntries().slice().sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
-  const known=archiveTotal!==null&&!archiveIncomplete;
-  const totalText=known?`${archiveTotal} 則`:(archiveIncomplete?`至少 ${state.entries.length} 則（尚未掃描完）`:archiveHasMore?`至少 ${state.entries.length} 則`:`${state.entries.length} 則`);
+  // 簡潔而準確：完整數量才使用「共有」；未完成掃描只顯示已載入的篇數。
+  // Firestore 缺少複合索引時不把部分結果誤標為總數。
+  const countIsExact=archiveTotal!==null&&!archiveIncomplete;
+  const countText=countIsExact
+    ? `共有 ${archiveTotal.toLocaleString('zh-TW')} 則`
+    : `已載入 ${state.entries.length.toLocaleString('zh-TW')} 則`;
   const pages=Math.max(1,Math.ceil(items.length/PAGE));
   archivePage=Math.min(archivePage,pages);
   const first=(archivePage-1)*PAGE;
   const showing=items.slice(first,first+PAGE);
-  $('resultCount').textContent=(archiveError?archiveError+' · ':'')+`共有 ${totalText} · 本頁 ${showing.length?first+1:0}–${Math.min(first+PAGE,items.length)} 則`;
+  $('resultCount').textContent=archiveError&&!items.length?'目前無法載入':countText;
   $('headlineCount').textContent=state.entries.length.toLocaleString('zh-TW');
   const nav=$('archivePagination');nav.replaceChildren();
   if(state.loading&&!archiveAppending){list.append(node('div','empty-state','正在讀取指定主題、年月的新聞…'));$('loadMoreBtn').hidden=true;return}
@@ -192,7 +196,9 @@ async function subscribe(force=false){
         if(token!==loadToken)return;
         state.entries=fallback.entries;archiveIncomplete=fallback.incomplete;
         archiveHasMore=false;archiveTotal=fallback.incomplete?null:fallback.entries.length;
-        archiveError=fallback.incomplete?'索引尚未建立：已載入部分相符新聞，無法確認全部篇數。':'';
+        // 索引不足屬於查詢設定問題，不在新聞標題旁顯示長篇技術警告。
+        archiveError='';
+        if(fallback.incomplete)console.warn('單月份已掃描 '+fallback.scanned+' 則新聞，達到安全上限；請建立 Firebase「topics array-contains + date descending」複合索引以查到完整篇數。');
         rememberArchive();
       } catch(err){archiveError='查詢失敗：'+safeErr(err);notify(archiveError)}
     } else {archiveError='查詢失敗：'+safeErr(e);notify(archiveError)}

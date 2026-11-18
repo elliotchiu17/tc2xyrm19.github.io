@@ -76,3 +76,19 @@
 .v7-topic-pick-item:hover{background:#efe2cb}
 .v7-pick-folder>.v7-topic-pick-item{padding-left:22px}
 .v7-pick-subfolder>.v7-topic-pick-item{padding-left:25px}
+
+/* v7.1：左側資料夾字級與一般關鍵字一致 */
+.topic-nav > .topic-folder > .topic-folder-title {
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.65;
+}
+.topic-nav > .topic-folder > .topic-folder > .topic-folder-title {
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.65;
+}
+/* 覆蓋 v7.css 舊版 14px 子資料夾與 styles.css 的 15px 巢狀主題設定 */
+.topic-nav .topic-folder > .topic-btn {
+  font-size: 17px;
+}

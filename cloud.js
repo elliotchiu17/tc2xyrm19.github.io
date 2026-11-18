@@ -84,24 +84,48 @@ export async function countArchive({admin, prefix, topic='all'}) {
   const coll = admin ? 'articles' : 'public_articles';
   const conditions = [];
   if (topic !== 'all') conditions.push(where('topics','array-contains',topic));
-  conditions.push(where('date','>=',from),where('date','<=',to));
+  // 與 fetchArchiveBatch 使用相同的日期降冪索引，避免計數另外要求升冪索引。
+  conditions.push(where('date','>=',from),where('date','<=',to),orderBy('date','desc'));
   const result=await getCountFromServer(query(collection(db,coll),...conditions));
   return result.data().count;
 }
 
-// 索引尚未建立時的保守降級：只在「單一月份」使用日期索引讀取至多 1200 篇。
-// 若達上限會標明數量不完整，不能把它當作全集。
-export async function fetchMonthWithoutComposite({admin,prefix,topic,batchSize=1200}) {
-  if (!/^\d{4}-\d{2}$/.test(prefix)) throw new Error('全年資料量較大，請建立主題與日期的複合索引。');
-  const coll=admin?'articles':'public_articles';
-  const [from,to]=dateRange(prefix);
-  const snap=await getDocs(query(collection(db,coll),where('date','>=',from),where('date','<=',to),orderBy('date','desc'),limit(batchSize+1)));
-  return {
-    entries:snap.docs.slice(0,batchSize).map(d=>({...d.data(),id:d.id})).filter(d=>topic==='all'||(d.topics||[]).includes(topic)),
-    incomplete:snap.size>batchSize
-  };
+// 在 Firebase 複合索引尚未建好時，以日期單欄位索引分批掃描整個月份。
+// 重要：先讀完整個月份，再篩選主題；不能只取前 1,200 筆就宣稱找齊。
+// 正式解法仍是建立 topics(array-contains) + date(desc) 複合索引。
+export async function fetchMonthWithoutComposite({admin,prefix,topic,batchSize=350,maxScan=12000}) {
+  if (!/^\d{4}-\d{2}$/.test(prefix)) {
+    throw new Error('全年資料量較大，請先建立「主題＋日期」的複合索引。');
+  }
+  const coll = admin ? 'articles' : 'public_articles';
+  const [from,to] = dateRange(prefix);
+  const matches = [];
+  let cursor = null;
+  let scanned = 0;
+  let incomplete = false;
+  while (true) {
+    const remaining = maxScan - scanned;
+    if (remaining <= 0) { incomplete = true; break; }
+    const take = Math.min(batchSize, remaining);
+    const clauses = [
+      where('date','>=',from), where('date','<=',to), orderBy('date','desc')
+    ];
+    if (cursor) clauses.push(startAfter(cursor));
+    clauses.push(limit(take + 1));
+    const snap = await getDocs(query(collection(db,coll),...clauses));
+    const page = snap.docs.slice(0,take);
+    for (const d of page) {
+      const value = {...d.data(), id:d.id};
+      if (topic==='all' || (value.topics||[]).includes(topic)) matches.push(value);
+    }
+    scanned += page.length;
+    if (snap.docs.length <= take) break; // 沒有下一批，已掃完整個月份
+    cursor = page.at(-1);
+    if (!cursor) break;
+    if (scanned >= maxScan) { incomplete = true; break; }
+  }
+  return {entries:matches,incomplete,scanned};
 }
-
 export async function deleteArticle(id) {
   if(!id)throw new Error('缺少新聞 ID');
   const batch=writeBatch(db);
