@@ -150,3 +150,29 @@ export function watchSearchJobs(next,error) {
     next(snap.docs.map(d => ({...d.data(),id:d.id})));
   },error);
 }
+
+// v7：批次永久刪除，單一 Firestore 批次最多 180 篇（兩個集合合計 360 次刪除）。
+export async function deleteArticlesBatch(ids, onProgress) {
+  if (!auth.currentUser) throw new Error('請先登入管理員');
+  const unique=[...new Set(ids.filter(x=>typeof x==='string'&&x.length>0))];
+  for(let n=0;n<unique.length;n+=180){
+    const batch=writeBatch(db);
+    for(const id of unique.slice(n,n+180)){
+      batch.delete(doc(db,'articles',id));
+      batch.delete(doc(db,'public_articles',id));
+    }
+    await batch.commit();
+    onProgress?.(Math.min(n+180,unique.length),unique.length);
+  }
+  return unique.length;
+}
+// v7：站內搜尋依標題過濾，逐批掃描資料庫（Firebase 不支援任意子字串查詢）。
+// 使用日期索引，不依賴主題複合索引；不載入新聞全文。
+export async function scanArchiveTitles({admin=false, last=null, batchSize=300}) {
+  const coll=admin?'articles':'public_articles';
+  const q=[orderBy('date','desc')];
+  if(last)q.push(startAfter(last));
+  q.push(limit(batchSize));
+  const snap=await getDocs(query(collection(db,coll),...q));
+  return {entries:snap.docs.map(d=>({...d.data(),id:d.id})),last:snap.docs.at(-1)||null,hasMore:snap.size===batchSize};
+}

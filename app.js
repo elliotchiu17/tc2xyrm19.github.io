@@ -1,4 +1,5 @@
-import * as cloud from './cloud.js';
+// v7 - 在 v6-2 基礎上擴充，保留原有功能。
+import * as cloud from './cloud.js?v=7';
 
 const $=id=>document.getElementById(id);
 const $all=s=>[...document.querySelectorAll(s)];
@@ -6,6 +7,8 @@ const DEFAULT={topics:[{id:'taichung',name:'台中',terms:['台中']},{id:'chen-
 const dateTW=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 const now=dateTW();
 const state={catalog:structuredClone(DEFAULT),topic:'all',year:+now.slice(0,4),month:+now.slice(5,7),kind:'all',source:'all',query:'',user:null,admin:false,entries:[],firstPage:[],extraRows:[],nextPage:null,hasMore:false,loading:false,configLoaded:false,uidShown:false};
+const MISC={id:'misc',name:'其他',terms:[]};
+function allTopics(){return [...state.catalog.topics.filter(t=>t.id!=='misc'),state.catalog.topics.find(t=>t.id==='misc')||MISC]}
 const PAGE=20;
 const BATCH=350;  // 一般月份直接取得全部（如 90 則），大量資料分批以防手機卡頓。
 const MAX_CACHE=4;
@@ -65,28 +68,50 @@ function safeErr(e){const code=str(e?.code),message=str(e?.message);if(/permissi
 function keyPrefix(){return String(state.year)+(state.month==='all'?'':('-'+String(state.month).padStart(2,'0')))}
 function visibleEntries(){return state.entries.filter(x=>(state.admin||!x.hidden)&&(state.topic==='all'||(x.topics||[]).includes(state.topic))&&(state.kind==='all'||x.kind===state.kind)&&(state.source==='all'||x.source===state.source)&&(!state.query||`${x.title} ${x.source} ${x.note}`.toLocaleLowerCase().includes(state.query.toLocaleLowerCase())))}
 function nav() {
-  const root=$('topicNav');root.replaceChildren();
+  const root=$('topicNav');
+  const oldOpened=new Set([...document.querySelectorAll('.topic-folder[open]')].map(x=>x.dataset.folderKey));
+  root.replaceChildren();
   const addTopic=(parent,t)=>{
     const b=btn('',()=>{if(state.topic===t.id){closeMobile();return}state.topic=t.id;archivePage=1;render();subscribe();closeMobile()},'topic-btn'+(state.topic===t.id?' active':''));
     b.append(node('span','',t.name));parent.append(b);
   };
   addTopic(root,{id:'all',name:'全部主題'});
-  const groups=new Map();
-  for(const t of state.catalog.topics){
-    const group=str(t.group);
-    if(!group){addTopic(root,t);continue}
-    if(!groups.has(group)){
-      const folder=node('details','topic-folder');
-      const summary=node('summary','topic-folder-title','▸ '+group);
-      folder.append(summary);root.append(folder);
-      folder.open=state.catalog.topics.some(x=>str(x.group)===group&&x.id===state.topic);
-      groups.set(group,folder);
+  const topics=state.catalog.topics.filter(t=>t.id!=='misc');
+  const folders=getFolders(state.catalog);
+  const createFolder=(parent,label,key,containsActive=false)=>{
+    const folder=node('details','topic-folder');folder.dataset.folderKey=key;
+    folder.append(node('summary','topic-folder-title','▸ '+label));parent.append(folder);
+    folder.open=oldOpened.has(key)||containsActive;
+    return folder;
+  };
+  // 第一層依資料夾順序，第二層可收合，未分類主題直接顯示。
+  for(const t of topics.filter(x=>!str(x.group)))addTopic(root,t);
+  for(const f of folders){
+    const related=topics.filter(x=>str(x.group)===f.name);
+    const fg=createFolder(root,f.name,'g:'+f.name,related.some(x=>x.id===state.topic));
+    for(const t of related.filter(x=>!str(x.subgroup)))addTopic(fg,t);
+    const subs=[...new Set([...(f.children||[]),...related.map(x=>str(x.subgroup)).filter(Boolean)])];
+    for(const sub of subs){
+      const relatedSub=related.filter(t=>str(t.subgroup)===sub);
+      const sg=createFolder(fg,sub,'s:'+f.name+'/'+sub,relatedSub.some(x=>x.id===state.topic));
+      for(const t of relatedSub)addTopic(sg,t);
     }
-    addTopic(groups.get(group),t);
   }
-  const name=state.catalog.topics.find(t=>t.id===state.topic)?.name||'全部主題';
+  const miscSection=node('div','misc-nav-divider');root.append(miscSection);
+  addTopic(root,allTopics().find(t=>t.id==='misc'));
+  const name=allTopics().find(t=>t.id===state.topic)?.name||'全部主題';
   $('crumbTopic').textContent=name;$('archiveTitle').textContent=name;
-  $('archiveDesc').textContent=state.topic==='all'?'已儲存的新聞依原始發布日期排列。':'只顯示歸入「'+name+'」的已收錄新聞，不設額外重要性門檻。';
+  $('archiveDesc').textContent=state.topic==='all'?'已儲存的新聞依原始發布日期排列。':state.topic==='misc'?'零碎新聞與自訂關鍵字蒐集的內容。':'只顯示歸入「'+name+'」的已收錄新聞，不設額外重要性門檻。';
+}
+function getFolders(catalog){
+  const folders=Array.isArray(catalog.folders)?structuredClone(catalog.folders):[];
+  for(const f of folders)f.children=Array.isArray(f.children)?f.children:[];
+  for(const t of catalog.topics||[]){
+    const g=str(t.group),s=str(t.subgroup);if(!g)continue;
+    let f=folders.find(x=>x.name===g);if(!f){f={name:g,children:[]};folders.push(f)}
+    if(s&&!(f.children||[]).includes(s)){f.children||=[];f.children.push(s)}
+  }
+  return folders;
 }
 function renderTopicMemo(){
   const wrap=$('topicMemoWrap'),field=$('topicMemo'),save=$('saveTopicMemo');
@@ -98,7 +123,7 @@ function renderTopicMemo(){
 }
 function yearMonths(){const yroot=$('yearChips');yroot.replaceChildren();const yearNow=+now.slice(0,4);for(let y=Math.max(yearNow,state.year);y>=2016;y--){const b=btn(y,()=>{state.year=y;state.month='all';archivePage=1;render();subscribe()},y===state.year?'active':'');b.setAttribute('aria-pressed',String(y===state.year));yroot.append(b)}const mroot=$('monthChips');mroot.replaceChildren();for(const m of [{value:'all',name:'全年'},...Array.from({length:12},(_,i)=>({value:i+1,name:String(i+1).padStart(2,'0')+'月'}))]){const b=btn(m.name,()=>{state.month=m.value;archivePage=1;render();subscribe()},m.value===state.month?'active':'');mroot.append(b)}}
 function sourceSelects(){const existing=state.source;const names=[...new Set([...state.catalog.sources.map(x=>x.name),...state.entries.map(x=>x.source)])];const s=$('sourceSelect');s.replaceChildren(new Option('所有媒體來源','all'));for(const n of names)s.append(new Option(n,n));state.source=names.includes(existing)?existing:'all';s.value=state.source;const form=$('articleSource'),old=form.value;form.replaceChildren();for(const n of names)form.append(new Option(n,n));form.append(new Option('其他（自行輸入）','__other'));if(names.includes(old))form.value=old}
-function articleCard(a){const row=node('article','article-card'+(a.hidden?' excluded':''));row.append(node('div','article-icon',a.kind==='影音'?'▷':'▤'));const body=node('div','article-body'),meta=node('div','article-meta');append(meta,node('span','source-name',a.source),node('span','','·'),node('time','article-date',a.date.replaceAll('-','.')),node('span','article-kind',a.hidden?'已排除':a.kind));body.append(meta);const title=node('h4','article-title');if(a.url){const link=node('a','',a.title);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';title.append(link)}else title.textContent=a.title;body.append(title);if(a.note)body.append(node('p','article-note',a.note));const tags=node('div','article-tags');for(const t of state.catalog.topics.filter(t=>(a.topics||[]).includes(t.id)))tags.append(node('span','article-tag',t.name));if(a.archive_url){const link=node('a','article-link','↗ 查看保存附件');link.href=a.archive_url;link.target='_blank';link.rel='noopener noreferrer';tags.append(link)}body.append(tags);
+function articleCard(a){const row=node('article','article-card'+(a.hidden?' excluded':''));row.append(node('div','article-icon',a.kind==='影音'?'▷':'▤'));const body=node('div','article-body'),meta=node('div','article-meta');append(meta,node('span','source-name',a.source),node('span','','·'),node('time','article-date',a.date.replaceAll('-','.')),node('span','article-kind',a.hidden?'已排除':a.kind));body.append(meta);const title=node('h4','article-title');if(a.url){const link=node('a','',a.title);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';title.append(link)}else title.textContent=a.title;body.append(title);if(a.note)body.append(node('p','article-note',a.note));const tags=node('div','article-tags');for(const t of allTopics().filter(t=>(a.topics||[]).includes(t.id)))tags.append(node('span','article-tag',t.name));if(a.archive_url){const link=node('a','article-link','↗ 查看保存附件');link.href=a.archive_url;link.target='_blank';link.rel='noopener noreferrer';tags.append(link)}body.append(tags);
   if(state.admin){const actions=node('div','article-actions');actions.append(btn('✎ 編輯',()=>openEditor(a),'edit-btn'));actions.append(btn(a.hidden?'↶ 復原':'× 排除',async()=>{if(!confirm(a.hidden?`復原「${a.title}」並重新公開？`:`將「${a.title}」從公開頁面排除？`))return;try{await cloud.setHidden(a,!a.hidden);state.entries=state.entries.map(x=>x.id===a.id?{...x,hidden:!a.hidden}:x);rememberArchive();renderList();notify(a.hidden?'已復原並同步雲端':'已排除並同步雲端')}catch(e){notify('操作未完成：'+safeErr(e))}}));actions.append(btn('永久刪除',async()=>{
     if(!confirm(`確定要永久刪除「${a.title}」？\n這項操作無法復原。`))return;
     try {await cloud.deleteArticle(a.id);state.entries=state.entries.filter(x=>x.id!==a.id);
@@ -134,7 +159,8 @@ function renderList(){
   $('loadMoreBtn').disabled=false;
   $('loadMoreBtn').textContent=archiveHasMore?'載入更早新聞（下一批，最多 '+BATCH+' 則） ↓':'';
 }
-function render(){renderTopicMemo();nav();yearMonths();sourceSelects();$all('#typeTabs button').forEach(b=>b.classList.toggle('active',b.dataset.kind===state.kind));$('adminBar').hidden=!state.admin;$('addArticleTop').hidden=!state.admin;$('autoImportSideBtn').hidden=!state.admin;$('manageCatalogBtn').hidden=!state.admin;$('adminToggle').setAttribute('aria-pressed',String(state.admin));$('adminToggleText').textContent=state.admin?'管理員：'+(state.user?.displayName||'已登入'):(state.user?'檢視登入／UID':'Google 管理員登入');$('syncStatus').textContent=state.admin?'管理員已驗證 · Firebase 雲端':state.user?'Google 已登入 · 尚未授權管理員':'公開閱覽 · Firebase 雲端';renderList()}
+function render(){renderTopicMemo();nav();yearMonths();sourceSelects();$all('#typeTabs button').forEach(b=>b.classList.toggle('active',b.dataset.kind===state.kind));$('adminBar').hidden=!state.admin;$('addArticleTop').hidden=!state.admin;$('autoImportSideBtn').hidden=!state.admin;$('manageCatalogBtn').hidden=!state.admin;
+  $('openOverviewBtn').hidden=!state.admin||state.topic==='all'||state.topic==='misc';$('adminToggle').setAttribute('aria-pressed',String(state.admin));$('adminToggleText').textContent=state.admin?'管理員：'+(state.user?.displayName||'已登入'):(state.user?'檢視登入／UID':'Google 管理員登入');$('syncStatus').textContent=state.admin?'管理員已驗證 · Firebase 雲端':state.user?'Google 已登入 · 尚未授權管理員':'公開閱覽 · Firebase 雲端';renderList()}
 async function subscribe(force=false){
   const token=++loadToken;archiveAppending=false;
   const key=archiveKey();activeArchiveKey=key;
@@ -185,7 +211,7 @@ async function loadMore(){
   }catch(e){notify('無法載入下一批新聞：'+safeErr(e))}
   finally{if(token===loadToken){state.loading=false;archiveAppending=false;renderList()}}
 }
-function openEditor(a=null){if(!state.admin){$('loginDialog').showModal();return}const f=$('articleForm');f.reset();$('editId').value=a?.id||'';$('editorTitle').textContent=a?'編輯新聞紀錄':'新增新聞報導';$('articleTitle').value=a?.title||'';$('articleDate').value=a?.date||now;$('articleKind').value=a?.kind||'新聞';$('articleUrl').value=a?.url||'';$('articleNote').value=a?.note||'';$('articleAttachment').value=a?.archive_url||'';sourceSelects();const existing=state.catalog.sources.some(x=>x.name===a?.source);$('articleSource').value=a?(existing?a.source:'__other'):(state.catalog.sources[0]?.name||'__other');$('articleSourceOther').value=a&&!existing?a.source:'';const parent=$('articleTopicChecks');parent.replaceChildren();for(const t of state.catalog.topics){const check=node('input');check.type='checkbox';check.value=t.id;check.checked=a?(a.topics||[]).includes(t.id):(state.topic!=='all'&&state.topic===t.id);append(parent,append(node('label','check-label'),check,node('span','',t.name)))}$('articleDialog').showModal()}
+function openEditor(a=null){if(!state.admin){$('loginDialog').showModal();return}const f=$('articleForm');f.reset();$('editId').value=a?.id||'';$('editorTitle').textContent=a?'編輯新聞紀錄':'新增新聞報導';$('articleTitle').value=a?.title||'';$('articleDate').value=a?.date||now;$('articleKind').value=a?.kind||'新聞';$('articleUrl').value=a?.url||'';$('articleNote').value=a?.note||'';$('articleAttachment').value=a?.archive_url||'';sourceSelects();const existing=state.catalog.sources.some(x=>x.name===a?.source);$('articleSource').value=a?(existing?a.source:'__other'):(state.catalog.sources[0]?.name||'__other');$('articleSourceOther').value=a&&!existing?a.source:'';const parent=$('articleTopicChecks');parent.replaceChildren();for(const t of allTopics()){const check=node('input');check.type='checkbox';check.value=t.id;check.checked=a?(a.topics||[]).includes(t.id):(state.topic!=='all'&&state.topic===t.id);append(parent,append(node('label','check-label'),check,node('span','',t.name)))}$('articleDialog').showModal()}
 async function suffixFor(title,source,url){const text=(url||`${source}|${title}`).trim().toLowerCase();const dig=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));return [...new Uint8Array(dig)].slice(0,12).map(x=>x.toString(16).padStart(2,'0')).join('')}
 async function stableId(record){return `${record.date}-${await suffixFor(record.title,record.source,record.url)}`}
 async function submitArticle(e){e.preventDefault();if(!state.admin)return;const topics=$all('#articleTopicChecks input:checked').map(x=>x.value);if(!topics.length){notify('請至少選一個追蹤主題');return}const source=$('articleSource').value==='__other'?$('articleSourceOther').value:$('articleSource').value;const oldId=$('editId').value;
@@ -214,18 +240,76 @@ function showCatalog(){if(!state.admin)return;editCatalog=structuredClone(state.
 function makeId(name){return 'topic-'+[...new TextEncoder().encode(name)].reduce((a,b)=>((a*31+b)>>>0),7).toString(36)}
 function renderCatalog(){
   const topics=$('catalogTopics'),sources=$('catalogSources');topics.replaceChildren();sources.replaceChildren();
-  for(const [i,t] of editCatalog.topics.entries()){
-    const row=node('div','setting-item'),content=node('div','topic-setting-content');
-    content.append(node('strong','',t.name));
-    const input=node('input');input.type='text';input.placeholder='資料夾名稱（留空＝不收進資料夾）';input.value=t.group||'';input.maxLength=40;
-    input.addEventListener('input',()=>{t.group=input.value.trim()});content.append(input);
-    const controls=node('div','topic-order-controls');
-    controls.append(btn('↑',()=>{if(i===0)return;[editCatalog.topics[i-1],editCatalog.topics[i]]=[editCatalog.topics[i],editCatalog.topics[i-1]];renderCatalog()}));
-    controls.append(btn('↓',()=>{if(i===editCatalog.topics.length-1)return;[editCatalog.topics[i+1],editCatalog.topics[i]]=[editCatalog.topics[i],editCatalog.topics[i+1]];renderCatalog()}));
-    controls.append(btn('移除',()=>{if(!confirm(`移除「${t.name}」的追蹤分類？`))return;editCatalog.topics=editCatalog.topics.filter(x=>x.id!==t.id);renderCatalog()},'small-danger'));
-    append(row,content,controls);topics.append(row);
+  const folders=getFolders(editCatalog);editCatalog.folders=folders;
+  const createBtn=btn('＋ 新增資料夾',()=>{
+    const name=str(prompt('新資料夾名稱（第一層）'));if(!name)return;
+    if(folders.some(f=>f.name===name)){notify('資料夾名稱已存在');return}
+    folders.push({name,children:[]});renderCatalog();
+  },'secondary-btn');topics.append(createBtn);
+  const makeTopicRow=(t)=>{
+    const i=editCatalog.topics.indexOf(t),row=node('div','v7-topic-row');row.draggable=true;row.dataset.topicId=t.id;
+    row.append(node('span','v7-drag-handle','⠿'));
+    const title=node('strong','',t.name);row.append(title);
+    const actions=node('div','v7-row-actions');
+    const folderSel=node('select');folderSel.setAttribute('aria-label','第一層資料夾');folderSel.append(new Option('不分類',''));
+    for(const f of folders)folderSel.append(new Option(f.name,f.name));folderSel.value=str(t.group);
+    const subSel=node('select');subSel.setAttribute('aria-label','第二層資料夾');
+    function refreshSub(){subSel.replaceChildren(new Option('無子資料夾',''));const f=folders.find(x=>x.name===folderSel.value);for(const s of f?.children||[])subSel.append(new Option(s,s));subSel.value=f?.children?.includes(str(t.subgroup))?str(t.subgroup):'';}
+    refreshSub();folderSel.addEventListener('change',()=>{t.group=folderSel.value;t.subgroup='';refreshSub();renderCatalog()});
+    subSel.addEventListener('change',()=>{t.subgroup=subSel.value;renderCatalog()});
+    actions.append(folderSel,subSel);
+    actions.append(btn('↑',()=>moveTopic(t,-1),'v7-mini-btn'),btn('↓',()=>moveTopic(t,1),'v7-mini-btn'));
+    actions.append(btn('刪除',()=>{if(!confirm(`移除「${t.name}」追蹤分類？既有新聞不會被刪除。`))return;editCatalog.topics=editCatalog.topics.filter(x=>x.id!==t.id);renderCatalog()},'small-danger'));
+    row.append(actions);
+    row.addEventListener('dragstart',e=>{e.dataTransfer.setData('text/plain','topic:'+t.id);e.dataTransfer.effectAllowed='move'});
+    row.addEventListener('dragover',e=>e.preventDefault());
+    row.addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();const value=e.dataTransfer.getData('text/plain');if(!value.startsWith('topic:'))return;const dragged=editCatalog.topics.find(x=>x.id===value.slice(6));if(dragged&&dragged!==t){dragged.group=t.group||'';dragged.subgroup=t.subgroup||'';moveTopicTo(dragged,t);renderCatalog()}});
+    return row;
+  };
+  function moveTopic(t,delta){const arr=editCatalog.topics;const idx=arr.indexOf(t),next=idx+delta;if(next<0||next>=arr.length)return;[arr[idx],arr[next]]=[arr[next],arr[idx]];renderCatalog()}
+  function moveTopicTo(a,b){const arr=editCatalog.topics;arr.splice(arr.indexOf(a),1);arr.splice(arr.indexOf(b),0,a)}
+  function folderDrop(el,g,sub=''){
+    el.addEventListener('dragover',e=>{if(e.dataTransfer.types.includes('text/plain'))e.preventDefault()});
+    el.addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();const value=e.dataTransfer.getData('text/plain');
+      if(value.startsWith('topic:')){const t=editCatalog.topics.find(x=>x.id===value.slice(6));if(!t)return;t.group=g;t.subgroup=sub;renderCatalog()}
+      else if(value.startsWith('folder:')&&!sub){const n=value.slice(7),i=folders.findIndex(x=>x.name===n),j=folders.findIndex(x=>x.name===g);if(i<0||j<0||i===j)return;const [f]=folders.splice(i,1);folders.splice(j,0,f);renderCatalog()}
+    });
   }
-  for(const src of editCatalog.sources){const row=node('div','setting-item source-setting');const content=node('div','source-setting-content');content.append(node('strong','',src.name));const inp=node('input');inp.type='url';inp.placeholder='https://新聞媒體的官網網址';inp.value=src.home_url||('https://'+(src.site_query||''));inp.addEventListener('input',()=>src.home_url=inp.value.trim());content.append(inp);append(row,content,btn('移除',()=>{if(!confirm(`移除「${src.name}」？`))return;editCatalog.sources=editCatalog.sources.filter(x=>x.name!==src.name);renderCatalog()},'small-danger'));sources.append(row)}
+  const loose=node('div','v7-catalog-folder');loose.append(node('h4','','未分類主題（可拖曳到資料夾）'));folderDrop(loose,'','');
+  for(const t of editCatalog.topics.filter(x=>!str(x.group)&&x.id!=='misc'))loose.append(makeTopicRow(t));topics.append(loose);
+  for(const f of folders){
+    const box=node('details','v7-catalog-folder');box.open=true;box.draggable=true;
+    box.addEventListener('dragstart',e=>{if(e.target!==box)return;e.dataTransfer.setData('text/plain','folder:'+f.name)});
+    const summary=node('summary','','📁 '+f.name+'（拖曳主題至此）');box.append(summary);folderDrop(box,f.name);
+    const actions=node('div','v7-folder-actions');
+    actions.append(btn('＋ 子資料夾',()=>{const name=str(prompt('新增「'+f.name+'」的子資料夾名稱'));if(!name)return;if(f.children.includes(name)){notify('名稱重複');return}f.children.push(name);renderCatalog()},'v7-mini-btn'));
+    actions.append(btn('重新命名',()=>{const name=str(prompt('重新命名資料夾',f.name));if(!name||folders.some(x=>x!==f&&x.name===name))return;for(const t of editCatalog.topics)if(t.group===f.name)t.group=name;f.name=name;renderCatalog()},'v7-mini-btn'));
+    actions.append(btn('↑',()=>{const i=folders.indexOf(f);if(i>0){[folders[i],folders[i-1]]=[folders[i-1],folders[i]];renderCatalog()}},'v7-mini-btn'));
+    actions.append(btn('↓',()=>{const i=folders.indexOf(f);if(i<folders.length-1){[folders[i],folders[i+1]]=[folders[i+1],folders[i]];renderCatalog()}},'v7-mini-btn'));
+    actions.append(btn('移除資料夾',()=>{if(!confirm('移除資料夾「'+f.name+'」？內部主題會變成未分類，新聞不會刪除。'))return;for(const t of editCatalog.topics)if(t.group===f.name){t.group='';t.subgroup=''}folders.splice(folders.indexOf(f),1);renderCatalog()},'small-danger'));
+    box.append(actions);
+    for(const t of editCatalog.topics.filter(x=>x.group===f.name&&!str(x.subgroup)))box.append(makeTopicRow(t));
+    for(const sub of f.children){
+      const inner=node('details','v7-catalog-subfolder');inner.open=true;
+      inner.append(node('summary','','📂 '+sub));folderDrop(inner,f.name,sub);
+      const tools=node('div','v7-folder-actions');tools.append(btn('改名',()=>{const name=str(prompt('子資料夾名稱',sub));if(!name||f.children.includes(name))return;f.children[f.children.indexOf(sub)]=name;for(const t of editCatalog.topics)if(t.group===f.name&&t.subgroup===sub)t.subgroup=name;renderCatalog()},'v7-mini-btn'));
+      tools.append(btn('移除',()=>{if(!confirm('移除此子資料夾？內部主題保留在「'+f.name+'」。'))return;f.children=f.children.filter(x=>x!==sub);for(const t of editCatalog.topics)if(t.group===f.name&&t.subgroup===sub)t.subgroup='';renderCatalog()},'v7-mini-btn'));
+      inner.append(tools);for(const t of editCatalog.topics.filter(x=>x.group===f.name&&x.subgroup===sub))inner.append(makeTopicRow(t));box.append(inner);
+    }
+    topics.append(box);
+  }
+  const media=node('div','v7-sources-scroll');sources.append(media);
+  for(const src of editCatalog.sources){
+    const row=node('div','v7-source-card');row.draggable=true;row.append(node('strong','',src.name));
+    const inp=node('input');inp.type='text';inp.placeholder='https://新聞媒體官網／搜尋網址（可使用 {keyword}）';inp.value=src.home_url||('https://'+(src.site_query||''));inp.addEventListener('input',()=>src.home_url=inp.value.trim());row.append(inp);
+    const controls=node('div','v7-row-actions');const i=editCatalog.sources.indexOf(src);
+    controls.append(btn('←',()=>{if(i>0){[editCatalog.sources[i-1],editCatalog.sources[i]]=[editCatalog.sources[i],editCatalog.sources[i-1]];renderCatalog()}},'v7-mini-btn'));
+    controls.append(btn('→',()=>{if(i<editCatalog.sources.length-1){[editCatalog.sources[i+1],editCatalog.sources[i]]=[editCatalog.sources[i],editCatalog.sources[i+1]];renderCatalog()}},'v7-mini-btn'));
+    controls.append(btn('移除',()=>{if(!confirm('移除媒體「'+src.name+'」？'))return;editCatalog.sources=editCatalog.sources.filter(x=>x!==src);renderCatalog()},'small-danger'));row.append(controls);
+    row.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain','media:'+src.name));
+    row.addEventListener('dragover',e=>e.preventDefault());row.addEventListener('drop',e=>{e.preventDefault();const value=e.dataTransfer.getData('text/plain');if(!value.startsWith('media:'))return;const dragged=editCatalog.sources.find(x=>x.name===value.slice(6));if(!dragged||dragged===src)return;editCatalog.sources.splice(editCatalog.sources.indexOf(dragged),1);editCatalog.sources.splice(editCatalog.sources.indexOf(src),0,dragged);renderCatalog()});
+    media.append(row);
+  }
 }
 async function saveCatalog(){if(!state.admin)return;const button=$('saveCatalogBtn');button.disabled=true;try{if(editCatalog.sources.some(x=>x.home_url&&!/^https:\/\/[^\s/]+/i.test(x.home_url)))throw Error('媒體官網網址請使用 https:// 開頭');await cloud.saveCatalog(editCatalog);invalidateArchive();state.catalog=structuredClone(editCatalog);if(!state.catalog.topics.some(x=>x.id===state.topic))state.topic='all';$('catalogDialog').close();render();notify('關鍵字與媒體已儲存至雲端')}catch(e){notify('設定未儲存：'+safeErr(e))}finally{button.disabled=false}}
 // 來源開啟策略：自由時報帶入關鍵字與日期；其他媒體進官網搜尋入口，不再導往 Google。
@@ -235,12 +319,14 @@ const MEDIA_HOMES={
   '聯合報':'https://udn.com/', '鏡新聞':'https://www.mnews.tw/'
 };
 function selectedSearch(){
-  const t=state.catalog.topics.find(x=>x.id===$('externalTopic').value);
+  const t=allTopics().find(x=>x.id===$('externalTopic').value);
   const s=state.catalog.sources.find(x=>x.name===$('externalSource').value);
   if(!t||!s){notify('請先選擇關鍵字與新聞媒體');return null}
+  const custom=str($('externalCustomKeyword').value);
+  if((t.id==='misc'||$('externalUseCustom').checked)&&!custom){notify('請先輸入要搜尋的文字');return null}
   const start=$('externalStart').value,end=$('externalEnd').value;
   if(start&&!verifyDate(start)||end&&!verifyDate(end)||start&&end&&start>end){notify('搜尋日期範圍有誤');return null}
-  return {topicId:t.id,keyword:t.terms?.[0]||t.name,source:s.name,start,end,mode:$('searchMode').value,media:s};
+  return {topicId:(t.id==='misc'||$('externalUseCustom').checked)?'misc':t.id,keyword:custom&&(t.id==='misc'||$('externalUseCustom').checked)?custom:(t.terms?.[0]||t.name),source:s.name,start,end,mode:$('searchMode').value,media:s};
 }
 function officialSearchUrl(v){
   if(v.source==='自由時報'){
@@ -251,7 +337,7 @@ function officialSearchUrl(v){
   }
   const configured=v.media.home_url, fallback=MEDIA_HOMES[v.source];
   // 自訂媒體網址僅採用 HTTPS 網域，不直接拼接使用者輸入的搜尋參數。
-  if(/^https:\/\/[^\s/]+/i.test(configured||''))return configured;
+  if(/^https:\/\/[^\s/]+/i.test(configured||''))return configured.replaceAll('{keyword}',encodeURIComponent(v.keyword)).replaceAll('{start8}',(v.start||'').replaceAll('-','')).replaceAll('{end8}',(v.end||'').replaceAll('-',''));
   return fallback||('https://'+(v.media.site_query||''));
 }
 function externalSearch(){const v=selectedSearch();if(!v)return;const u=officialSearchUrl(v);if(!/^https:\/\//.test(u)){notify('請先為此媒體設定官網網址');return}window.open(u,'_blank','noopener,noreferrer');if(v.source!=='自由時報')notify('已開啟媒體官網；若該站不支援網址帶入關鍵字，請在站內搜尋框輸入。')}
@@ -262,10 +348,41 @@ function updateSearchAvailability(){
   $('autoImportNote').textContent=isLtn?'自由時報：可送出日期搜尋（實驗性）或官方 RSS（近期）。網站按鈕會建立任務，GitHub Actions 約每 10 分鐘檢查一次；無法保證官網所有報導均可取得。':'其他媒體：目前提供官方網站入口，尚未支援自動匯入。未經驗證不會假裝已完成。';
   $('searchModeHolder').hidden=!isLtn;
 }
+function renderSearchTopicChoices(){
+  const input=$('externalTopic'),previous=input.value||state.topic;input.replaceChildren();
+  const tree=$('topicPickerTree');tree.replaceChildren();
+  const addOption=t=>input.append(new Option(t.name,t.id));
+  const addPick=(parent,t)=>{
+    const b=btn(t.name,()=>{input.value=t.id;tree.hidden=true;$('topicPickerBtn').textContent=t.name+' ▾';updateCustomSearchUI()},'v7-topic-pick-item');
+    parent.append(b);
+  };
+  const loose=state.catalog.topics.filter(x=>x.id!=='misc'&&!str(x.group));
+  for(const t of loose){addOption(t);addPick(tree,t)}
+  for(const f of getFolders(state.catalog)){
+    const first=node('details','v7-pick-folder');const heading=node('summary','','📁 '+f.name);first.append(heading);
+    for(const t of state.catalog.topics.filter(x=>x.group===f.name&&!str(x.subgroup))){addOption(t);addPick(first,t)}
+    for(const sub of f.children||[]){
+      const second=node('details','v7-pick-subfolder');second.append(node('summary','','📂 '+sub));
+      for(const t of state.catalog.topics.filter(x=>x.group===f.name&&x.subgroup===sub)){addOption(t);addPick(second,t)}
+      first.append(second);
+    }
+    tree.append(first);
+  }
+  input.append(new Option('其他（自行輸入關鍵字）','misc'));
+  addPick(tree,{id:'misc',name:'其他（自行輸入關鍵字）'});
+  input.value=allTopics().some(x=>x.id===previous)?previous:'misc';
+  $('topicPickerBtn').textContent=(allTopics().find(x=>x.id===input.value)?.name||'選擇新聞主題')+' ▾';
+  tree.hidden=true;
+  updateCustomSearchUI();
+}
+function updateCustomSearchUI(){
+  const custom=$('externalTopic').value==='misc'||$('externalUseCustom').checked;
+  $('customKeywordWrap').hidden=!custom;
+  $('externalCustomKeyword').required=custom;
+}
 function showSearch(){
-  const topics=$('externalTopic'),sources=$('externalSource');topics.replaceChildren();
-  for(const t of state.catalog.topics)topics.append(new Option(t.name,t.id));if(state.topic!=='all')topics.value=state.topic;
-  sources.replaceChildren();for(const s of state.catalog.sources)sources.append(new Option(s.name,s.name));
+  renderSearchTopicChoices();
+  const sources=$('externalSource');sources.replaceChildren();for(const s of state.catalog.sources)sources.append(new Option(s.name,s.name));
   $('externalEnd').value=dateTW();const d=new Date(dateTW()+'T00:00:00Z');d.setUTCDate(d.getUTCDate()-2);$('externalStart').value=d.toISOString().slice(0,10);
   $('searchMode').value='site';updateSearchAvailability();$('searchDialog').showModal();closeMobile();
 }
@@ -296,10 +413,126 @@ function showJobStatus(jobs){const list=$('jobStatusList');list.replaceChildren(
 }
 function beginJobs(){if(stopJobs){stopJobs();stopJobs=null}const box=$('jobStatusList');box.replaceChildren();if(!state.admin){box.append(node('p','', '登入管理員即可查看匯入進度'));return}
   stopJobs=cloud.watchSearchJobs(showJobStatus,e=>{box.textContent='無法取得工作進度：'+safeErr(e)})}
+// v7：資料總覽：完整掃描指定主題／年月後，才能開放全選與永久刪除。
+const overview={entries:[],selected:new Set(),loading:false,complete:false,token:0};
+function renderOverview(){
+  const list=$('overviewItems');list.replaceChildren();
+  $('overviewCount').textContent=`已取得 ${overview.entries.length} 則${overview.complete?'（本月全部）':'（尚未完整讀取）'} · 已選 ${overview.selected.size} 則`;
+  $('overviewDelete').disabled=!overview.complete||overview.loading||overview.selected.size===0;
+  $('overviewSelectAll').disabled=!overview.complete||overview.loading;
+  $('overviewUnselect').disabled=overview.loading||overview.selected.size===0;
+  const q=str($('overviewFilter').value).toLowerCase();
+  for(const article of overview.entries){
+    if(q&&!(`${article.title} ${article.date} ${article.source}`.toLowerCase().includes(q)))continue;
+    const row=node('label','v7-overview-row');
+    const ck=node('input');ck.type='checkbox';ck.checked=overview.selected.has(article.id);ck.disabled=overview.loading;
+    ck.addEventListener('change',()=>{if(ck.checked)overview.selected.add(article.id);else overview.selected.delete(article.id);$('overviewCount').textContent=`已取得 ${overview.entries.length} 則${overview.complete?'（本月全部）':'（尚未完整讀取）'} · 已選 ${overview.selected.size} 則`;$('overviewDelete').disabled=!overview.complete||!overview.selected.size});
+    const meta=node('span','v7-overview-info');meta.append(node('small','',article.date+' · '+article.source),node('span','',article.title));
+    row.append(ck,meta);list.append(row);
+  }
+}
+async function openOverview(){
+  if(!state.admin||state.topic==='all'||state.topic==='misc'){notify('請先選擇個別關鍵字，再以管理員身分開啟資料總覽');return}
+  const dlg=$('overviewDialog');dlg.showModal();
+  $('overviewFilter').value='';overview.entries=[];overview.selected.clear();overview.complete=false;overview.loading=true;
+  const token=++overview.token;const topic=state.topic,prefix=keyPrefix();
+  $('overviewScope').textContent=(allTopics().find(t=>t.id===topic)?.name||topic)+' · '+prefix;
+  $('overviewProgress').textContent='正在完整讀取這個主題與年月的新聞…';renderOverview();
+  let last=null;
+  try{
+    do{
+      const part=await cloud.fetchArchiveBatch({admin:true,topic,prefix,batchSize:300,last});
+      if(token!==overview.token||!dlg.open)return;
+      overview.entries.push(...part.entries);last=part.last;
+      $('overviewProgress').textContent=`已讀取 ${overview.entries.length} 則，${part.hasMore?'繼續讀取…':'讀取完成'}`;
+      if(!part.hasMore){overview.complete=true;break}
+      if(!part.entries.length)throw Error('資料分頁異常，已停止操作');
+    }while(true);
+  }catch(err){$('overviewProgress').textContent='讀取未完成，已禁止批次刪除：'+safeErr(err)}
+  finally{if(token===overview.token){overview.loading=false;renderOverview()}}
+}
+async function deleteOverviewSelected(){
+  if(!state.admin||!overview.complete||overview.loading)return;
+  const ids=[...overview.selected];if(!ids.length)return;
+  const message=`即將永久刪除 ${ids.length} 則新聞。注意：同一篇新聞若屬多個主題，也會從其他主題一併消失。此操作無法復原。`;
+  if(!confirm(message))return;
+  const check=prompt('請輸入「刪除 '+ids.length+'」確認永久刪除：');
+  if(check!==`刪除 ${ids.length}`){notify('已取消批次刪除');return}
+  overview.loading=true;renderOverview();
+  try{
+    await cloud.deleteArticlesBatch(ids,(done,total)=>{$('overviewProgress').textContent=`正在永久刪除：${done} / ${total} 則`});
+    overview.entries=overview.entries.filter(x=>!overview.selected.has(x.id));
+    overview.selected.clear();overview.complete=true;invalidateArchive();
+    $('overviewProgress').textContent=`已成功刪除 ${ids.length} 則，現在剩餘 ${overview.entries.length} 則。`;
+    await subscribe(true);renderOverview();notify('批次刪除完成：'+ids.length+' 則');
+  }catch(e){overview.complete=false;$('overviewProgress').textContent='部分刪除可能已成功，請關閉並重新讀取確認：'+safeErr(e);notify('批次刪除未完全完成：'+safeErr(e))}
+  finally{overview.loading=false;renderOverview()}
+}
+// v7：跨主題、跨年月的站內標題搜尋：只有使用者按搜尋才開始分批掃描。
+const internal={rows:[],page:1,scanned:0,loading:false,cancel:false};
+function renderInternalResults(){
+  const root=$('internalResults');root.replaceChildren();
+  const pages=Math.max(1,Math.ceil(internal.rows.length/20));internal.page=Math.min(internal.page,pages);
+  const start=(internal.page-1)*20;
+  for(const r of internal.rows.slice(start,start+20)){
+    const row=node('div','v7-search-result');
+    row.append(node('small','',r.date+' · '+r.source));
+    const link=node('a','',r.title);if(r.url){link.href=r.url;link.target='_blank';link.rel='noopener noreferrer'}else link.removeAttribute('href');row.append(link);
+    const names=allTopics().filter(t=>(r.topics||[]).includes(t.id)).map(t=>t.name);
+    row.append(node('small','',names.join('、')));root.append(row);
+  }
+  const nav=$('internalPages');nav.replaceChildren();
+  if(pages>1){for(let page=1;page<=pages;page++){
+    if(pages>13&&Math.abs(page-internal.page)>3&&page!==1&&page!==pages)continue;
+    nav.append(btn(page,()=>{internal.page=page;renderInternalResults()},'page-btn'+(page===internal.page?' active':'')));
+  }}
+  $('internalSummary').textContent=`已掃描 ${internal.scanned.toLocaleString()} 則已收錄新聞 · 標題符合 ${internal.rows.length.toLocaleString()} 則${internal.loading?' · 搜尋中…':''}`;
+}
+async function runInternalSearch(){
+  if(internal.loading)return;
+  const term=str($('internalKeyword').value).toLocaleLowerCase();if(term.length<2){notify('請輸入至少兩個字的搜尋關鍵字');return}
+  internal.rows=[];internal.scanned=0;internal.page=1;internal.loading=true;internal.cancel=false;
+  $('internalSearchBtn').disabled=true;$('internalCancelBtn').hidden=false;renderInternalResults();
+  let last=null,complete=false;
+  try{
+    do{
+      const part=await cloud.scanArchiveTitles({admin:state.admin,last,batchSize:300});
+      if(!part.entries.length){complete=true;break}
+      internal.scanned+=part.entries.length;
+      internal.rows.push(...part.entries.filter(x=>(state.admin||!x.hidden)&&String(x.title||'').toLocaleLowerCase().includes(term)));
+      last=part.last;complete=!part.hasMore;
+      renderInternalResults();
+      if(internal.cancel)break;
+      // 每次最多掃描 20,000 則，避免無限制讀取；必要時提示縮小查詢。
+      if(internal.scanned>=20000&&!complete){$('internalProgress').textContent='已達 20,000 則掃描上限，結果可能不完整。';break}
+    }while(!complete);
+    if(complete)$('internalProgress').textContent='搜尋完成：已掃描全部可取得的新聞標題。';
+    else if(internal.cancel)$('internalProgress').textContent='已停止搜尋：目前結果僅涵蓋已掃描的新聞。';
+  }catch(e){$('internalProgress').textContent='搜尋中斷，結果可能不完整：'+safeErr(e)}
+  finally{internal.loading=false;$('internalSearchBtn').disabled=false;$('internalCancelBtn').hidden=true;renderInternalResults()}
+}
+function openInternalSearch(){
+  $('internalDialog').showModal();closeMobile();
+  $('internalKeyword').focus();
+}
 function wire(){for(const close of $all('[data-close]'))close.addEventListener('click',()=>$(close.dataset.close).close());$('mobileMenu').addEventListener('click',()=>{$('sidebar').classList.add('open');$('mobileBackdrop').hidden=false});$('mobileBackdrop').addEventListener('click',closeMobile);$('adminToggle').addEventListener('click',()=>{loginUI();$('loginDialog').showModal();closeMobile()});$('googleLoginBtn').addEventListener('click',startLogin);$('recheckAdminBtn').addEventListener('click',async()=>{await authChanged(cloud.currentUser());notify(state.admin?'管理員權限驗證成功':'仍未授權，請檢查規則是否已發布')});$('logoutBtn').addEventListener('click',async()=>{await cloud.logout();$('loginDialog').close();notify('已登出管理員')});$('copyUid').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('uidValue').textContent);notify('UID 已複製')}catch{notify('請手動選取並複製 UID')}});
   for(const id of ['addArticleTop','addArticleBtn'])$(id).addEventListener('click',()=>openEditor());$('articleForm').addEventListener('submit',submitArticle);$('sourceSearchBtn').addEventListener('click',showSearch);$('openExternalSearchBtn').addEventListener('click',externalSearch);$('updateHelpBtn').addEventListener('click',()=>{$('helpDialog').showModal();closeMobile()});$('autoImportSideBtn').addEventListener('click',showSearch);$('autoImportHelpBtn').addEventListener('click',showSearch);$('autoImportBtn').addEventListener('click',submitImportJob);$('externalSource').addEventListener('change',updateSearchAvailability);$('manageCatalogBtn').addEventListener('click',showCatalog);
   $('addTopicSetting').addEventListener('click',()=>{const name=str($('newTopic').value);if(!name)return;if(editCatalog.topics.some(x=>x.name===name)){notify('追蹤主題已存在');return}let id=makeId(name);while(editCatalog.topics.some(x=>x.id===id))id+='x';editCatalog.topics.push({id,name,terms:[name]});$('newTopic').value='';renderCatalog()});$('addSourceSetting').addEventListener('click',()=>{const name=str($('newSource').value);if(!name)return;if(editCatalog.sources.some(x=>x.name===name)){notify('媒體已存在');return}const url=str($('newSourceUrl').value);if(url&&!/^https:\/\/[^\s/]+/i.test(url)){notify('請輸入 https:// 開頭的媒體官網網址');return}editCatalog.sources.push({name,site_query:'',home_url:url});$('newSourceUrl').value='';$('newSource').value='';renderCatalog()});$('saveCatalogBtn').addEventListener('click',saveCatalog);
   $('searchInput').addEventListener('input',e=>{state.query=e.target.value.trim();archivePage=1;renderList()});$('sourceSelect').addEventListener('change',e=>{state.source=e.target.value;archivePage=1;renderList()});$('typeTabs').addEventListener('click',e=>{const b=e.target.closest('[data-kind]');if(!b)return;state.kind=b.dataset.kind;archivePage=1;render()});$('loadMoreBtn').addEventListener('click',loadMore);$('saveTopicMemo').addEventListener('click',saveTopicMemo);
+  $('openOverviewBtn').addEventListener('click',openOverview);
+  $('overviewDialog').addEventListener('close',()=>{overview.token++});
+  $('overviewFilter').addEventListener('input',renderOverview);
+  $('overviewSelectAll').addEventListener('click',()=>{if(!overview.complete)return;overview.selected=new Set(overview.entries.map(x=>x.id));renderOverview()});
+  $('overviewUnselect').addEventListener('click',()=>{overview.selected.clear();renderOverview()});
+  $('overviewDelete').addEventListener('click',deleteOverviewSelected);
+  $('internalSearchSideBtn').addEventListener('click',openInternalSearch);
+  $('internalSearchBtn').addEventListener('click',runInternalSearch);
+  $('internalKeyword').addEventListener('keydown',e=>{if(e.key==='Enter')runInternalSearch()});
+  $('internalCancelBtn').addEventListener('click',()=>{internal.cancel=true});
+  $('internalDialog').addEventListener('close',()=>{internal.cancel=true});
+  $('externalTopic').addEventListener('change',updateCustomSearchUI);
+  $('topicPickerBtn').addEventListener('click',()=>{$('topicPickerTree').hidden=!$('topicPickerTree').hidden});
+  $('externalUseCustom').addEventListener('change',updateCustomSearchUI);
 }
 const V62_PAGE_STYLES = `/* 新聞分頁附加樣式：不覆蓋原本的 styles.css */
 .archive-pagination{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin-top:25px}

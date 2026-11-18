@@ -5,7 +5,8 @@
 <meta name="theme-color" content="#f5efdf"><meta name="description" content="個人新聞與影音檔案：依主題、年份和月份瀏覽，Firebase 雲端同步。">
 <title>輿情觀測室｜雲端新聞檔案</title>
 <link rel="stylesheet" href="styles.css">
-<script type="module" src="app.js"></script>
+<link rel="stylesheet" href="v7.css?v=7">
+<script type="module" src="app.js?v=7"></script>
 </head>
 <body>
 <div class="app-shell">
@@ -17,6 +18,7 @@
     <nav class="topic-nav" id="topicNav" aria-label="追蹤主題"></nav>
     <div class="side-divider"></div>
     <div class="side-section-title">資料整理 <span>ARCHIVE</span></div>
+    <button class="side-utility" id="internalSearchSideBtn" type="button"><span class="side-ico">⌕</span> 站內搜尋 <span class="side-arrow">↗</span></button>
     <button class="side-utility" id="sourceSearchBtn" type="button"><span class="side-ico">⌕</span> 搜尋原始新聞 <span class="side-arrow">↗</span></button>
     <button class="side-utility" id="autoImportSideBtn" type="button" hidden><span class="side-ico">↻</span> 自動匯入／更新 <span class="side-arrow">›</span></button>
     <button class="side-utility" id="manageCatalogBtn" type="button" hidden><span class="side-ico">⚙</span> 關鍵字與媒體 <span class="side-arrow">›</span></button>
@@ -54,6 +56,7 @@
           <div class="filter-options"><div class="type-tabs" id="typeTabs"><button type="button" data-kind="all" class="active">全部</button><button type="button" data-kind="新聞">新聞</button><button type="button" data-kind="影音">影音</button></div><label class="select-holder"><span class="sr-only">媒體來源</span><select id="sourceSelect"><option value="all">所有媒體來源</option></select><span class="select-down">⌄</span></label></div>
         </div>
         <div class="admin-bar" id="adminBar" hidden><div><div class="admin-title">✎　管理模式 · 已連接雲端</div><p>按「儲存」就會寫入 Firebase；手機和其他裝置重新開啟網站即可看到。排除的新聞只有管理員能復原。</p></div><div class="admin-bar-buttons"><button id="addArticleBtn" class="primary-btn" type="button">＋ 新增新聞</button><button id="autoImportHelpBtn" class="secondary-btn" type="button">↻ 指定條件搜尋</button></div></div>
+        <div class="v7-overview-action"><button type="button" id="openOverviewBtn" class="secondary-btn" hidden>▦ 資料總覽／批次管理</button></div>
         <div class="list-heading"><div><span class="list-kicker">ARCHIVE ENTRIES</span><h3 id="listHeading">新聞列表 <span id="resultCount">0 則</span></h3></div><span class="sort-hint">依發布日期 ↓　·　可載入更多</span></div>
         <div class="article-list" id="articleList"></div>
         <div class="load-footer"><button id="loadMoreBtn" class="load-more" type="button" hidden>載入更多新聞 ↓</button></div>
@@ -93,13 +96,42 @@
 </dialog>
 <dialog id="searchDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">OFFICIAL MEDIA SEARCH</span><h2>官方新聞搜尋／自動匯入</h2></div><button type="button" class="close-modal" data-close="searchDialog" aria-label="關閉">×</button></div>
  <div class="help-content"><p>先選關鍵字、媒體與日期。「開啟媒體官網」可供任何人使用；「送出自動匯入任務」目前只支援自由時報，管理員登入後才能使用。</p>
- <div class="form-grid"><label class="form-field">追蹤關鍵字<select id="externalTopic"></select></label><label class="form-field">新聞媒體<select id="externalSource"></select></label></div>
+ <div class="form-grid"><label class="form-field">追蹤關鍵字
+  <select id="externalTopic" aria-label="已選主題"></select>
+  <span class="v7-topic-picker-wrap"><button type="button" id="topicPickerBtn" class="v7-picker-btn">選擇新聞主題 ▾</button>
+    <span id="topicPickerTree" class="v7-topic-picker-tree" hidden></span>
+  </span>
+  </label><label class="form-field">新聞媒體<select id="externalSource"></select></label></div>
+ <label class="v7-custom-toggle"><input type="checkbox" id="externalUseCustom"> 不使用預設主題詞彙，改為自行輸入搜尋文字（結果歸入「其他」）</label>
+ <label class="form-field" id="customKeywordWrap" hidden>自訂搜尋關鍵字<input type="text" id="externalCustomKeyword" maxlength="90" placeholder="例如：長春自辦重劃"></label>
  <div class="form-grid"><label class="form-field">開始日期<input type="date" id="externalStart"></label><label class="form-field">結束日期<input type="date" id="externalEnd"></label></div>
  <label class="form-field" id="searchModeHolder">自由時報資料來源<select id="searchMode"><option value="site">官網日期搜尋（實驗，可能被阻擋）</option><option value="rss">官方 RSS（適合近期，不含完整歷史）</option></select></label>
  <p id="autoImportNote" class="import-note">請選擇來源。</p>
  <div class="help-actions"><button id="openExternalSearchBtn" type="button" class="secondary-btn">↗ 開啟對應新聞官網</button><button id="autoImportBtn" type="button" class="primary-btn">送出自動匯入任務</button></div>
  <div class="help-step"><b>最近的匯入進度</b><div id="jobStatusList" class="job-status-list"><p>登入管理員後顯示</p></div></div>
  </div>
+</dialog>
+<dialog id="overviewDialog" class="modal v7-large-modal">
+  <div class="modal-top"><div><span class="modal-kicker">ARCHIVE OVERVIEW</span><h2>資料總覽／批次管理</h2></div><button type="button" class="close-modal" data-close="overviewDialog" aria-label="關閉">×</button></div>
+  <div class="v7-dialog-body">
+    <p id="overviewScope" class="v7-scope"></p>
+    <p class="v7-warning">此處是永久刪除，已歸入其他主題的同一篇新聞也會一併刪除。所有選取結果都會再次確認。若資料尚未讀取完成，不能批次刪除。</p>
+    <p id="overviewProgress" aria-live="polite">準備讀取…</p>
+    <label class="form-field">篩選這份資料總覽（標題／日期／媒體）<input id="overviewFilter" placeholder="快速找要保留的新聞"></label>
+    <div class="v7-bulk-toolbar"><button id="overviewSelectAll" class="secondary-btn" type="button">一鍵全選</button><button id="overviewUnselect" class="secondary-btn" type="button">取消所選</button><strong id="overviewCount"></strong></div>
+    <div id="overviewItems" class="v7-overview-list"></div>
+    <div class="v7-bulk-footer"><button id="overviewDelete" class="v7-danger-btn" type="button" disabled>永久刪除已勾選的新聞</button></div>
+  </div>
+</dialog>
+<dialog id="internalDialog" class="modal v7-large-modal">
+  <div class="modal-top"><div><span class="modal-kicker">SEARCH THE ARCHIVE</span><h2>站內搜尋</h2></div><button type="button" class="close-modal" data-close="internalDialog" aria-label="關閉">×</button></div>
+  <div class="v7-dialog-body">
+    <p>跨所有主題、年份與月份搜尋已收錄的<b>新聞標題</b>，不會重新向新聞媒體匯入。</p>
+    <div class="v7-search-bar"><input id="internalKeyword" type="search" placeholder="輸入關鍵字，例如：產業園區" maxlength="90"><button class="primary-btn" id="internalSearchBtn" type="button">開始搜尋</button><button class="secondary-btn" id="internalCancelBtn" type="button" hidden>停止</button></div>
+    <p id="internalProgress" class="v7-progress" aria-live="polite">按下搜尋後才讀取 Firebase。資料量大時會依序掃描。</p>
+    <p id="internalSummary" class="v7-scope">尚未開始搜尋</p>
+    <div id="internalResults" class="v7-internal-results"></div><nav id="internalPages" class="archive-pagination" aria-label="站內搜尋頁碼"></nav>
+  </div>
 </dialog>
 <dialog id="helpDialog" class="modal help-modal"><div class="modal-top"><div><span class="modal-kicker">HOW IT WORKS</span><h2>資料與使用說明</h2></div><button type="button" class="close-modal" data-close="helpDialog" aria-label="關閉">×</button></div>
  <div class="help-content"><div class="help-step"><b>01　雲端永久儲存</b><p>使用管理員 Google 帳號登入，按「新增新聞」並儲存，資料會寫入 Firebase，其他裝置可查看，無須再次上傳 JSON。</p></div><div class="help-step"><b>02　主題、年份與月份</b><p>新聞依發布日期歸檔，預設顯示目前月份；可以選擇其他年份或全年。按「載入更多」逐批取得更多新聞，以免一次讀取數萬筆。</p></div><div class="help-step"><b>03　排除與復原</b><p>管理員可以排除不相關的新聞，公開頁面會移除，登入管理模式時仍能復原。</p></div><div class="help-step"><b>04　直接開啟媒體官網</b><p>自由時報可直接帶入關鍵字與日期；其他媒體先打開該媒體網站內的搜尋入口，依其實際功能操作。</p></div><div class="help-step"><b>05　自動匯入</b><p>管理員可選關鍵字、日期和自由時報資料來源並送出任務；完成 GitHub Actions 安全設定後由背景程式執行。官網日期搜尋是實驗功能，受阻時會回報失敗，不會假裝蒐集完成。</p></div></div>
